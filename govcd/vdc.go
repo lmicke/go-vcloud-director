@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -13,8 +13,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
-	"github.com/vmware/go-vcloud-director/v2/util"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/util"
 )
 
 type Vdc struct {
@@ -47,7 +47,7 @@ func (vdc *Vdc) undeployAllVdcVApps() error {
 	}
 	for _, resents := range vdc.Vdc.ResourceEntities {
 		for _, resent := range resents.ResourceEntity {
-			if resent.Type == "application/vnd.vmware.vcloud.vApp+xml" {
+			if resent.Type == "application/vnd.lmicke.vcloud.vApp+xml" {
 				vappHREF, err := url.Parse(resent.HREF)
 				if err != nil {
 					return err
@@ -81,7 +81,7 @@ func (vdc *Vdc) removeAllVdcVApps() error {
 	}
 	for _, resents := range vdc.Vdc.ResourceEntities {
 		for _, resent := range resents.ResourceEntity {
-			if resent.Type == "application/vnd.vmware.vcloud.vApp+xml" {
+			if resent.Type == "application/vnd.lmicke.vcloud.vApp+xml" {
 				vappHREF, err := url.Parse(resent.HREF)
 				if err != nil {
 					return err
@@ -127,7 +127,7 @@ func (vdc *Vdc) Refresh() error {
 }
 
 // Deletes the vdc, returning an error of the vCD call fails.
-// API Documentation: https://code.vmware.com/apis/220/vcloud#/doc/doc/operations/DELETE-Vdc.html
+// API Documentation: https://code.lmicke.com/apis/220/vcloud#/doc/doc/operations/DELETE-Vdc.html
 func (vdc *Vdc) Delete(force bool, recursive bool) (Task, error) {
 	util.Logger.Printf("[TRACE] Vdc.Delete - deleting VDC with force: %t, recursive: %t", force, recursive)
 
@@ -331,7 +331,7 @@ func (vdc *Vdc) FindEdgeGateway(edgegateway string) (EdgeGateway, error) {
 			// At this point in time the solution is to retry a few times as it does not fail to
 			// retrieve when retried.
 			//
-			// GitHUB issue - https://github.com/vmware/go-vcloud-director/issues/218
+			// GitHUB issue - https://github.com/lmicke/go-vcloud-director/issues/218
 			if err != nil {
 				util.Logger.Printf("[DEBUG] vCD 9.7 is known to sometimes respond with error on edge gateway (%s) "+
 					"retrieval. As a workaround this is done a few times before failing. Retrying: ", edgegateway)
@@ -370,7 +370,7 @@ func (vdc *Vdc) GetEdgeGatewayByHref(href string) (*EdgeGateway, error) {
 	// At this point in time the solution is to retry a few times as it does not fail to
 	// retrieve when retried.
 	//
-	// GitHUB issue - https://github.com/vmware/go-vcloud-director/issues/218
+	// GitHUB issue - https://github.com/lmicke/go-vcloud-director/issues/218
 	if err != nil {
 		util.Logger.Printf("[DEBUG] vCD 9.7 is known to sometimes respond with error on edge gateway " +
 			"retrieval. As a workaround this is done a few times before failing. Retrying:")
@@ -593,7 +593,7 @@ func (vdc *Vdc) FindVAppByName(vapp string) (VApp, error) {
 	for _, resents := range vdc.Vdc.ResourceEntities {
 		for _, resent := range resents.ResourceEntity {
 
-			if resent.Name == vapp && resent.Type == "application/vnd.vmware.vcloud.vApp+xml" {
+			if resent.Name == vapp && resent.Type == "application/vnd.lmicke.vcloud.vApp+xml" {
 
 				newVapp := NewVApp(vdc.client)
 
@@ -706,7 +706,7 @@ func (vdc *Vdc) FindVAppByID(vappid string) (VApp, error) {
 			hrefslice = strings.SplitAfter(hrefslice[len(hrefslice)-1], "-")
 			res := strings.Join(hrefslice[1:], "")
 
-			if res == urnid && resent.Type == "application/vnd.vmware.vcloud.vApp+xml" {
+			if res == urnid && resent.Type == "application/vnd.lmicke.vcloud.vApp+xml" {
 
 				newVapp := NewVApp(vdc.client)
 
@@ -780,7 +780,7 @@ func (vdc *Vdc) GetVAppByName(vappName string, refresh bool) (*VApp, error) {
 
 	for _, resourceEntities := range vdc.Vdc.ResourceEntities {
 		for _, resourceReference := range resourceEntities.ResourceEntity {
-			if resourceReference.Name == vappName && resourceReference.Type == "application/vnd.vmware.vcloud.vApp+xml" {
+			if resourceReference.Name == vappName && resourceReference.Type == "application/vnd.lmicke.vcloud.vApp+xml" {
 				return vdc.GetVAppByHref(resourceReference.HREF)
 			}
 		}

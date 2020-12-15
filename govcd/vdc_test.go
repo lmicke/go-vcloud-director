@@ -1,7 +1,7 @@
 // +build vdc functional ALL
 
 /*
- * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -11,7 +11,7 @@ import (
 
 	. "gopkg.in/check.v1"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
 )
 
 func (vcd *TestVCD) Test_FindVDCNetwork(check *C) {
@@ -79,7 +79,7 @@ func (vcd *TestVCD) Test_NewVdc(check *C) {
 	check.Assert(err, IsNil)
 
 	check.Assert(vcd.vdc.Vdc.Link[0].Rel, Equals, "up")
-	check.Assert(vcd.vdc.Vdc.Link[0].Type, Equals, "application/vnd.vmware.vcloud.org+xml")
+	check.Assert(vcd.vdc.Vdc.Link[0].Type, Equals, "application/vnd.lmicke.vcloud.org+xml")
 
 	// fmt.Printf("allocation mem %#v\n\n",vcd.vdc.Vdc.AllocationModel)
 	for _, resource := range vcd.vdc.Vdc.ResourceEntities[0].ResourceEntity {
@@ -114,14 +114,14 @@ func (vcd *TestVCD) Test_NewVdc(check *C) {
 	// Skipping this check, as we can't define the existence of a given vApp template beforehand
 	/*
 		check.Assert(vcd.vdc.Vdc.ResourceEntities[0].ResourceEntity[0].Name, Equals, QtVappTemplate)
-		check.Assert(vcd.vdc.Vdc.ResourceEntities[0].ResourceEntity[0].Type, Equals, "application/vnd.vmware.vcloud.vAppTemplate+xml")
+		check.Assert(vcd.vdc.Vdc.ResourceEntities[0].ResourceEntity[0].Type, Equals, "application/vnd.lmicke.vcloud.vAppTemplate+xml")
 		check.Assert(vcd.vdc.Vdc.ResourceEntities[0].ResourceEntity[0].HREF, Equals, "http://localhost:4444/api/vAppTemplate/vappTemplate-22222222-2222-2222-2222-222222222222")
 	*/
 
 	for _, availableNetworks := range vcd.vdc.Vdc.AvailableNetworks {
 		for _, v2 := range availableNetworks.Network {
 			check.Assert(v2.Name, Not(Equals), "")
-			check.Assert(v2.Type, Equals, "application/vnd.vmware.vcloud.network+xml")
+			check.Assert(v2.Type, Equals, "application/vnd.lmicke.vcloud.network+xml")
 			check.Assert(v2.HREF, Not(Equals), "")
 		}
 	}
@@ -137,7 +137,7 @@ func (vcd *TestVCD) Test_NewVdc(check *C) {
 	*/
 
 	for _, v2 := range vcd.vdc.Vdc.VdcStorageProfiles.VdcStorageProfile {
-		check.Assert(v2.Type, Equals, "application/vnd.vmware.vcloud.vdcStorageProfile+xml")
+		check.Assert(v2.Type, Equals, "application/vnd.lmicke.vcloud.vdcStorageProfile+xml")
 		check.Assert(v2.HREF, Not(Equals), "")
 	}
 

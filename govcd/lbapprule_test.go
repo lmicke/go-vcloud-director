@@ -1,7 +1,7 @@
 // +build lb lbAppRule nsxv functional ALL
 
 /*
- * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -9,7 +9,7 @@ package govcd
 import (
 	. "gopkg.in/check.v1"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
 )
 
 // Test_LBAppRule tests CRUD methods for load balancer application rule.
@@ -30,7 +30,7 @@ func (vcd *TestVCD) Test_LBAppRule(check *C) {
 	// Used for creating
 	lbAppRuleConfig := &types.LbAppRule{
 		Name:   TestLbAppRule,
-		Script: "acl vmware_page url_beg / vmware redirect location https://www.vmware.com/ ifvmware_page",
+		Script: "acl lmicke_page url_beg / lmicke redirect location https://www.lmicke.com/ iflmicke_page",
 	}
 
 	err = deleteLbAppRuleIfExists(*edge, lbAppRuleConfig.Name)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
 )
 
 type Results struct {
@@ -26,7 +26,7 @@ func NewResults(cli *Client) *Results {
 func (vcdCli *VCDClient) Query(params map[string]string) (Results, error) {
 
 	req := vcdCli.Client.NewRequest(params, http.MethodGet, vcdCli.QueryHREF, nil)
-	req.Header.Add("Accept", "vnd.vmware.vcloud.org+xml;version="+vcdCli.Client.APIVersion)
+	req.Header.Add("Accept", "vnd.lmicke.vcloud.org+xml;version="+vcdCli.Client.APIVersion)
 
 	return getResult(&vcdCli.Client, req)
 }
@@ -35,7 +35,7 @@ func (vdc *Vdc) Query(params map[string]string) (Results, error) {
 	queryUrl := vdc.client.VCDHREF
 	queryUrl.Path += "/query"
 	req := vdc.client.NewRequest(params, http.MethodGet, queryUrl, nil)
-	req.Header.Add("Accept", "vnd.vmware.vcloud.org+xml;version="+vdc.client.APIVersion)
+	req.Header.Add("Accept", "vnd.lmicke.vcloud.org+xml;version="+vdc.client.APIVersion)
 
 	return getResult(vdc.client, req)
 }
@@ -51,7 +51,7 @@ func (client *Client) QueryWithNotEncodedParamsWithApiVersion(params map[string]
 	queryUlr.Path += "/query"
 
 	req := client.NewRequestWitNotEncodedParamsWithApiVersion(params, notEncodedParams, http.MethodGet, queryUlr, nil, apiVersion)
-	req.Header.Add("Accept", "vnd.vmware.vcloud.org+xml;version="+apiVersion)
+	req.Header.Add("Accept", "vnd.lmicke.vcloud.org+xml;version="+apiVersion)
 
 	return getResult(client, req)
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2020 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -12,7 +12,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
 )
 
 // orgInfoType is the basic information about an organization (needed for tenant context)

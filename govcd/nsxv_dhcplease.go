@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2020 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -9,8 +9,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
-	"github.com/vmware/go-vcloud-director/v2/util"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/util"
 )
 
 type responseEdgeDhcpLeases struct {

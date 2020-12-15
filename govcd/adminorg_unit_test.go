@@ -1,7 +1,7 @@
 // +build unit ALL
 
 /*
-* Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+* Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -9,7 +9,7 @@ package govcd
 import (
 	"testing"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
 )
 
 // Tests that equalIds returns the expected result whether the target reference

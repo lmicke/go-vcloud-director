@@ -1,7 +1,7 @@
 // +build functional openapi ALL
 
 /*
- * Copyright 2020 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2020 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -14,7 +14,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
 
 	. "gopkg.in/check.v1"
 )
@@ -192,7 +192,7 @@ func (vcd *TestVCD) Test_OpenApiInlineStructCRUDRoles(check *C) {
 		Name:        check.TestName(),
 		Description: "Role created by test",
 		// This BundleKey is being set by VCD even if it is not sent
-		BundleKey: "com.vmware.vcloud.undefined.key",
+		BundleKey: "com.lmicke.vcloud.undefined.key",
 		ReadOnly:  false,
 	}
 	newRoleResponse := &InlineRoles{}

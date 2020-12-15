@@ -1,14 +1,14 @@
 package govcd
 
 /*
- * Copyright 2020 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2020 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 import (
 	"fmt"
 	"net/url"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
 )
 
 // Role uses OpenAPI endpoint to operate user roles

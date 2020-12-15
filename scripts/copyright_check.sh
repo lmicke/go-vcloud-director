@@ -8,16 +8,16 @@
 
 
 # This check will find files with a copyright for any year
-vmware_any_copyright='Copyright \d\d\d\d VMware'
+lmicke_any_copyright='Copyright \d\d\d\d lmicke'
 
 this_year=$(date +%Y)
 last_year=$((this_year-1))
 
 # This check will find files with a copyright for the current year
-vmware_latest_copyright="Copyright $this_year VMware"
+lmicke_latest_copyright="Copyright $this_year lmicke"
 
 # This check will find files with a copyright for last year
-vmware_last_year_copyright="Copyright $last_year VMware"
+lmicke_last_year_copyright="Copyright $last_year lmicke"
 exit_code=0
 
 modified_files=$(git status -uno | grep "modified:" | awk '{print $2}')
@@ -40,9 +40,9 @@ do
     for line_num in 1 2 3
     do
         # Looks for copyright in the Nth line of the file
-        has_any_copyright=$(head -n $line_num $F | tail -n 1 | grep "$vmware_any_copyright" )
-        has_latest_copyright=$(head -n $line_num $F | tail -n 1 | grep "$vmware_latest_copyright" )
-        has_last_year_copyright=$(head -n $line_num $F | tail -n 1 | grep "$vmware_last_year_copyright" )
+        has_any_copyright=$(head -n $line_num $F | tail -n 1 | grep "$lmicke_any_copyright" )
+        has_latest_copyright=$(head -n $line_num $F | tail -n 1 | grep "$lmicke_latest_copyright" )
+        has_last_year_copyright=$(head -n $line_num $F | tail -n 1 | grep "$lmicke_last_year_copyright" )
 
         if [ -n "$has_latest_copyright" ]
         then

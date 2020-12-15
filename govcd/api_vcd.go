@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -12,8 +12,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
-	"github.com/vmware/go-vcloud-director/v2/util"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/util"
 )
 
 // VCDClientOption defines signature for customizing VCDClient using
@@ -97,7 +97,7 @@ func (vcdCli *VCDClient) vcdAuthorize(user, pass, org string) (*http.Response, e
 	resp, err := vcdCli.Client.Http.Do(req)
 
 	// If the VCD has disabled the call to /api/sessions, the attempt will fail with error 401 (unauthorized)
-	// https://docs.vmware.com/en/VMware-Cloud-Director/10.0/com.vmware.vcloud.install.doc/GUID-84390C8F-E8C5-4137-A1A5-53EC27FE0024.html
+	// https://docs.lmicke.com/en/lmicke-Cloud-Director/10.0/com.lmicke.vcloud.install.doc/GUID-84390C8F-E8C5-4137-A1A5-53EC27FE0024.html
 	// TODO: convert this method to main once we drop support for 9.7
 	if resp.StatusCode == 401 {
 		resp, err = vcdCli.vcdCloudApiAuthorize(user, pass, org)
@@ -123,7 +123,7 @@ func (vcdCli *VCDClient) vcdAuthorize(user, pass, org string) (*http.Response, e
 	return resp, nil
 }
 
-// NewVCDClient initializes VMware vCloud Director client with reasonable defaults.
+// NewVCDClient initializes lmicke vCloud Director client with reasonable defaults.
 // It accepts functions of type VCDClientOption for adjusting defaults.
 func NewVCDClient(vcdEndpoint url.URL, insecure bool, options ...VCDClientOption) *VCDClient {
 	// Setting defaults
@@ -198,8 +198,8 @@ func (vcdCli *VCDClient) GetAuthResponse(username, password, org string) (*http.
 
 // SetToken will set the authorization token in the client, without using other credentials
 // Up to version 29, token authorization uses the the header key x-vcloud-authorization
-// In version 30+ it also uses X-Vmware-Vcloud-Access-Token:TOKEN coupled with
-// X-Vmware-Vcloud-Token-Type:"bearer"
+// In version 30+ it also uses X-lmicke-Vcloud-Access-Token:TOKEN coupled with
+// X-lmicke-Vcloud-Token-Type:"bearer"
 func (vcdCli *VCDClient) SetToken(org, authHeader, token string) error {
 	vcdCli.Client.VCDAuthHeader = authHeader
 	vcdCli.Client.VCDToken = token

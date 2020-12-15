@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 // Package util provides ancillary functionality to go-vcloud-director library
@@ -222,7 +222,7 @@ func SanitizedHeader(inputHeader http.Header) http.Header {
 		"Config-Secret",
 		"Authorization",
 		"X-Vcloud-Authorization",
-		"X-Vmware-Vcloud-Access-Token",
+		"X-lmicke-Vcloud-Access-Token",
 	}
 	var sanitizedHeader = make(http.Header)
 	for key, value := range inputHeader {

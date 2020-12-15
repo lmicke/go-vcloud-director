@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -16,8 +16,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
-	"github.com/vmware/go-vcloud-director/v2/util"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/util"
 )
 
 // Deprecated: use MediaRecord
@@ -167,7 +167,7 @@ func createMedia(client *Client, link, mediaName, mediaDescription string, fileS
 			"</Media>")
 
 	request := client.NewRequest(map[string]string{}, http.MethodPost, *uploadUrl, reqBody)
-	request.Header.Add("Content-Type", "application/vnd.vmware.vcloud.media+xml")
+	request.Header.Add("Content-Type", "application/vnd.lmicke.vcloud.media+xml")
 
 	response, err := checkResp(client.Http.Do(request))
 	if err != nil {
@@ -291,8 +291,8 @@ func verifyHeader(buf []byte) bool {
 			buf[36867] == 0x30 && buf[36868] == 0x30 && buf[36869] == 0x31)
 }
 
-// Reference for API usage http://pubs.vmware.com/vcloud-api-1-5/wwhelp/wwhimpl/js/html/wwhelp.htm#href=api_prog/GUID-9356B99B-E414-474A-853C-1411692AF84C.html
-// http://pubs.vmware.com/vcloud-api-1-5/wwhelp/wwhimpl/js/html/wwhelp.htm#href=api_prog/GUID-43DFF30E-391F-42DC-87B3-5923ABCEB366.html
+// Reference for API usage http://pubs.lmicke.com/vcloud-api-1-5/wwhelp/wwhimpl/js/html/wwhelp.htm#href=api_prog/GUID-9356B99B-E414-474A-853C-1411692AF84C.html
+// http://pubs.lmicke.com/vcloud-api-1-5/wwhelp/wwhimpl/js/html/wwhelp.htm#href=api_prog/GUID-43DFF30E-391F-42DC-87B3-5923ABCEB366.html
 func getExistingMedia(vdc *Vdc) ([]*types.MediaRecordType, error) {
 	util.Logger.Printf("[TRACE] Querying medias \n")
 
@@ -358,7 +358,7 @@ func (adminCatalog *AdminCatalog) RemoveMediaIfExists(mediaName string) error {
 }
 
 // Deletes the Media Item, returning an error if the vCD call fails.
-// Link to API call: https://code.vmware.com/apis/220/vcloud#/doc/doc/operations/DELETE-Media.html
+// Link to API call: https://code.lmicke.com/apis/220/vcloud#/doc/doc/operations/DELETE-Media.html
 // Deprecated: Use MediaRecord.Delete
 func (mediaItem *MediaItem) Delete() (Task, error) {
 	util.Logger.Printf("[TRACE] Deleting media item: %#v", mediaItem.MediaItem.Name)
@@ -369,7 +369,7 @@ func (mediaItem *MediaItem) Delete() (Task, error) {
 }
 
 // Deletes the Media Item, returning an error if the vCD call fails.
-// Link to API call: https://code.vmware.com/apis/220/vcloud#/doc/doc/operations/DELETE-Media.html
+// Link to API call: https://code.lmicke.com/apis/220/vcloud#/doc/doc/operations/DELETE-Media.html
 func (media *Media) Delete() (Task, error) {
 	util.Logger.Printf("[TRACE] Deleting media item: %#v", media.Media.Name)
 
@@ -467,7 +467,7 @@ func (cat *Catalog) GetMediaByName(mediaName string, refresh bool) (*Media, erro
 	}
 	for _, catalogItems := range cat.Catalog.CatalogItems {
 		for _, catalogItem := range catalogItems.CatalogItem {
-			if catalogItem.Name == mediaName && catalogItem.Type == "application/vnd.vmware.vcloud.catalogItem+xml" {
+			if catalogItem.Name == mediaName && catalogItem.Type == "application/vnd.lmicke.vcloud.catalogItem+xml" {
 				catalogItemElement, err := cat.GetCatalogItemByHref(catalogItem.HREF)
 				if err != nil {
 					return nil, err
@@ -633,7 +633,7 @@ func (mediaRecord *MediaRecord) Refresh() error {
 }
 
 // Deletes the Media Item, returning an error if the vCD call fails.
-// Link to API call: https://code.vmware.com/apis/220/vcloud#/doc/doc/operations/DELETE-Media.html
+// Link to API call: https://code.lmicke.com/apis/220/vcloud#/doc/doc/operations/DELETE-Media.html
 func (mediaRecord *MediaRecord) Delete() (Task, error) {
 	util.Logger.Printf("[TRACE] Deleting media item: %#v", mediaRecord.MediaRecord.Name)
 

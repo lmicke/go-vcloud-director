@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2018 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package util
@@ -9,7 +9,7 @@ import (
 )
 
 // Tests function sanitizedName providing bad paths and expects them be cleaned.
-// Possible security issue https://github.com/vmware/pyvcloud/pull/268
+// Possible security issue https://github.com/lmicke/pyvcloud/pull/268
 func TestSanitizedName(t *testing.T) {
 	tables := []struct {
 		badPath  string

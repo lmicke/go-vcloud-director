@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package types
@@ -8,7 +8,7 @@ import "encoding/xml"
 
 // FirewallConfigWithXml allows to enable/disable firewall on a specific edge gateway
 // Reference: vCloud Director API for NSX Programming Guide
-// https://code.vmware.com/docs/6900/vcloud-director-api-for-nsx-programming-guide
+// https://code.lmicke.com/docs/6900/vcloud-director-api-for-nsx-programming-guide
 //
 // Warning. It nests all firewall rules because Edge Gateway API is done so that if this data is not
 // sent while enabling it would wipe all firewall rules. InnerXML type field is used with struct tag
@@ -35,7 +35,7 @@ type FirewallDefaultPolicy struct {
 
 // LbGeneralParamsWithXml allows to enable/disable load balancing capabilities on specific edge gateway
 // Reference: vCloud Director API for NSX Programming Guide
-// https://code.vmware.com/docs/6900/vcloud-director-api-for-nsx-programming-guide
+// https://code.lmicke.com/docs/6900/vcloud-director-api-for-nsx-programming-guide
 //
 // Warning. It nests all components (LbMonitor, LbPool, LbAppProfile, LbAppRule, LbVirtualServer)
 // because Edge Gateway API is done so that if this data is not sent while enabling it would wipe
@@ -75,7 +75,7 @@ type InnerXML struct {
 
 // LbMonitor defines health check parameters for a particular type of network traffic
 // Reference: vCloud Director API for NSX Programming Guide
-// https://code.vmware.com/docs/6900/vcloud-director-api-for-nsx-programming-guide
+// https://code.lmicke.com/docs/6900/vcloud-director-api-for-nsx-programming-guide
 type LbMonitor struct {
 	XMLName    xml.Name `xml:"monitor"`
 	ID         string   `xml:"monitorId,omitempty"`
@@ -96,7 +96,7 @@ type LbMonitors []LbMonitor
 
 // LbPool represents a load balancer server pool as per "vCloud Director API for NSX Programming Guide"
 // Type: LBPoolHealthCheckType
-// https://code.vmware.com/docs/6900/vcloud-director-api-for-nsx-programming-guide
+// https://code.lmicke.com/docs/6900/vcloud-director-api-for-nsx-programming-guide
 type LbPool struct {
 	XMLName             xml.Name      `xml:"pool"`
 	ID                  string        `xml:"poolId,omitempty"`
@@ -128,7 +128,7 @@ type LbPoolMembers []LbPoolMember
 
 // LbAppProfile represents a load balancer application profile as per "vCloud Director API for NSX
 // Programming Guide"
-// https://code.vmware.com/docs/6900/vcloud-director-api-for-nsx-programming-guide
+// https://code.lmicke.com/docs/6900/vcloud-director-api-for-nsx-programming-guide
 type LbAppProfile struct {
 	XMLName                       xml.Name                  `xml:"applicationProfile"`
 	ID                            string                    `xml:"applicationProfileId,omitempty"`
@@ -160,7 +160,7 @@ type LbAppProfileHttpRedirect struct {
 
 // LbAppRule represents a load balancer application rule as per "vCloud Director API for NSX
 // Programming Guide"
-// https://code.vmware.com/docs/6900/vcloud-director-api-for-nsx-programming-guide
+// https://code.lmicke.com/docs/6900/vcloud-director-api-for-nsx-programming-guide
 type LbAppRule struct {
 	XMLName xml.Name `xml:"applicationRule"`
 	ID      string   `xml:"applicationRuleId,omitempty"`
@@ -172,7 +172,7 @@ type LbAppRules []LbAppRule
 
 // LbVirtualServer represents a load balancer virtual server as per "vCloud Director API for NSX
 // Programming Guide"
-// https://code.vmware.com/docs/6900/vcloud-director-api-for-nsx-programming-guide
+// https://code.lmicke.com/docs/6900/vcloud-director-api-for-nsx-programming-guide
 type LbVirtualServer struct {
 	XMLName              xml.Name `xml:"virtualServer"`
 	ID                   string   `xml:"virtualServerId,omitempty"`
@@ -192,7 +192,7 @@ type LbVirtualServer struct {
 
 // EdgeNatRule contains shared structure for SNAT and DNAT rule configuration using
 // NSX-V proxied edge gateway endpoint
-// https://code.vmware.com/docs/6900/vcloud-director-api-for-nsx-programming-guide
+// https://code.lmicke.com/docs/6900/vcloud-director-api-for-nsx-programming-guide
 type EdgeNatRule struct {
 	XMLName           xml.Name `xml:"natRule"`
 	ID                string   `xml:"ruleId,omitempty"`
@@ -212,7 +212,7 @@ type EdgeNatRule struct {
 }
 
 // EdgeFirewall holds data for creating firewall rule using proxied NSX-V API
-// https://code.vmware.com/docs/6900/vcloud-director-api-for-nsx-programming-guide
+// https://code.lmicke.com/docs/6900/vcloud-director-api-for-nsx-programming-guide
 type EdgeFirewallRule struct {
 	XMLName         xml.Name                `xml:"firewallRule" `
 	ID              string                  `xml:"id,omitempty"`

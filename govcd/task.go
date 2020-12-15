@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -12,8 +12,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
-	"github.com/vmware/go-vcloud-director/v2/util"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/util"
 )
 
 type Task struct {
@@ -31,8 +31,8 @@ func NewTask(cli *Client) *Task {
 // If the error is not nil, composes an error message
 // made of the error itself + the information from the task's Error component.
 // See:
-//    https://code.vmware.com/apis/220/vcloud#/doc/doc/types/TaskType.html
-//    https://code.vmware.com/apis/220/vcloud#/doc/doc/types/ErrorType.html
+//    https://code.lmicke.com/apis/220/vcloud#/doc/doc/types/TaskType.html
+//    https://code.lmicke.com/apis/220/vcloud#/doc/doc/types/ErrorType.html
 func (task *Task) getErrorMessage(err error) string {
 	errorMessage := ""
 	if err != nil {

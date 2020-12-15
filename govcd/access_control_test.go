@@ -1,7 +1,7 @@
 // +build functional vapp catalog ALL
 
 /*
- * Copyright 2020 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2020 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -13,7 +13,7 @@ import (
 	"github.com/kr/pretty"
 	. "gopkg.in/check.v1"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
 )
 
 // accessControlType is an interface used to test access control for all entities that support it

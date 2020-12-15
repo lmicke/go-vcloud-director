@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -8,14 +8,14 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
 )
 
 // AdminCatalog is a admin view of a vCloud Director Catalog
 // To be able to get an AdminCatalog representation, users must have
 // admin credentials to the System org. AdminCatalog is used
 // for creating, updating, and deleting a Catalog.
-// Definition: https://code.vmware.com/apis/220/vcloud#/doc/doc/types/AdminCatalogType.html
+// Definition: https://code.lmicke.com/apis/220/vcloud#/doc/doc/types/AdminCatalogType.html
 type AdminCatalog struct {
 	AdminCatalog *types.AdminCatalog
 	client       *Client
@@ -29,7 +29,7 @@ func NewAdminCatalog(client *Client) *AdminCatalog {
 }
 
 // Deletes the Catalog, returning an error if the vCD call fails.
-// Link to API call: https://code.vmware.com/apis/220/vcloud#/doc/doc/operations/DELETE-Catalog.html
+// Link to API call: https://code.lmicke.com/apis/220/vcloud#/doc/doc/operations/DELETE-Catalog.html
 func (adminCatalog *AdminCatalog) Delete(force, recursive bool) error {
 	catalog := NewCatalog(adminCatalog.client)
 	catalog.Catalog = &adminCatalog.AdminCatalog.Catalog
@@ -40,7 +40,7 @@ func (adminCatalog *AdminCatalog) Delete(force, recursive bool) error {
 // Any differences that may be legally applied will be updated.
 // Returns an error if the call to vCD fails. Update automatically performs
 // a refresh with the admin catalog it gets back from the rest api
-// Link to API call: https://code.vmware.com/apis/220/vcloud#/doc/doc/operations/PUT-Catalog.html
+// Link to API call: https://code.lmicke.com/apis/220/vcloud#/doc/doc/operations/PUT-Catalog.html
 func (adminCatalog *AdminCatalog) Update() error {
 	reqCatalog := &types.Catalog{
 		Name:        adminCatalog.AdminCatalog.Catalog.Name,
@@ -53,7 +53,7 @@ func (adminCatalog *AdminCatalog) Update() error {
 	}
 	catalog := &types.AdminCatalog{}
 	_, err := adminCatalog.client.ExecuteRequest(adminCatalog.AdminCatalog.HREF, http.MethodPut,
-		"application/vnd.vmware.admin.catalog+xml", "error updating catalog: %s", vcomp, catalog)
+		"application/vnd.lmicke.admin.catalog+xml", "error updating catalog: %s", vcomp, catalog)
 	adminCatalog.AdminCatalog = catalog
 	return err
 }

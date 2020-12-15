@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 // Package types/v56 provider all types which are used by govcd package in order to perform API
@@ -50,7 +50,7 @@ var VDCStatuses = map[int]string{
 
 // DefaultStorageProfileSection is the name of the storage profile that will be specified for this virtual machine. The named storage profile must exist in the organization vDC that contains the virtual machine. If not specified, the default storage profile for the vDC is used.
 // Type: DefaultStorageProfileSection_Type
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Name of the storage profile that will be specified for this virtual machine. The named storage profile must exist in the organization vDC that contains the virtual machine. If not specified, the default storage profile for the vDC is used.
 // Since: 5.1
 type DefaultStorageProfileSection struct {
@@ -59,7 +59,7 @@ type DefaultStorageProfileSection struct {
 
 // CustomizationSection represents a vApp template customization settings.
 // Type: CustomizationSectionType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a vApp template customization settings.
 // Since: 1.0
 type CustomizationSection struct {
@@ -75,7 +75,7 @@ type CustomizationSection struct {
 
 // LeaseSettingsSection represents vApp lease settings.
 // Type: LeaseSettingsSectionType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents vApp lease settings.
 // Since: 0.9
 type LeaseSettingsSection struct {
@@ -90,7 +90,7 @@ type LeaseSettingsSection struct {
 
 // IPRange represents a range of IP addresses, start and end inclusive.
 // Type: IpRangeType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a range of IP addresses, start and end inclusive.
 // Since: 0.9
 type IPRange struct {
@@ -100,7 +100,7 @@ type IPRange struct {
 
 // DhcpService represents a DHCP network service.
 // Type: DhcpServiceType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a DHCP network service.
 // Since:
 type DhcpService struct {
@@ -117,7 +117,7 @@ type DhcpService struct {
 
 // NetworkFeatures represents features of a network.
 // Type: NetworkFeaturesType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents features of a network.
 // Since:
 type NetworkFeatures struct {
@@ -131,7 +131,7 @@ type NetworkFeatures struct {
 
 // IPAddresses a list of IP addresses
 // Type: IpAddressesType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: A list of IP addresses.
 // Since: 0.9
 type IPAddresses struct {
@@ -140,7 +140,7 @@ type IPAddresses struct {
 
 // IPRanges represents a list of IP ranges.
 // Type: IpRangesType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a list of IP ranges.
 // Since: 0.9
 type IPRanges struct {
@@ -149,7 +149,7 @@ type IPRanges struct {
 
 // IPScope specifies network settings like gateway, network mask, DNS servers IP ranges etc
 // Type: IpScopeType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Specify network settings like gateway, network mask, DNS servers, IP ranges, etc.
 // Since: 0.9
 type IPScope struct {
@@ -167,7 +167,7 @@ type IPScope struct {
 
 // SubAllocations a list of IP addresses that are sub allocated to edge gateways.
 // Type: SubAllocationsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: A list of IP addresses that are sub allocated to edge gateways.
 // Since: 5.1
 type SubAllocations struct {
@@ -181,7 +181,7 @@ type SubAllocations struct {
 
 // SubAllocation IP range sub allocated to an edge gateway.
 // Type: SubAllocationType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: IP range sub allocated to an edge gateway.
 // Since: 5.1
 type SubAllocation struct {
@@ -191,7 +191,7 @@ type SubAllocation struct {
 
 // IPScopes represents a list of IP scopes.
 // Type: IpScopesType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a list of IP scopes.
 // Since: 5.1
 type IPScopes struct {
@@ -201,7 +201,7 @@ type IPScopes struct {
 // NetworkConfiguration is the configuration applied to a network. This is an abstract base type.
 // The concrete types include those for vApp and Organization wide networks.
 // Type: NetworkConfigurationType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: The configurations applied to a network. This is an abstract base type. The concrete types include those for vApp and Organization wide networks.
 // Since: 0.9
 type NetworkConfiguration struct {
@@ -229,7 +229,7 @@ type NetworkConfiguration struct {
 // Used in vApp network configuration actions as part of vApp type,
 // VApp.NetworkConfigSection.NetworkConfig or directly as NetworkConfigSection.NetworkConfig for various API calls.
 // Type: VAppNetworkConfigurationType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a vApp network configuration.
 // Since: 0.9
 type VAppNetworkConfiguration struct {
@@ -247,7 +247,7 @@ type VAppNetworkConfiguration struct {
 // VAppNetwork represents a vApp network configuration
 // Used as input PUT /network/{id}
 // Type: VAppNetworkType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a vApp network configuration.
 // Since: 0.9
 type VAppNetwork struct {
@@ -266,7 +266,7 @@ type VAppNetwork struct {
 
 // NetworkConfigSection is container for vApp networks.
 // Type: NetworkConfigSectionType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Container for vApp networks.
 // Since: 0.9
 type NetworkConfigSection struct {
@@ -295,7 +295,7 @@ func (n NetworkConfigSection) NetworkNames() []string {
 
 // NetworkConnection represents a network connection in the virtual machine.
 // Type: NetworkConnectionType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a network connection in the virtual machine.
 // Since: 0.9
 type NetworkConnection struct {
@@ -312,7 +312,7 @@ type NetworkConnection struct {
 
 // NetworkConnectionSection the container for the network connections of this virtual machine.
 // Type: NetworkConnectionSectionType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Container for the network connections of this virtual machine.
 // Since: 0.9
 type NetworkConnectionSection struct {
@@ -333,7 +333,7 @@ type NetworkConnectionSection struct {
 
 // InstantiationParams is a container for ovf:Section_Type elements that specify vApp configuration on instantiate, compose, or recompose.
 // Type: InstantiationParamsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Container for ovf:Section_Type elements that specify vApp configuration on instantiate, compose, or recompose.
 // Since: 0.9
 type InstantiationParams struct {
@@ -350,7 +350,7 @@ type InstantiationParams struct {
 
 // OrgVDCNetwork represents an Org VDC network in the vCloud model.
 // Type: OrgVdcNetworkType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents an Org VDC network in the vCloud model.
 // Since: 5.1
 type OrgVDCNetwork struct {
@@ -372,10 +372,10 @@ type OrgVDCNetwork struct {
 	Tasks           *TasksInProgress      `xml:"Tasks,omitempty"`
 }
 
-// SupportedHardwareVersions contains a list of VMware virtual hardware versions supported in this vDC.
+// SupportedHardwareVersions contains a list of lmicke virtual hardware versions supported in this vDC.
 // Type: SupportedHardwareVersionsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
-// Description: Contains a list of VMware virtual hardware versions supported in this vDC.
+// Namespace: http://www.lmicke.com/vcloud/v1.5
+// Description: Contains a list of lmicke virtual hardware versions supported in this vDC.
 // Since: 1.5
 type SupportedHardwareVersions struct {
 	SupportedHardwareVersion []string `xml:"SupportedHardwareVersion,omitempty"` // A virtual hardware version supported in this vDC.
@@ -383,7 +383,7 @@ type SupportedHardwareVersions struct {
 
 // Capabilities collection of supported hardware capabilities.
 // Type: CapabilitiesType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Collection of supported hardware capabilities.
 // Since: 1.5
 type Capabilities struct {
@@ -392,7 +392,7 @@ type Capabilities struct {
 
 // Vdc represents the user view of an organization VDC.
 // Type: VdcType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the user view of an organization VDC.
 // Since: 0.9
 type Vdc struct {
@@ -422,7 +422,7 @@ type Vdc struct {
 
 // AdminVdc represents the admin view of an organization VDC.
 // Type: AdminVdcType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the admin view of an organization VDC.
 // Since: 0.9
 type AdminVdc struct {
@@ -447,10 +447,10 @@ type AdminVdc struct {
 
 // VdcStorageProfileConfiguration represents the parameters to assign a storage profile in creation of organization vDC.
 // Type: VdcStorageProfileParamsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the parameters to create a storage profile in an organization vDC.
 // Since: 5.1
-// https://code.vmware.com/apis/220/vcloud#/doc/doc/types/VdcStorageProfileParamsType.html
+// https://code.lmicke.com/apis/220/vcloud#/doc/doc/types/VdcStorageProfileParamsType.html
 type VdcStorageProfileConfiguration struct {
 	Enabled                   bool       `xml:"Enabled,omitempty"`
 	Units                     string     `xml:"Units"`
@@ -461,9 +461,9 @@ type VdcStorageProfileConfiguration struct {
 
 // VdcStorageProfile represents the parameters for fetched storage profile
 // Type: VdcStorageProfileParamsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
-// https://vdc-repo.vmware.com/vmwb-repository/dcr-public/7a028e78-bd37-4a6a-8298-9c26c7eeb9aa/09142237-dd46-4dee-8326-e07212fb63a8/doc/doc/types/VdcStorageProfileType.html
-// https://vdc-repo.vmware.com/vmwb-repository/dcr-public/71e12563-bc11-4d64-821d-92d30f8fcfa1/7424bf8e-aec2-44ad-be7d-b98feda7bae0/doc/doc/types/AdminVdcStorageProfileType.html
+// Namespace: http://www.lmicke.com/vcloud/v1.5
+// https://vdc-repo.lmicke.com/vmwb-repository/dcr-public/7a028e78-bd37-4a6a-8298-9c26c7eeb9aa/09142237-dd46-4dee-8326-e07212fb63a8/doc/doc/types/VdcStorageProfileType.html
+// https://vdc-repo.lmicke.com/vmwb-repository/dcr-public/71e12563-bc11-4d64-821d-92d30f8fcfa1/7424bf8e-aec2-44ad-be7d-b98feda7bae0/doc/doc/types/AdminVdcStorageProfileType.html
 type VdcStorageProfile struct {
 	Xmlns                     string                         `xml:"xmlns,attr"`
 	Name                      string                         `xml:"name,attr"`
@@ -479,8 +479,8 @@ type VdcStorageProfile struct {
 
 // AdminVdcStorageProfile represents the parameters for fetched storage profile
 // Type: AdminVdcStorageProfileType
-// Namespace: http://www.vmware.com/vcloud/v1.5
-// https://vdc-repo.vmware.com/vmwb-repository/dcr-public/71e12563-bc11-4d64-821d-92d30f8fcfa1/7424bf8e-aec2-44ad-be7d-b98feda7bae0/doc/doc/types/AdminVdcStorageProfileType.html
+// Namespace: http://www.lmicke.com/vcloud/v1.5
+// https://vdc-repo.lmicke.com/vmwb-repository/dcr-public/71e12563-bc11-4d64-821d-92d30f8fcfa1/7424bf8e-aec2-44ad-be7d-b98feda7bae0/doc/doc/types/AdminVdcStorageProfileType.html
 type AdminVdcStorageProfile struct {
 	Xmlns                     string                         `xml:"xmlns,attr"`
 	Name                      string                         `xml:"name,attr"`
@@ -496,7 +496,7 @@ type AdminVdcStorageProfile struct {
 
 // VdcStorageProfileIopsSettings represents the parameters for VDC storage profiles Iops settings.
 // Type: VdcStorageProfileIopsSettings
-// https://vdc-repo.vmware.com/vmwb-repository/dcr-public/71e12563-bc11-4d64-821d-92d30f8fcfa1/7424bf8e-aec2-44ad-be7d-b98feda7bae0/doc/doc/types/VdcStorageProfileIopsSettingsType.html
+// https://vdc-repo.lmicke.com/vmwb-repository/dcr-public/71e12563-bc11-4d64-821d-92d30f8fcfa1/7424bf8e-aec2-44ad-be7d-b98feda7bae0/doc/doc/types/VdcStorageProfileIopsSettingsType.html
 type VdcStorageProfileIopsSettings struct {
 	Xmlns                   string `xml:"xmlns,attr"`
 	Enabled                 bool   `xml:"enabled"`
@@ -508,10 +508,10 @@ type VdcStorageProfileIopsSettings struct {
 
 // VdcConfiguration models the payload for creating a VDC.
 // Type: CreateVdcParamsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Parameters for creating an organization VDC
 // Since: 5.1
-// https://code.vmware.com/apis/220/vcloud#/doc/doc/types/CreateVdcParamsType.html
+// https://code.lmicke.com/apis/220/vcloud#/doc/doc/types/CreateVdcParamsType.html
 type VdcConfiguration struct {
 	XMLName         xml.Name           `xml:"CreateVdcParams"`
 	Xmlns           string             `xml:"xmlns,attr"`
@@ -540,10 +540,10 @@ type VdcConfiguration struct {
 
 // Task represents an asynchronous operation in vCloud Director.
 // Type: TaskType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents an asynchronous operation in vCloud Director.
 // Since: 0.9
-// Comments added from https://code.vmware.com/apis/912/vmware-cloud-director/doc/doc/types/TaskType.html
+// Comments added from https://code.lmicke.com/apis/912/lmicke-cloud-director/doc/doc/types/TaskType.html
 type Task struct {
 	HREF             string           `xml:"href,attr,omitempty"`             // The URI of the entity.
 	Type             string           `xml:"type,attr,omitempty"`             // The MIME type of the entity.
@@ -553,7 +553,7 @@ type Task struct {
 	Status           string           `xml:"status,attr"`                     // The execution status of the task. One of queued, preRunning, running, success, error, aborted
 	Operation        string           `xml:"operation,attr,omitempty"`        // A message describing the operation that is tracked by this task.
 	OperationName    string           `xml:"operationName,attr,omitempty"`    // The short name of the operation that is tracked by this task.
-	ServiceNamespace string           `xml:"serviceNamespace,attr,omitempty"` // Identifier of the service that created the task. It must not start with com.vmware.vcloud and the length must be between 1 and 128 symbols.
+	ServiceNamespace string           `xml:"serviceNamespace,attr,omitempty"` // Identifier of the service that created the task. It must not start with com.lmicke.vcloud and the length must be between 1 and 128 symbols.
 	StartTime        string           `xml:"startTime,attr,omitempty"`        // The date and time the system started executing the task. May not be present if the task has not been executed yet.
 	EndTime          string           `xml:"endTime,attr,omitempty"`          // The date and time that processing of the task was completed. May not be present if the task is still being executed.
 	ExpiryTime       string           `xml:"expiryTime,attr,omitempty"`       // The date and time at which the task resource will be destroyed and no longer available for retrieval. May not be present if the task has not been executed or is still being executed.
@@ -576,7 +576,7 @@ type Task struct {
 
 // CapacityWithUsage represents a capacity and usage of a given resource.
 // Type: CapacityWithUsageType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a capacity and usage of a given resource.
 // Since: 0.9
 type CapacityWithUsage struct {
@@ -589,7 +589,7 @@ type CapacityWithUsage struct {
 
 // ComputeCapacity represents VDC compute capacity.
 // Type: ComputeCapacityType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents VDC compute capacity.
 // Since: 0.9
 type ComputeCapacity struct {
@@ -599,7 +599,7 @@ type ComputeCapacity struct {
 
 // Reference is a reference to a resource. Contains an href attribute and optional name and type attributes.
 // Type: ReferenceType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: A reference to a resource. Contains an href attribute and optional name and type attributes.
 // Since: 0.9
 type Reference struct {
@@ -611,7 +611,7 @@ type Reference struct {
 
 // ResourceReference represents a reference to a resource. Contains an href attribute, a resource status attribute, and optional name and type attributes.
 // Type: ResourceReferenceType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a reference to a resource. Contains an href attribute, a resource status attribute, and optional name and type attributes.
 // Since: 0.9
 type ResourceReference struct {
@@ -625,7 +625,7 @@ type ResourceReference struct {
 // VdcStorageProfiles is a container for references to storage profiles associated with a vDC.
 // Element: VdcStorageProfiles
 // Type: VdcStorageProfilesType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Container for references to storage profiles associated with a vDC.
 // Since: 5.1
 type VdcStorageProfiles struct {
@@ -634,7 +634,7 @@ type VdcStorageProfiles struct {
 
 // ResourceEntities is a container for references to ResourceEntity objects in this vDC.
 // Type: ResourceEntitiesType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Container for references to ResourceEntity objects in this vDC.
 // Since: 0.9
 type ResourceEntities struct {
@@ -643,7 +643,7 @@ type ResourceEntities struct {
 
 // AvailableNetworks is a container for references to available organization vDC networks.
 // Type: AvailableNetworksType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Container for references to available organization vDC networks.
 // Since: 0.9
 type AvailableNetworks struct {
@@ -652,7 +652,7 @@ type AvailableNetworks struct {
 
 // Link extends reference type by adding relation attribute. Defines a hyper-link with a relationship, hyper-link reference, and an optional MIME type.
 // Type: LinkType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Extends reference type by adding relation attribute. Defines a hyper-link with a relationship, hyper-link reference, and an optional MIME type.
 // Since: 0.9
 type Link struct {
@@ -665,7 +665,7 @@ type Link struct {
 
 // OrgList represents a lists of Organizations
 // Type: OrgType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a list of vCloud Director organizations.
 // Since: 0.9
 type OrgList struct {
@@ -675,7 +675,7 @@ type OrgList struct {
 
 // Org represents the user view of a vCloud Director organization.
 // Type: OrgType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the user view of a vCloud Director organization.
 // Since: 0.9
 type Org struct {
@@ -713,7 +713,7 @@ type RightsType struct {
 
 // AdminOrg represents the admin view of a vCloud Director organization.
 // Type: AdminOrgType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the admin view of a vCloud Director organization.
 // Since: 0.9
 type AdminOrg struct {
@@ -741,7 +741,7 @@ type AdminOrg struct {
 
 // OrgSettingsType represents the settings for a vCloud Director organization.
 // Type: OrgSettingsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the settings of a vCloud Director organization.
 // Since: 0.9
 type OrgSettings struct {
@@ -759,7 +759,7 @@ type OrgSettings struct {
 
 // OrgGeneralSettingsType represents the general settings for a vCloud Director organization.
 // Type: OrgGeneralSettingsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the user view of a vCloud Director organization.
 // Since: 0.9
 type OrgGeneralSettings struct {
@@ -776,7 +776,7 @@ type OrgGeneralSettings struct {
 
 // VAppTemplateLeaseSettings represents the vapp template lease settings for a vCloud Director organization.
 // Type: VAppTemplateLeaseSettingsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the vapp template lease settings of a vCloud Director organization.
 // Since: 0.9
 type VAppTemplateLeaseSettings struct {
@@ -809,7 +809,7 @@ type OrgFederationSettings struct {
 
 // OrgLdapSettingsType represents the ldap settings for a vCloud Director organization.
 // Type: OrgLdapSettingsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the ldap settings of a vCloud Director organization.
 // Since: 0.9
 type OrgLdapSettingsType struct {
@@ -826,7 +826,7 @@ type OrgLdapSettingsType struct {
 
 // CustomOrgLdapSettings represents the custom ldap settings for a vCloud Director organization.
 // Type: CustomOrgLdapSettingsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the custom ldap settings of a vCloud Director organization.
 // Since: 0.9
 // Note. Order of these fields matter and API will error if it is changed
@@ -855,7 +855,7 @@ type CustomOrgLdapSettings struct {
 
 // OrgLdapGroupAttributes	 represents the ldap group attribute settings for a vCloud Director organization.
 // Type: OrgLdapGroupAttributesType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the ldap group attribute settings of a vCloud Director organization.
 // Since: 0.9
 // Note. Order of these fields matter and API will error if it is changed
@@ -870,7 +870,7 @@ type OrgLdapGroupAttributes struct {
 
 // OrgLdapUserAttributesType represents the ldap user attribute settings for a vCloud Director organization.
 // Type: OrgLdapUserAttributesType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the ldap user attribute settings of a vCloud Director organization.
 // Since: 0.9
 // Note. Order of these fields matter and API will error if it is changed.
@@ -889,7 +889,7 @@ type OrgLdapUserAttributes struct {
 
 // VDCList contains a list of references to Org VDCs
 // Type: VdcListType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a list of organization vDCs.
 // Since: 0.9
 type VDCList struct {
@@ -898,7 +898,7 @@ type VDCList struct {
 
 // NetworksListType contains a list of references to Org Networks
 // Type: NetworksListType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a list of organization Networks.
 // Since: 0.9
 type NetworksList struct {
@@ -907,7 +907,7 @@ type NetworksList struct {
 
 // CatalogsList contains a list of references to Org Catalogs
 // Type: CatalogsListType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a list of organization Catalogs.
 // Since: 0.9
 type CatalogsList struct {
@@ -916,7 +916,7 @@ type CatalogsList struct {
 
 // CatalogItem contains a reference to a VappTemplate or Media object and related metadata.
 // Type: CatalogItemType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Contains a reference to a VappTemplate or Media object and related metadata.
 // Since: 0.9
 type CatalogItem struct {
@@ -936,7 +936,7 @@ type CatalogItem struct {
 
 // Entity is a basic entity type in the vCloud object model. Includes a name, an optional description, and an optional list of links.
 // Type: EntityType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Basic entity type in the vCloud object model. Includes a name, an optional description, and an optional list of links.
 // Since: 0.9
 type Entity struct {
@@ -952,7 +952,7 @@ type Entity struct {
 
 // CatalogItems is a container for references to catalog items.
 // Type: CatalogItemsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Container for references to catalog items.
 // Since: 0.9
 type CatalogItems struct {
@@ -961,9 +961,9 @@ type CatalogItems struct {
 
 // Catalog represents the user view of a Catalog object.
 // Type: CatalogType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the user view of a Catalog object.
-// https://code.vmware.com/apis/287/vcloud#/doc/doc/types/CatalogType.html
+// https://code.lmicke.com/apis/287/vcloud#/doc/doc/types/CatalogType.html
 // Since: 0.9
 type Catalog struct {
 	HREF          string           `xml:"href,attr,omitempty"`
@@ -983,9 +983,9 @@ type Catalog struct {
 
 // AdminCatalog represents the Admin view of a Catalog object.
 // Type: AdminCatalogType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the Admin view of a Catalog object.
-// https://code.vmware.com/apis/287/vcloud#/doc/doc/types/AdminCatalogType.html
+// https://code.lmicke.com/apis/287/vcloud#/doc/doc/types/AdminCatalogType.html
 // Since: 0.9
 type AdminCatalog struct {
 	Catalog
@@ -999,7 +999,7 @@ type AdminCatalog struct {
 
 // PublishExternalCatalogParamsType represents the configuration parameters of a catalog published externally
 // Type: PublishExternalCatalogParamsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the configuration parameters of a catalog published externally.
 // Since: 5.5
 type PublishExternalCatalogParams struct {
@@ -1012,7 +1012,7 @@ type PublishExternalCatalogParams struct {
 
 // ExternalCatalogSubscription represents the configuration parameters for a catalog that has an external subscription
 // Type: ExternalCatalogSubscriptionParamsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the configuration parameters for a catalog that has an external subscription.
 // Since: 5.5
 type ExternalCatalogSubscription struct {
@@ -1025,7 +1025,7 @@ type ExternalCatalogSubscription struct {
 
 // CatalogStorageProfiles represents a container for storage profiles used by this catalog
 // Type: CatalogStorageProfiles
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a container for storage profiles used by this catalog
 // Since: 5.5
 type CatalogStorageProfiles struct {
@@ -1034,7 +1034,7 @@ type CatalogStorageProfiles struct {
 
 // Owner represents the owner of this entity.
 // Type: OwnerType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the owner of this entity.
 // Since: 1.5
 type Owner struct {
@@ -1046,7 +1046,7 @@ type Owner struct {
 
 // Error is the standard error message type used in the vCloud REST API.
 // Type: ErrorType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: The standard error message type used in the vCloud REST API.
 // Since: 0.9
 type Error struct {
@@ -1078,7 +1078,7 @@ func (nsxErr NSXError) Error() string {
 
 // File represents a file to be transferred (uploaded or downloaded).
 // Type: FileType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a file to be transferred (uploaded or downloaded).
 // Since: 0.9
 type File struct {
@@ -1097,7 +1097,7 @@ type File struct {
 
 // FilesList represents a list of files to be transferred (uploaded or downloaded).
 // Type: FilesListType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a list of files to be transferred (uploaded or downloaded).
 // Since: 0.9
 type FilesList struct {
@@ -1106,7 +1106,7 @@ type FilesList struct {
 
 // UndeployVAppParams parameters to an undeploy vApp request.
 // Type: UndeployVAppParamsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Parameters to an undeploy vApp request.
 // Since: 0.9
 type UndeployVAppParams struct {
@@ -1116,7 +1116,7 @@ type UndeployVAppParams struct {
 
 // VmCapabilities allows you to specify certain capabilities of this virtual machine.
 // Type: VmCapabilitiesType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Allows you to specify certain capabilities of this virtual machine.
 // Since: 5.1
 type VmCapabilities struct {
@@ -1130,7 +1130,7 @@ type VmCapabilities struct {
 
 // VMs represents a list of virtual machines.
 // Type: VmsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a list of virtual machines.
 // Since: 5.1
 type VMs struct {
@@ -1146,7 +1146,7 @@ type VMs struct {
 
 // ComposeVAppParams represents vApp composition parameters
 // Type: ComposeVAppParamsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents vApp composition parameters.
 // Since: 0.9
 type ComposeVAppParams struct {
@@ -1192,7 +1192,7 @@ type DeleteItem struct {
 
 // SourcedCompositionItemParam represents a vApp, vApp template or Vm to include in a composed vApp.
 // Type: SourcedCompositionItemParamType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a vApp, vApp template or Vm to include in a composed vApp.
 // Since: 0.9
 type SourcedCompositionItemParam struct {
@@ -1211,7 +1211,7 @@ type SourcedCompositionItemParam struct {
 
 // LocalityParams represents locality parameters. Locality parameters provide a hint that may help the placement engine optimize placement of a VM with respect to another VM or an independent disk.
 // Type: LocalityParamsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents locality parameters. Locality parameters provide a hint that may help the placement engine optimize placement of a VM with respect to another VM or an independent disk.
 // Since: 5.1
 type LocalityParams struct {
@@ -1221,7 +1221,7 @@ type LocalityParams struct {
 
 // NetworkAssignment maps a network name specified in a Vm to the network name of a vApp network defined in the VApp that contains the Vm
 // Type: NetworkAssignmentType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Maps a network name specified in a Vm to the network name of a vApp network defined in the VApp that contains the Vm
 // Since: 0.9
 type NetworkAssignment struct {
@@ -1232,7 +1232,7 @@ type NetworkAssignment struct {
 
 // VMGeneralParams a set of overrides to source VM properties to apply to target VM during copying.
 // Type: VmGeneralParamsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: A set of overrides to source VM properties to apply to target VM during copying.
 // Since: 5.6
 type VMGeneralParams struct {
@@ -1245,7 +1245,7 @@ type VMGeneralParams struct {
 
 // VApp represents a vApp
 // Type: VAppType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a vApp.
 // Since: 0.9
 type VApp struct {
@@ -1321,7 +1321,7 @@ type TypedValue struct {
 }
 
 // Type: MetadataType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: User-defined metadata associated with with an object.
 // Since: 1.5
 type Metadata struct {
@@ -1335,7 +1335,7 @@ type Metadata struct {
 }
 
 // Type: MetadataEntryType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 type MetadataEntry struct {
 	Xmlns      string      `xml:"xmlns,attr"`
 	HREF       string      `xml:"href,attr"`
@@ -1349,7 +1349,7 @@ type MetadataEntry struct {
 
 // VAppChildren is a container for virtual machines included in this vApp.
 // Type: VAppChildrenType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Container for virtual machines included in this vApp.
 // Since: 0.9
 type VAppChildren struct {
@@ -1358,7 +1358,7 @@ type VAppChildren struct {
 
 // TasksInProgress is a list of queued, running, or recently completed tasks.
 // Type: TasksInProgressType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: A list of queued, running, or recently completed tasks.
 // Since: 0.9
 type TasksInProgress struct {
@@ -1368,7 +1368,7 @@ type TasksInProgress struct {
 
 // VAppTemplateChildren is a container for virtual machines included in this vApp template.
 // Type: VAppTemplateChildrenType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Container for virtual machines included in this vApp template.
 // Since: 0.9
 type VAppTemplateChildren struct {
@@ -1378,7 +1378,7 @@ type VAppTemplateChildren struct {
 
 // VAppTemplate represents a vApp template.
 // Type: VAppTemplateType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a vApp template.
 // Since: 0.9
 type VAppTemplate struct {
@@ -1421,7 +1421,7 @@ type VMDiskChange struct {
 	Xmlns   string   `xml:"xmlns,attr,omitempty"`
 
 	HREF string `xml:"href,attr,omitempty"` // The URI of the VM entity.
-	Type string `xml:"type,attr,omitempty"` // The MIME type of the entity - application/vnd.vmware.vcloud.vm+xml
+	Type string `xml:"type,attr,omitempty"` // The MIME type of the entity - application/vnd.lmicke.vcloud.vm+xml
 	Name string `xml:"name,attr"`           // VM name
 	ID   string `xml:"id,attr,omitempty"`   // VM ID. The entity identifier, expressed in URN format. The value of this attribute uniquely identifies the entity, persists for the life of the entity, and is never reused.
 
@@ -1521,7 +1521,7 @@ type VirtualHardwareItem struct {
 	Connection          []*VirtualHardwareConnection   `xml:"Connection,omitempty"`
 	HostResource        []*VirtualHardwareHostResource `xml:"HostResource,omitempty"`
 	Link                []*Link                        `xml:"Link,omitempty"`
-	// Reference: https://code.vmware.com/apis/287/vcloud?h=Director#/doc/doc/operations/GET-DisksRasdItemsList-vApp.html
+	// Reference: https://code.lmicke.com/apis/287/vcloud?h=Director#/doc/doc/operations/GET-DisksRasdItemsList-vApp.html
 	Parent int `xml:"Parent,omitempty"`
 }
 
@@ -1535,7 +1535,7 @@ type VirtualHardwareConnection struct {
 
 // HostResource info from ResourceType=17 (Hard Disk)
 // Reference: vCloud API Programming Guide for Service Providers vCloud API 30.0, Page 188 - 189
-// https://vdc-download.vmware.com/vmwb-repository/dcr-public/1b6cf07d-adb3-4dba-8c47-9c1c92b04857/
+// https://vdc-download.lmicke.com/vmwb-repository/dcr-public/1b6cf07d-adb3-4dba-8c47-9c1c92b04857/
 // def8435d-a54a-4923-b26a-e2d1915b09c3/vcloud_sp_api_guide_30_0.pdf
 type VirtualHardwareHostResource struct {
 	BusType           int    `xml:"busType,attr,omitempty"`
@@ -1588,7 +1588,7 @@ type OVFItem struct {
 
 // DeployVAppParams are the parameters to a deploy vApp request
 // Type: DeployVAppParamsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Parameters to a deploy vApp request.
 // Since: 0.9
 type DeployVAppParams struct {
@@ -1601,7 +1601,7 @@ type DeployVAppParams struct {
 }
 
 // GuestCustomizationStatusSection holds information about guest customization status
-// https://vdc-repo.vmware.com/vmwb-repository/dcr-public/76f491b4-679c-4e1e-8428-f813d668297a/a2555a1b-22f1-4cca-b481-2a98ab874022/doc/doc/operations/GET-GuestCustStatus.html
+// https://vdc-repo.lmicke.com/vmwb-repository/dcr-public/76f491b4-679c-4e1e-8428-f813d668297a/a2555a1b-22f1-4cca-b481-2a98ab874022/doc/doc/operations/GET-GuestCustStatus.html
 type GuestCustomizationStatusSection struct {
 	XMLName xml.Name `xml:"GuestCustomizationStatusSection"`
 	Xmlns   string   `xml:"xmlns,attr"`
@@ -1611,7 +1611,7 @@ type GuestCustomizationStatusSection struct {
 
 // GuestCustomizationSection represents guest customization settings
 // Type: GuestCustomizationSectionType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a guest customization settings.
 // Since: 1.0
 type GuestCustomizationSection struct {
@@ -1648,7 +1648,7 @@ type GuestCustomizationSection struct {
 
 // InstantiateVAppTemplateParams represents vApp template instantiation parameters.
 // Type: InstantiateVAppTemplateParamsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents vApp template instantiation parameters.
 // Since: 0.9
 type InstantiateVAppTemplateParams struct {
@@ -1674,7 +1674,7 @@ type InstantiateVAppTemplateParams struct {
 // EdgeGateway represents a gateway.
 // Element: EdgeGateway
 // Type: GatewayType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a gateway.
 // Since: 5.1
 type EdgeGateway struct {
@@ -1695,7 +1695,7 @@ type EdgeGateway struct {
 
 // GatewayConfiguration is the gateway configuration
 // Type: GatewayConfigurationType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Gateway Configuration.
 // Since: 5.1
 type GatewayConfiguration struct {
@@ -1733,7 +1733,7 @@ type GatewayConfiguration struct {
 
 // GatewayInterfaces is a list of Gateway Interfaces.
 // Type: GatewayInterfacesType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: A list of Gateway Interfaces.
 // Since: 5.1
 type GatewayInterfaces struct {
@@ -1742,7 +1742,7 @@ type GatewayInterfaces struct {
 
 // GatewayInterface is a gateway interface configuration.
 // Type: GatewayInterfaceType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Gateway Interface configuration.
 // Since: 5.1
 type GatewayInterface struct {
@@ -1767,7 +1767,7 @@ func (g *GatewayInterface) SortBySubnetParticipationGateway() {
 
 // SubnetParticipation allows to chose which subnets a gateway can be a part of
 // Type: SubnetParticipationType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Allows to chose which subnets a gateway can be part of
 // Since: 5.1
 //
@@ -1793,7 +1793,7 @@ type EdgeGatewayServiceConfiguration struct {
 // GatewayFeatures represents edge gateway services.
 // Element: EdgeGatewayServiceConfiguration
 // Type: GatewayFeaturesType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents edge gateway services.
 // Since: 5.1
 type GatewayFeatures struct {
@@ -1808,7 +1808,7 @@ type GatewayFeatures struct {
 
 // StaticRoutingService represents Static Routing network service.
 // Type: StaticRoutingServiceType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents Static Routing network service.
 // Since: 1.5
 type StaticRoutingService struct {
@@ -1818,7 +1818,7 @@ type StaticRoutingService struct {
 
 // StaticRoute represents a static route entry
 // Type: StaticRouteType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description:
 // Since:
 type StaticRoute struct {
@@ -1831,7 +1831,7 @@ type StaticRoute struct {
 
 // VendorTemplate is information about a vendor service template. This is optional.
 // Type: VendorTemplateType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Information about a vendor service template. This is optional.
 // Since: 5.1
 type VendorTemplate struct {
@@ -1841,7 +1841,7 @@ type VendorTemplate struct {
 
 // GatewayIpsecVpnService represents gateway IPsec VPN service.
 // Type: GatewayIpsecVpnServiceType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents gateway IPsec VPN service.
 // Since: 5.1
 type GatewayIpsecVpnService struct {
@@ -1852,7 +1852,7 @@ type GatewayIpsecVpnService struct {
 
 // GatewayIpsecVpnEndpoint represents an IPSec VPN endpoint.
 // Type: GatewayIpsecVpnEndpointType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents an IPSec VPN endpoint.
 // Since: 5.1
 type GatewayIpsecVpnEndpoint struct {
@@ -1862,7 +1862,7 @@ type GatewayIpsecVpnEndpoint struct {
 
 // GatewayIpsecVpnTunnel represents an IPSec VPN tunnel.
 // Type: GatewayIpsecVpnTunnelType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents an IPSec VPN tunnel.
 // Since: 5.1
 type GatewayIpsecVpnTunnel struct {
@@ -1899,7 +1899,7 @@ type IpsecVpnLocalPeer struct {
 
 // IpsecVpnSubnet represents subnet details.
 // Type: IpsecVpnSubnetType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents subnet details.
 // Since: 5.1
 type IpsecVpnSubnet struct {
@@ -1910,7 +1910,7 @@ type IpsecVpnSubnet struct {
 
 // GatewayDhcpService represents Gateway DHCP service.
 // Type: GatewayDhcpServiceType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents Gateway DHCP service.
 // Since: 5.1
 type GatewayDhcpService struct {
@@ -1920,7 +1920,7 @@ type GatewayDhcpService struct {
 
 // DhcpPoolService represents DHCP pool service.
 // Type: DhcpPoolServiceType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents DHCP pool service.
 // Since: 5.1
 type DhcpPoolService struct {
@@ -1934,7 +1934,7 @@ type DhcpPoolService struct {
 
 // VMSelection represents details of an vm+nic+iptype selection.
 // Type: VmSelectionType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents details of an vm+nic+iptype selection.
 // Since: 5.1
 type VMSelection struct {
@@ -1945,7 +1945,7 @@ type VMSelection struct {
 
 // FirewallRuleProtocols flags for a network protocol in a firewall rule
 // Type: FirewallRuleType/Protocols
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description:
 // Since:
 type FirewallRuleProtocols struct {
@@ -1959,7 +1959,7 @@ type FirewallRuleProtocols struct {
 
 // FirewallRule represents a firewall rule
 // Type: FirewallRuleType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a firewall rule.
 // Since: 0.9
 type FirewallRule struct {
@@ -1984,7 +1984,7 @@ type FirewallRule struct {
 
 // FirewallService represent a network firewall service.
 // Type: FirewallServiceType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a network firewall service.
 // Since:
 type FirewallService struct {
@@ -1996,7 +1996,7 @@ type FirewallService struct {
 
 // NatService represents a NAT network service.
 // Type: NatServiceType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a NAT network service.
 // Since:
 type NatService struct {
@@ -2012,7 +2012,7 @@ type NatService struct {
 
 // NatRule represents a NAT rule.
 // Type: NatRuleType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents a NAT rule.
 // Since: 0.9
 type NatRule struct {
@@ -2031,7 +2031,7 @@ type NatRule struct {
 
 // GatewayNatRule represents the SNAT and DNAT rules.
 // Type: GatewayNatRuleType represents the SNAT and DNAT rules.
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the SNAT and DNAT rules.
 // Since: 5.1
 type GatewayNatRule struct {
@@ -2048,7 +2048,7 @@ type GatewayNatRule struct {
 
 // NatOneToOneBasicRule represents the NAT basic rule for one to one mapping of internal and external IP addresses from a network.
 // Type: NatOneToOneBasicRuleType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the NAT basic rule for one to one mapping of internal and external IP addresses from a network.
 // Since: 0.9
 type NatOneToOneBasicRule struct {
@@ -2061,7 +2061,7 @@ type NatOneToOneBasicRule struct {
 
 // NatOneToOneVMRule represents the NAT rule for one to one mapping of VM NIC and external IP addresses from a network.
 // Type: NatOneToOneVmRuleType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the NAT rule for one to one mapping of VM NIC and external IP addresses from a network.
 // Since: 0.9
 type NatOneToOneVMRule struct {
@@ -2075,7 +2075,7 @@ type NatOneToOneVMRule struct {
 
 // NatPortForwardingRule represents the NAT rule for port forwarding between internal IP/port and external IP/port.
 // Type: NatPortForwardingRuleType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the NAT rule for port forwarding between internal IP/port and external IP/port.
 // Since: 0.9
 type NatPortForwardingRule struct {
@@ -2088,7 +2088,7 @@ type NatPortForwardingRule struct {
 
 // NatVMRule represents the NAT rule for port forwarding between VM NIC/port and external IP/port.
 // Type: NatVmRuleType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Represents the NAT rule for port forwarding between VM NIC/port and external IP/port.
 // Since: 0.9
 type NatVMRule struct {
@@ -2102,7 +2102,7 @@ type NatVMRule struct {
 
 // QueryResultEdgeGatewayRecordsType is a container for query results in records format.
 // Type: QueryResultRecordsType
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Description: Container for query results in records format.
 // Since: 1.5
 type QueryResultEdgeGatewayRecordsType struct {
@@ -2368,8 +2368,8 @@ type QueryResultNetworkPoolRecordType struct {
 }
 
 // Type: QueryResultVirtualCenterRecordType
-// Namespace: http://www.vmware.com/vcloud/v1.5
-// https://vdc-repo.vmware.com/vmwb-repository/dcr-public/7a028e78-bd37-4a6a-8298-9c26c7eeb9aa/09142237-dd46-4dee-8326-e07212fb63a8/doc/doc/types/QueryResultVirtualCenterRecordType.html
+// Namespace: http://www.lmicke.com/vcloud/v1.5
+// https://vdc-repo.lmicke.com/vmwb-repository/dcr-public/7a028e78-bd37-4a6a-8298-9c26c7eeb9aa/09142237-dd46-4dee-8326-e07212fb63a8/doc/doc/types/QueryResultVirtualCenterRecordType.html
 // Description: Type for a single virtualCenter query result in records format.
 // Since: 1.5
 type QueryResultVirtualCenterRecordType struct {
@@ -2387,14 +2387,14 @@ type QueryResultVirtualCenterRecordType struct {
 	VsmIP         string `xml:"vsmIP,attr,omitempty"`
 }
 
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Retrieve a list of extension objects and operations.
 // Since: 1.0
 type Extension struct {
 	Link LinkList `xml:"Link,omitempty"` // A reference to an entity or operation associated with this object.
 }
 
-// Namespace: http://www.vmware.com/vcloud/v1.5
+// Namespace: http://www.lmicke.com/vcloud/v1.5
 // Retrieve a list of tasks
 type TasksList struct {
 	XMLName xml.Name `xml:"TasksList"`
@@ -2412,8 +2412,8 @@ type ExternalNetworkReference struct {
 }
 
 // Type: VimObjectRefType
-// Namespace: http://www.vmware.com/vcloud/extension/v1.5
-// https://vdc-repo.vmware.com/vmwb-repository/dcr-public/7a028e78-bd37-4a6a-8298-9c26c7eeb9aa/09142237-dd46-4dee-8326-e07212fb63a8/doc/doc/types/VimObjectRefsType.html
+// Namespace: http://www.lmicke.com/vcloud/extension/v1.5
+// https://vdc-repo.lmicke.com/vmwb-repository/dcr-public/7a028e78-bd37-4a6a-8298-9c26c7eeb9aa/09142237-dd46-4dee-8326-e07212fb63a8/doc/doc/types/VimObjectRefsType.html
 // Description: Represents the Managed Object Reference (MoRef) and the type of a vSphere object.
 // Since: 0.9
 type VimObjectRef struct {
@@ -2423,8 +2423,8 @@ type VimObjectRef struct {
 }
 
 // Type: VimObjectRefsType
-// Namespace: http://www.vmware.com/vcloud/extension/v1.5
-// https://vdc-repo.vmware.com/vmwb-repository/dcr-public/7a028e78-bd37-4a6a-8298-9c26c7eeb9aa/09142237-dd46-4dee-8326-e07212fb63a8/doc/doc/types/VimObjectRefsType.html
+// Namespace: http://www.lmicke.com/vcloud/extension/v1.5
+// https://vdc-repo.lmicke.com/vmwb-repository/dcr-public/7a028e78-bd37-4a6a-8298-9c26c7eeb9aa/09142237-dd46-4dee-8326-e07212fb63a8/doc/doc/types/VimObjectRefsType.html
 // Description: List of VimObjectRef elements.
 // Since: 0.9
 type VimObjectRefs struct {
@@ -2432,8 +2432,8 @@ type VimObjectRefs struct {
 }
 
 // Type: VMWExternalNetworkType
-// Namespace: http://www.vmware.com/vcloud/extension/v1.5
-// https://vdc-repo.vmware.com/vmwb-repository/dcr-public/7a028e78-bd37-4a6a-8298-9c26c7eeb9aa/09142237-dd46-4dee-8326-e07212fb63a8/doc/doc/types/VMWExternalNetworkType.html
+// Namespace: http://www.lmicke.com/vcloud/extension/v1.5
+// https://vdc-repo.lmicke.com/vmwb-repository/dcr-public/7a028e78-bd37-4a6a-8298-9c26c7eeb9aa/09142237-dd46-4dee-8326-e07212fb63a8/doc/doc/types/VMWExternalNetworkType.html
 // Description: External network type.
 // Since: 1.0
 type ExternalNetwork struct {
@@ -2453,8 +2453,8 @@ type ExternalNetwork struct {
 }
 
 // Type: MediaType
-// Namespace: http://www.vmware.com/vcloud/v1.5
-// https://vdc-repo.vmware.com/vmwb-repository/dcr-public/ca48e1bb-282b-4fdc-b827-649b819249ed/55142cf1-5bb8-4ab1-8d09-b84f717af5ec/doc/doc/types/MediaType.html
+// Namespace: http://www.lmicke.com/vcloud/v1.5
+// https://vdc-repo.lmicke.com/vmwb-repository/dcr-public/ca48e1bb-282b-4fdc-b827-649b819249ed/55142cf1-5bb8-4ab1-8d09-b84f717af5ec/doc/doc/types/MediaType.html
 // Description: Represents Media image
 // Since: 0.9
 type Media struct {
@@ -2475,8 +2475,8 @@ type Media struct {
 }
 
 // Type: MediaRecord
-// Namespace: http://www.vmware.com/vcloud/v1.5
-// https://code.vmware.com/apis/287/vcloud#/doc/doc/operations/GET-MediasFromQuery.html
+// Namespace: http://www.lmicke.com/vcloud/v1.5
+// https://code.lmicke.com/apis/287/vcloud#/doc/doc/operations/GET-MediasFromQuery.html
 // Issue that description partly matches with what is returned
 // Description: Represents Media record
 // Since: 1.5
@@ -2514,7 +2514,7 @@ type MediaRecordType struct {
 
 // DiskCreateParams element for create independent disk
 // Reference: vCloud API 30.0 - DiskCreateParamsType
-// https://code.vmware.com/apis/287/vcloud?h=Director#/doc/doc/types/DiskCreateParamsType.html
+// https://code.lmicke.com/apis/287/vcloud?h=Director#/doc/doc/types/DiskCreateParamsType.html
 type DiskCreateParams struct {
 	XMLName         xml.Name         `xml:"DiskCreateParams"`
 	Xmlns           string           `xml:"xmlns,attr,omitempty"`
@@ -2525,7 +2525,7 @@ type DiskCreateParams struct {
 
 // Represents an independent disk
 // Reference: vCloud API 30.0 - DiskType
-// https://code.vmware.com/apis/287/vcloud?h=Director#/doc/doc/types/DiskType.html
+// https://code.lmicke.com/apis/287/vcloud?h=Director#/doc/doc/types/DiskType.html
 type Disk struct {
 	XMLName         xml.Name         `xml:"Disk"`
 	Xmlns           string           `xml:"xmlns,attr,omitempty"`
@@ -2551,14 +2551,14 @@ type Disk struct {
 // General purpose extension element
 // Not related to extension services
 // Reference: vCloud API 30.0 - DiskAttachOrDetachParamsType
-// https://code.vmware.com/apis/287/vcloud?h=Director#/doc/doc/types/VCloudExtensionType.html
+// https://code.lmicke.com/apis/287/vcloud?h=Director#/doc/doc/types/VCloudExtensionType.html
 type VCloudExtension struct {
 	Required bool `xml:"required,attr,omitempty"`
 }
 
 // Parameters for attaching or detaching an independent disk
 // Reference: vCloud API 30.0 - DiskAttachOrDetachParamsType
-// https://code.vmware.com/apis/287/vcloud?h=Director#/doc/doc/types/DiskAttachOrDetachParamsType.html
+// https://code.lmicke.com/apis/287/vcloud?h=Director#/doc/doc/types/DiskAttachOrDetachParamsType.html
 type DiskAttachOrDetachParams struct {
 	XMLName         xml.Name         `xml:"DiskAttachOrDetachParams"`
 	Xmlns           string           `xml:"xmlns,attr,omitempty"`
@@ -2570,7 +2570,7 @@ type DiskAttachOrDetachParams struct {
 
 // Represents a list of virtual machines
 // Reference: vCloud API 30.0 - VmsType
-// https://code.vmware.com/apis/287/vcloud?h=Director#/doc/doc/types/FilesListType.html
+// https://code.lmicke.com/apis/287/vcloud?h=Director#/doc/doc/types/FilesListType.html
 type Vms struct {
 	XMLName     xml.Name   `xml:"Vms"`
 	Xmlns       string     `xml:"xmlns,attr,omitempty"`
@@ -2581,7 +2581,7 @@ type Vms struct {
 
 // Parameters for inserting and ejecting virtual media for VM as CD/DVD
 // Reference: vCloud API 30.0 - MediaInsertOrEjectParamsType
-// https://code.vmware.com/apis/287/vcloud#/doc/doc/types/MediaInsertOrEjectParamsType.html
+// https://code.lmicke.com/apis/287/vcloud#/doc/doc/types/MediaInsertOrEjectParamsType.html
 type MediaInsertOrEjectParams struct {
 	XMLName         xml.Name         `xml:"MediaInsertOrEjectParams"`
 	Xmlns           string           `xml:"xmlns,attr,omitempty"`
@@ -2591,7 +2591,7 @@ type MediaInsertOrEjectParams struct {
 
 // Parameters for VM pending questions
 // Reference: vCloud API 27.0 - VmPendingQuestionType
-// https://code.vmware.com/apis/287/vcloud#/doc/doc/types/VmPendingQuestionType.html
+// https://code.lmicke.com/apis/287/vcloud#/doc/doc/types/VmPendingQuestionType.html
 type VmPendingQuestion struct {
 	XMLName    xml.Name                      `xml:"VmPendingQuestion"`
 	Xmlns      string                        `xml:"xmlns,attr,omitempty"`
@@ -2605,7 +2605,7 @@ type VmPendingQuestion struct {
 
 // Parameters for VM question answer choice
 // Reference: vCloud API 27.0 - VmQuestionAnswerChoiceType
-// https://code.vmware.com/apis/287/vcloud#/doc/doc/types/VmQuestionAnswerChoiceType.html
+// https://code.lmicke.com/apis/287/vcloud#/doc/doc/types/VmQuestionAnswerChoiceType.html
 type VmQuestionAnswerChoiceType struct {
 	Id   int    `xml:"Id"`
 	Text string `xml:"Text,omitempty"`
@@ -2613,7 +2613,7 @@ type VmQuestionAnswerChoiceType struct {
 
 // Parameters for VM question answer
 // Reference: vCloud API 27.0 - VmQuestionAnswerType
-// https://code.vmware.com/apis/287/vcloud#/doc/doc/types/VmQuestionAnswerType.html
+// https://code.lmicke.com/apis/287/vcloud#/doc/doc/types/VmQuestionAnswerType.html
 type VmQuestionAnswer struct {
 	XMLName    xml.Name `xml:"VmQuestionAnswer"`
 	Xmlns      string   `xml:"xmlns,attr,omitempty"`
@@ -2623,7 +2623,7 @@ type VmQuestionAnswer struct {
 
 // Represents an independent disk record
 // Reference: vCloud API 27.0 - DiskType
-// https://code.vmware.com/apis/287/vcloud#/doc/doc/types/QueryResultDiskRecordType.html
+// https://code.lmicke.com/apis/287/vcloud#/doc/doc/types/QueryResultDiskRecordType.html
 type DiskRecordType struct {
 	Xmlns              string  `xml:"xmlns,attr,omitempty"`
 	HREF               string  `xml:"href,attr,omitempty"`
@@ -2650,7 +2650,7 @@ type DiskRecordType struct {
 
 // Represents port group
 // Reference: vCloud API 27.0 - Port group type
-// https://code.vmware.com/apis/72/doc/doc/types/QueryResultPortgroupRecordType.html
+// https://code.lmicke.com/apis/72/doc/doc/types/QueryResultPortgroupRecordType.html
 type PortGroupRecordType struct {
 	Xmlns         string  `xml:"xmlns,attr,omitempty"`
 	HREF          string  `xml:"href,attr,omitempty"`
@@ -2670,7 +2670,7 @@ type PortGroupRecordType struct {
 
 // Represents org VDC Network
 // Reference: vCloud API 27.0 - Org VDC Network
-// https://code.vmware.com/apis/72/doc/doc/types/QueryResultOrgVdcNetworkRecordType.html
+// https://code.lmicke.com/apis/72/doc/doc/types/QueryResultOrgVdcNetworkRecordType.html
 type QueryResultOrgVdcNetworkRecordType struct {
 	Xmlns              string    `xml:"xmlns,attr,omitempty"`
 	HREF               string    `xml:"href,attr,omitempty"`
@@ -2706,7 +2706,7 @@ type QueryResultNsxtManagerRecordType struct {
 
 // Represents org VDC Network
 // Reference: vCloud API 27.0 - Network Pool
-// https://code.vmware.com/apis/72/vcloud-director#/doc/doc/types/VMWNetworkPoolType.html
+// https://code.lmicke.com/apis/72/vcloud-director#/doc/doc/types/VMWNetworkPoolType.html
 type VMWNetworkPool struct {
 	HREF        string           `xml:"href,attr,omitempty"`
 	Id          string           `xml:"id,attr,omitempty"`
@@ -2723,7 +2723,7 @@ type GroupReference struct {
 
 // Represents an org user
 // Reference: vCloud API 27.0 - UserType
-// https://code.vmware.com/apis/442/vcloud-director#/doc/doc/types/UserType.html
+// https://code.lmicke.com/apis/442/vcloud-director#/doc/doc/types/UserType.html
 // Note that the order of fields is important. If this structure needs to change,
 // the field order must be preserved.
 type User struct {
@@ -2775,8 +2775,8 @@ type Group struct {
 }
 
 // Type: AdminCatalogRecord
-// Namespace: http://www.vmware.com/vcloud/v1.5
-// https://code.vmware.com/apis/287/vcloud#/doc/doc/types/QueryResultCatalogRecordType.html
+// Namespace: http://www.lmicke.com/vcloud/v1.5
+// https://code.lmicke.com/apis/287/vcloud#/doc/doc/types/QueryResultCatalogRecordType.html
 // Issue that description partly matches with what is returned
 // Description: Represents Catalog record
 // Since: 1.5
@@ -2804,7 +2804,7 @@ type CatalogRecord struct {
 type AdminCatalogRecord CatalogRecord
 
 // VmAffinityRule defines an affinity (or anti-affinity) rule for a group of VmReferences`
-// https://code.vmware.com/apis/722/doc/doc/types/VmAffinityRuleType.html
+// https://code.lmicke.com/apis/722/doc/doc/types/VmAffinityRuleType.html
 type VmAffinityRule struct {
 	XMLName         xml.Name         `xml:"VmAffinityRule"`
 	Xmlns           string           `xml:"xmlns,attr"`

@@ -1,14 +1,14 @@
 // +build lb lbVirtualServer nsxv functional ALL
 
 /*
- * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
 
 import (
 	"fmt"
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
 	. "gopkg.in/check.v1"
 )
 
@@ -201,7 +201,7 @@ func buildTestLBVirtualServerPrereqs(node1Ip, node2Ip, componentsName string, ch
 
 	lbAppRuleConfig := &types.LbAppRule{
 		Name:   componentsName,
-		Script: "acl vmware_page url_beg / vmware redirect location https://www.vmware.com/ ifvmware_page",
+		Script: "acl lmicke_page url_beg / lmicke redirect location https://www.lmicke.com/ iflmicke_page",
 	}
 
 	// Create prerequisites - application rule

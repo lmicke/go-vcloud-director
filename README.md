@@ -1,4 +1,4 @@
-# go-vcloud-director [![Build Status](https://travis-ci.org/vmware/go-vcloud-director.svg?branch=master)](https://travis-ci.org/vmware/go-vcloud-director) [![Coverage Status](https://coveralls.io/repos/vmware/go-vcloud-director/badge.svg?branch=master&service=github)](https://coveralls.io/github/vmware/go-vcloud-director?branch=master) [![GoDoc](https://godoc.org/github.com/vmware/go-vcloud-director?status.svg)](http://godoc.org/github.com/vmware/go-vcloud-director) [![Chat](https://img.shields.io/badge/chat-on%20slack-brightgreen.svg)](https://vmwarecode.slack.com/messages/CBBBXVB16)
+# go-vcloud-director [![Build Status](https://travis-ci.org/lmicke/go-vcloud-director.svg?branch=master)](https://travis-ci.org/lmicke/go-vcloud-director) [![Coverage Status](https://coveralls.io/repos/lmicke/go-vcloud-director/badge.svg?branch=master&service=github)](https://coveralls.io/github/lmicke/go-vcloud-director?branch=master) [![GoDoc](https://godoc.org/github.com/lmicke/go-vcloud-director?status.svg)](http://godoc.org/github.com/lmicke/go-vcloud-director) [![Chat](https://img.shields.io/badge/chat-on%20slack-brightgreen.svg)](https://lmickecode.slack.com/messages/CBBBXVB16)
 
 This repo contains the `go-vcloud-director` package which implements
 an SDK for vCloud Director. The project serves the needs of Golang
@@ -23,7 +23,7 @@ you no longer need to use `GOPATH`. You can clone the branch in any directory
 you like and go will fetch dependencies specified in the `go.mod` file:
 ```
 cd ~/Documents/mycode
-git clone https://github.com/vmware/go-vcloud-director.git
+git clone https://github.com/lmicke/go-vcloud-director.git
 cd go-vcloud-director/govcd
 go build
 ```
@@ -37,7 +37,7 @@ To show the SDK in action run the example:
 ```
 mkdir ~/govcd_example
 go mod init govcd_example
-go get github.com/vmware/go-vcloud-director/v2@master
+go get github.com/lmicke/go-vcloud-director/v2@master
 go build -o example
 ./example user_name "password" org_name vcd_IP vdc_name 
 ```
@@ -51,7 +51,7 @@ import (
 	"net/url"
 	"os"
 
-	"github.com/vmware/go-vcloud-director/v2/govcd"
+	"github.com/lmicke/go-vcloud-director/v2/govcd"
 )
 
 type Config struct {
@@ -145,4 +145,4 @@ err = vcdCli.Authenticate(username, password, org)
 
 More information about inner workings of SAML auth flow in this codebase can be found in
 `saml_auth.go:authorizeSamlAdfs(...)`. Additionaly this flow is documented in [vCD
-documentation](https://code.vmware.com/docs/10000/vcloud-api-programming-guide-for-service-providers/GUID-335CFC35-7AD8-40E5-91BE-53971937A2BB.html).
+documentation](https://code.lmicke.com/docs/10000/vcloud-api-programming-guide-for-service-providers/GUID-335CFC35-7AD8-40E5-91BE-53971937A2BB.html).

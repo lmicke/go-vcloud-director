@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -16,8 +16,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
-	"github.com/vmware/go-vcloud-director/v2/util"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/util"
 )
 
 type EdgeGateway struct {
@@ -127,7 +127,7 @@ func (egw *EdgeGateway) AddDhcpPool(network *types.OrgVDCNetwork, dhcppool []int
 		util.Logger.Printf("[DEBUG] POSTING TO URL: %s", apiEndpoint.Path)
 		util.Logger.Printf("[DEBUG] XML TO SEND:\n%s", buffer)
 
-		req.Header.Add("Content-Type", "application/vnd.vmware.admin.edgeGatewayServiceConfiguration+xml")
+		req.Header.Add("Content-Type", "application/vnd.lmicke.admin.edgeGatewayServiceConfiguration+xml")
 
 		resp, err = checkResp(egw.client.Http.Do(req))
 		if err != nil {
@@ -202,7 +202,7 @@ func (egw *EdgeGateway) RemoveNATPortMapping(natType, externalIP, externalPort, 
 
 	// Return the task
 	return egw.client.ExecuteTaskRequest(apiEndpoint.String(), http.MethodPost,
-		"application/vnd.vmware.admin.edgeGatewayServiceConfiguration+xml", "error reconfiguring Edge Gateway: %s", newRules)
+		"application/vnd.lmicke.admin.edgeGatewayServiceConfiguration+xml", "error reconfiguring Edge Gateway: %s", newRules)
 
 }
 
@@ -268,7 +268,7 @@ func (egw *EdgeGateway) RemoveNATRuleAsync(id string) (Task, error) {
 
 	// Return the task
 	return egw.client.ExecuteTaskRequest(egwConfigureHref.String(), http.MethodPost,
-		"application/vnd.vmware.admin.edgeGatewayServiceConfiguration+xml", "error reconfiguring Edge Gateway: %s", newRules)
+		"application/vnd.lmicke.admin.edgeGatewayServiceConfiguration+xml", "error reconfiguring Edge Gateway: %s", newRules)
 }
 
 // AddDNATRule creates DNAT rule and returns the NAT struct that was created or an error.
@@ -433,7 +433,7 @@ func (egw *EdgeGateway) UpdateNatRuleAsync(natRule *types.NatRule) (Task, error)
 
 	// Return the task
 	return egw.client.ExecuteTaskRequest(egwConfigureHref.String(), http.MethodPost,
-		"application/vnd.vmware.admin.edgeGatewayServiceConfiguration+xml", "error reconfiguring Edge Gateway: %s", newRules)
+		"application/vnd.lmicke.admin.edgeGatewayServiceConfiguration+xml", "error reconfiguring Edge Gateway: %s", newRules)
 }
 
 // GetNatRule returns NAT rule or error.
@@ -511,7 +511,7 @@ func (egw *EdgeGateway) AddNATRuleAsync(ruleDetails NatRule) (Task, error) {
 
 	// Return the task
 	return egw.client.ExecuteTaskRequest(egwConfigureHref.String(), http.MethodPost,
-		"application/vnd.vmware.admin.edgeGatewayServiceConfiguration+xml", "error reconfiguring Edge Gateway: %s", newRules)
+		"application/vnd.lmicke.admin.edgeGatewayServiceConfiguration+xml", "error reconfiguring Edge Gateway: %s", newRules)
 }
 
 // Deprecated: Use eGW.AddSNATRule() or eGW.AddDNATRule()
@@ -555,7 +555,7 @@ func isValidProtocol(protocol string) bool {
 	return false
 }
 
-// Used values are named here https://code.vmware.com/apis/287/vcloud#/doc/doc/types/GatewayNatRuleType.html
+// Used values are named here https://code.lmicke.com/apis/287/vcloud#/doc/doc/types/GatewayNatRuleType.html
 // Also can be matched in VCD UI when creating DNAT for edge gateway.
 func isValidIcmpSubType(protocol string) bool {
 	switch strings.ToLower(protocol) {
@@ -659,7 +659,7 @@ func (egw *EdgeGateway) AddNATPortMappingWithUplink(network *types.OrgVDCNetwork
 
 	// Return the task
 	return egw.client.ExecuteTaskRequest(apiEndpoint.String(), http.MethodPost,
-		"application/vnd.vmware.admin.edgeGatewayServiceConfiguration+xml", "error reconfiguring Edge Gateway: %s", newRules)
+		"application/vnd.lmicke.admin.edgeGatewayServiceConfiguration+xml", "error reconfiguring Edge Gateway: %s", newRules)
 }
 
 func (egw *EdgeGateway) CreateFirewallRules(defaultAction string, rules []*types.FirewallRule) (Task, error) {
@@ -694,7 +694,7 @@ func (egw *EdgeGateway) CreateFirewallRules(defaultAction string, rules []*types
 		util.Logger.Printf("[DEBUG] POSTING TO URL: %s", apiEndpoint.Path)
 		util.Logger.Printf("[DEBUG] XML TO SEND:\n%s", buffer)
 
-		req.Header.Add("Content-Type", "application/vnd.vmware.admin.edgeGatewayServiceConfiguration+xml")
+		req.Header.Add("Content-Type", "application/vnd.lmicke.admin.edgeGatewayServiceConfiguration+xml")
 
 		resp, err = checkResp(egw.client.Http.Do(req))
 		if err != nil {
@@ -842,7 +842,7 @@ func (egw *EdgeGateway) Remove1to1Mapping(internal, external string) (Task, erro
 
 	// Return the task
 	return egw.client.ExecuteTaskRequest(apiEndpoint.String(), http.MethodPost,
-		"application/vnd.vmware.admin.edgeGatewayServiceConfiguration+xml", "error reconfiguring Edge Gateway: %s", newEdgeConfig)
+		"application/vnd.lmicke.admin.edgeGatewayServiceConfiguration+xml", "error reconfiguring Edge Gateway: %s", newEdgeConfig)
 
 }
 
@@ -937,7 +937,7 @@ func (egw *EdgeGateway) Create1to1Mapping(internal, external, description string
 
 	// Return the task
 	return egw.client.ExecuteTaskRequest(apiEndpoint.String(), http.MethodPost,
-		"application/vnd.vmware.admin.edgeGatewayServiceConfiguration+xml", "error reconfiguring Edge Gateway: %s", newEdgeConfig)
+		"application/vnd.lmicke.admin.edgeGatewayServiceConfiguration+xml", "error reconfiguring Edge Gateway: %s", newEdgeConfig)
 
 }
 
@@ -955,7 +955,7 @@ func (egw *EdgeGateway) AddIpsecVPN(ipsecVPNConfig *types.EdgeGatewayServiceConf
 
 	// Return the task
 	return egw.client.ExecuteTaskRequest(apiEndpoint.String(), http.MethodPost,
-		"application/vnd.vmware.admin.edgeGatewayServiceConfiguration+xml", "error reconfiguring Edge Gateway: %s", ipsecVPNConfig)
+		"application/vnd.lmicke.admin.edgeGatewayServiceConfiguration+xml", "error reconfiguring Edge Gateway: %s", ipsecVPNConfig)
 
 }
 
@@ -975,7 +975,7 @@ func (egw *EdgeGateway) RemoveIpsecVPN() (Task, error) {
 }
 
 // Deletes the edge gateway, returning a task and an error with the operation result.
-// https://code.vmware.com/apis/442/vcloud-director/doc/doc/operations/DELETE-EdgeGateway.html
+// https://code.lmicke.com/apis/442/vcloud-director/doc/doc/operations/DELETE-EdgeGateway.html
 func (egw *EdgeGateway) DeleteAsync(force bool, recursive bool) (Task, error) {
 	util.Logger.Printf("[TRACE] EdgeGateway.Delete - deleting edge gateway with force: %t, recursive: %t", force, recursive)
 
@@ -1004,7 +1004,7 @@ func (egw *EdgeGateway) DeleteAsync(force bool, recursive bool) (Task, error) {
 }
 
 // Deletes the edge gateway, returning an error with the operation result.
-// https://code.vmware.com/apis/442/vcloud-director/doc/doc/operations/DELETE-EdgeGateway.html
+// https://code.lmicke.com/apis/442/vcloud-director/doc/doc/operations/DELETE-EdgeGateway.html
 func (egw *EdgeGateway) Delete(force bool, recursive bool) error {
 
 	task, err := egw.DeleteAsync(force, recursive)

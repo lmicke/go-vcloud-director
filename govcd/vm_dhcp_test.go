@@ -1,7 +1,7 @@
 // +build nsxv vm functional ALL
 
 /*
- * Copyright 2020 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2020 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -9,7 +9,7 @@ package govcd
 import (
 	"fmt"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
 	. "gopkg.in/check.v1"
 )
 
@@ -145,7 +145,7 @@ func (vcd *TestVCD) Test_VMGetDhcpAddress(check *C) {
 		fmt.Printf("OK: Got IP for NICs 0: %s\n", ips[0])
 	}
 
-	// Check if IPs are reported by only using VMware tools
+	// Check if IPs are reported by only using lmicke tools
 	if testVerbose {
 		fmt.Printf("# Get IPs for NICs 0 and 1 (only using guest tools): ")
 	}

@@ -1,7 +1,7 @@
 // +build system functional ALL
 
 /*
- * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -11,8 +11,8 @@ import (
 
 	. "gopkg.in/check.v1"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
-	"github.com/vmware/go-vcloud-director/v2/util"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/util"
 )
 
 // Tests Org retrieval by name, by ID, and by a combination of name and ID
@@ -292,7 +292,7 @@ func (vcd *TestVCD) Test_CreateDeleteEdgeGatewayAdvanced(check *C) {
 		Network: &types.Reference{
 			HREF: externalNetwork.HREF,
 			ID:   externalNetwork.ID,
-			Type: "application/vnd.vmware.admin.network+xml",
+			Type: "application/vnd.lmicke.admin.network+xml",
 			Name: externalNetwork.Name,
 		},
 		UseForDefaultRoute:  true,

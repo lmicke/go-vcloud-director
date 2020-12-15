@@ -1,7 +1,7 @@
 // +build unit ALL
 
 /*
-* Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+* Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -13,7 +13,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
 )
 
 func TestGetPseudoUUID(t *testing.T) {
@@ -47,7 +47,7 @@ func Test_getVnicIndexFromNetworkNameType(t *testing.T) {
         <networkReference>
             <id>95bffe8e-7e67-452d-abf2-535ac298db2b</id>
             <name>my-vdc-int-net</name>
-            <type>com.vmware.vcloud.entity.network</type>
+            <type>com.lmicke.vcloud.entity.network</type>
         </networkReference>
         <addressGroups>
             <addressGroup>
@@ -67,7 +67,7 @@ func Test_getVnicIndexFromNetworkNameType(t *testing.T) {
         <networkReference>
             <id>f2547dd9-e0f7-4d81-97c1-dd33e5e0fbbf</id>
             <name>my-ext-network</name>
-            <type>com.vmware.vcloud.entity.network</type>
+            <type>com.lmicke.vcloud.entity.network</type>
         </networkReference>
         <addressGroups>
             <addressGroup>
@@ -93,7 +93,7 @@ func Test_getVnicIndexFromNetworkNameType(t *testing.T) {
         <networkReference>
             <id>00251e01-16ed-4367-a0cb-58195d21f367</id>
             <name>Distributed Router Transit</name>
-            <type>com.vmware.vcloud.entity.network</type>
+            <type>com.lmicke.vcloud.entity.network</type>
         </networkReference>
         <addressGroups>
             <addressGroup>
@@ -113,7 +113,7 @@ func Test_getVnicIndexFromNetworkNameType(t *testing.T) {
         <networkReference>
             <id>96a68fd4-c21a-41d6-98a4-fbf32c96480f</id>
             <name>my-vdc-int-net2</name>
-            <type>com.vmware.vcloud.entity.network</type>
+            <type>com.lmicke.vcloud.entity.network</type>
         </networkReference>
         <addressGroups>
             <addressGroup>
@@ -133,7 +133,7 @@ func Test_getVnicIndexFromNetworkNameType(t *testing.T) {
         <networkReference>
             <id>96a68fd4-c21a-41d6-98a4-fbf32c96480f</id>
             <name>my-vdc-int-net2</name>
-            <type>com.vmware.vcloud.entity.network</type>
+            <type>com.lmicke.vcloud.entity.network</type>
         </networkReference>
         <addressGroups>
             <addressGroup>
@@ -153,7 +153,7 @@ func Test_getVnicIndexFromNetworkNameType(t *testing.T) {
         <networkReference>
             <id>2d3e46cb-afe6-4725-9f0a-63514ebac840</id>
             <name>subinterfaced-net</name>
-            <type>com.vmware.vcloud.entity.network</type>
+            <type>com.lmicke.vcloud.entity.network</type>
         </networkReference>
         <addressGroups>
             <addressGroup>
@@ -174,7 +174,7 @@ func Test_getVnicIndexFromNetworkNameType(t *testing.T) {
         <networkReference>
             <id>3e10dd56-2a3a-47bd-aac8-07fc3f653baa</id>
             <name>subinterface2</name>
-            <type>com.vmware.vcloud.entity.network</type>
+            <type>com.lmicke.vcloud.entity.network</type>
         </networkReference>
         <addressGroups>
             <addressGroup>
@@ -195,7 +195,7 @@ func Test_getVnicIndexFromNetworkNameType(t *testing.T) {
         <networkReference>
             <id>0f1cc84b-517b-4435-9f7d-e42eacea1e19</id>
             <name>distributd-net</name>
-            <type>com.vmware.vcloud.entity.network</type>
+            <type>com.lmicke.vcloud.entity.network</type>
         </networkReference>
         <addressGroups>
             <addressGroup>
@@ -215,7 +215,7 @@ func Test_getVnicIndexFromNetworkNameType(t *testing.T) {
         <networkReference>
             <id>8d09d23c-fd08-4c34-9ad7-21afb629cd99</id>
             <name>distri-2</name>
-            <type>com.vmware.vcloud.entity.network</type>
+            <type>com.lmicke.vcloud.entity.network</type>
         </networkReference>
         <addressGroups>
             <addressGroup>
@@ -283,7 +283,7 @@ func Test_getNetworkNameTypeFromVnicIndex(t *testing.T) {
         <networkReference>
             <id>95bffe8e-7e67-452d-abf2-535ac298db2b</id>
             <name>my-vdc-int-net</name>
-            <type>com.vmware.vcloud.entity.network</type>
+            <type>com.lmicke.vcloud.entity.network</type>
         </networkReference>
         <addressGroups>
             <addressGroup>
@@ -303,7 +303,7 @@ func Test_getNetworkNameTypeFromVnicIndex(t *testing.T) {
         <networkReference>
             <id>f2547dd9-e0f7-4d81-97c1-dd33e5e0fbbf</id>
             <name>my-ext-network</name>
-            <type>com.vmware.vcloud.entity.network</type>
+            <type>com.lmicke.vcloud.entity.network</type>
         </networkReference>
         <addressGroups>
             <addressGroup>
@@ -329,7 +329,7 @@ func Test_getNetworkNameTypeFromVnicIndex(t *testing.T) {
         <networkReference>
             <id>00251e01-16ed-4367-a0cb-58195d21f367</id>
             <name>Distributed Router Transit</name>
-            <type>com.vmware.vcloud.entity.network</type>
+            <type>com.lmicke.vcloud.entity.network</type>
         </networkReference>
         <addressGroups>
             <addressGroup>
@@ -349,7 +349,7 @@ func Test_getNetworkNameTypeFromVnicIndex(t *testing.T) {
         <networkReference>
             <id>96a68fd4-c21a-41d6-98a4-fbf32c96480f</id>
             <name>my-vdc-int-net2</name>
-            <type>com.vmware.vcloud.entity.network</type>
+            <type>com.lmicke.vcloud.entity.network</type>
         </networkReference>
         <addressGroups>
             <addressGroup>
@@ -369,7 +369,7 @@ func Test_getNetworkNameTypeFromVnicIndex(t *testing.T) {
         <networkReference>
             <id>2d3e46cb-afe6-4725-9f0a-63514ebac840</id>
             <name>subinterfaced-net</name>
-            <type>com.vmware.vcloud.entity.network</type>
+            <type>com.lmicke.vcloud.entity.network</type>
         </networkReference>
         <addressGroups>
             <addressGroup>

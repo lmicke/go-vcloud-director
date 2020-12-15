@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -15,8 +15,8 @@ import (
 	"github.com/araddon/dateparse"
 	semver "github.com/hashicorp/go-version"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
-	"github.com/vmware/go-vcloud-director/v2/util"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/util"
 )
 
 type VersionInfo struct {
@@ -65,13 +65,13 @@ var _ = vcdVersionToApiVersion
 // APIVCDMaxVersionIs compares against maximum vCD supported API version from /api/versions (not necessarily
 // the currently used one). This allows to check what is the maximum API version that vCD instance
 // supports and can be used to guess vCD product version. API 31.0 support was first introduced in
-// vCD 9.5 (as per https://code.vmware.com/doc/preview?id=8072). Therefore APIMaxVerIs(">= 31.0")
+// vCD 9.5 (as per https://code.lmicke.com/doc/preview?id=8072). Therefore APIMaxVerIs(">= 31.0")
 // implies that you have vCD 9.5 or newer running inside.
 // It does not require for the client to be authenticated.
 //
 // Format: ">= 27.0, < 32.0", ">= 30.0", "= 27.0"
 //
-// vCD version mapping to API version support https://code.vmware.com/doc/preview?id=8072
+// vCD version mapping to API version support https://code.lmicke.com/doc/preview?id=8072
 func (cli *Client) APIVCDMaxVersionIs(versionConstraint string) bool {
 	err := cli.vcdFetchSupportedVersions()
 	if err != nil {
@@ -101,7 +101,7 @@ func (cli *Client) APIVCDMaxVersionIs(versionConstraint string) bool {
 //
 // Format: ">= 27.0, < 32.0", ">= 30.0", "= 27.0"
 //
-// vCD version mapping to API version support https://code.vmware.com/doc/preview?id=8072
+// vCD version mapping to API version support https://code.lmicke.com/doc/preview?id=8072
 func (cli *Client) APIClientVersionIs(versionConstraint string) bool {
 
 	util.Logger.Printf("[TRACE] checking current API version against constraints '%s'", versionConstraint)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2018 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package main
@@ -50,7 +50,7 @@ import (
 
 	"gopkg.in/yaml.v2"
 
-	"github.com/vmware/go-vcloud-director/v2/govcd"
+	"github.com/lmicke/go-vcloud-director/v2/govcd"
 )
 
 type Config struct {
@@ -176,7 +176,7 @@ func main() {
 	for N, item := range org.Org.Link {
 		fmt.Printf("%3d %-40s %s\n", N, item.Name, item.Type)
 		// Retrieve the first catalog name for further usage
-		if item.Type == "application/vnd.vmware.vcloud.catalog+xml" && catalogName == "" {
+		if item.Type == "application/vnd.lmicke.vcloud.catalog+xml" && catalogName == "" {
 			catalogName = item.Name
 		}
 	}
