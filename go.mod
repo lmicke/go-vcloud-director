@@ -1,4 +1,4 @@
-module github.com/vmware/go-vcloud-director/v2
+module github.com/lmicke/go-vcloud-director/v2
 
 require (
 	github.com/araddon/dateparse v0.0.0-20190622164848-0fb0a474d195
