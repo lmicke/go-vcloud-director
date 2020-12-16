@@ -24,7 +24,7 @@ func NewDFW(cli *Client) *DFW {
 
 func (dfw *DFW) EnableDistributedFirewall(VdcID string) (string, error) {
 	base := dfw.client.VCDHREF
-	add, err := url.Parse(types.DFWOn + VdcID)
+	add, err := url.Parse(types.DFWOn + VdcID + "?append=true")
 	if err != nil {
 		return "", fmt.Errorf("Error building url for DFW activation: %s", err)
 	}
