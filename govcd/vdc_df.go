@@ -3,6 +3,7 @@ package govcd
 import (
 	"encoding/xml"
 	"fmt"
+	"log"
 	"net/http"
 	"net/url"
 
@@ -21,19 +22,20 @@ func NewDFW(cli *Client) *DFW {
 	}
 }
 
-func (dfw *DFW) EnableDistributedFirewall(VdcID string) error {
+func (dfw *DFW) EnableDistributedFirewall(VdcID string) (string, error) {
 	base := dfw.client.VCDHREF
 	add, err := url.Parse(types.DFWOn + VdcID)
 	if err != nil {
-		return fmt.Errorf("Error building url for DFW activation: %s", err)
+		return "", fmt.Errorf("Error building url for DFW activation: %s", err)
 	}
 	dfwURL := base.ResolveReference(add)
+	log.Printf("[DEBUG] Distributed Firewall URL is: %s", dfwURL.String())
 
 	_, err = dfw.client.ExecuteRequest(dfwURL.String(), http.MethodPost, "", "error enabling dfw: %s", nil, nil)
 	if err != nil {
-		return err
+		return dfwURL.String(), err
 	}
-	return nil
+	return dfwURL.String(), nil
 }
 
 func (dfw *DFW) CheckDistributedFirewall(VdcId string) (bool, error) {
@@ -44,7 +46,7 @@ func (dfw *DFW) CheckDistributedFirewall(VdcId string) (bool, error) {
 	}
 	dfwURL := base.ResolveReference(add)
 
-	resp, err := dfw.client.ExecuteRequest(dfwURL.String(), http.MethodGet, "", "error enabling dfw: %s", dfw.Section, nil)
+	resp, err := dfw.client.ExecuteRequest(dfwURL.String(), http.MethodGet, "", "error reaching dfwURL: %s", dfw.Section, nil)
 	if err != nil {
 		return false, err
 	}
