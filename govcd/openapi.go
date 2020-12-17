@@ -608,7 +608,7 @@ func (client *Client) newOpenApiRequest(apiVersion string, params url.Values, me
 		// The bearer token is 612 characters long
 		if len(client.VCDToken) > 32 {
 			req.Header.Add("Authorization", "bearer "+client.VCDToken)
-			req.Header.Add("X-lmicke-Vcloud-Token-Type", "Bearer")
+			req.Header.Add("X-Vmware-Vcloud-Token-Type", "Bearer")
 		}
 		// Add the Accept header for VCD
 		acceptMime := types.JSONMime + ";version=" + apiVersion

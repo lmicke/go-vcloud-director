@@ -13,6 +13,7 @@ github.com/lmicke/go-vcloud-director v2.0.0+incompatible h1:3B121XZVdEOxRhv5ARsw
 github.com/lmicke/go-vcloud-director/v2 v2.9.0 h1:6HxKdIwbRtTkw+up829ZRCTaC1EyuAqSm5jRnd9zHQ4=
 github.com/lmicke/go-vcloud-director/v2 v2.9.0/go.mod h1:czvTQZlB4/WsOsL7rMVCb+SYAPJhx/dYoS/Sk7rc/O0=
 github.com/lmicke/go-vcloud-director/v2 v2.11.3-rc/go.mod h1:p5C0EBPwE6SJ59E0MBM0mgpoY/qcTnQAgm7Gh2Cjbs8=
+github.com/lmicke/go-vcloud-director/v2 v2.11.5-rc/go.mod h1:y5osJLe/La14GQf8oKspsiDFojf1tWKs/MbhAcjOHRU=
 github.com/peterhellberg/link v1.1.0 h1:s2+RH8EGuI/mI4QwrWGSYQCRz7uNgip9BaM04HKu5kc=
 github.com/peterhellberg/link v1.1.0/go.mod h1:gtSlOT4jmkY8P47hbTc8PTgiDDWpdPbFYl75keYyBB8=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=

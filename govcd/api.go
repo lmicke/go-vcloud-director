@@ -212,7 +212,7 @@ func (cli *Client) newRequest(params map[string]string, notEncodedParams map[str
 	// The deprecated authorization token is 32 characters long
 	// The bearer token is 612 characters long
 	if len(cli.VCDToken) > 32 {
-		req.Header.Add("X-lmicke-Vcloud-Token-Type", "Bearer")
+		req.Header.Add("X-Vmware-Vcloud-Token-Type", "Bearer")
 		req.Header.Add("Authorization", "bearer "+cli.VCDToken)
 	}
 
