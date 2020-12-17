@@ -58,7 +58,7 @@ type Client struct {
 const AuthorizationHeader = "X-Vcloud-Authorization"
 
 // BearerTokenHeader is the header key containing a bearer token
-const BearerTokenHeader = "X-lmicke-Vcloud-Access-Token"
+const BearerTokenHeader = "X-Vmware-Vcloud-Access-Token"
 
 // General purpose error to be used whenever an entity is not found from a "GET" request
 // Allows a simpler checking of the call result
