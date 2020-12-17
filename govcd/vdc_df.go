@@ -12,18 +12,18 @@ import (
 
 type DFW struct {
 	Section *DFWSection
-	client  *Client
+	Client  *Client
 }
 
 func NewDFW(cli *Client) *DFW {
 	return &DFW{
 		Section: new(DFWSection),
-		client:  cli,
+		Client:  cli,
 	}
 }
 
 func (dfw *DFW) EnableDistributedFirewall(VdcID string) (string, error) {
-	base := dfw.client.VCDHREF
+	base := dfw.Client.VCDHREF
 	add, err := url.Parse(types.DFWOn + VdcID + "?append=true")
 	if err != nil {
 		return "", fmt.Errorf("Error building url for DFW activation: %s", err)
@@ -31,7 +31,7 @@ func (dfw *DFW) EnableDistributedFirewall(VdcID string) (string, error) {
 	dfwURL := base.ResolveReference(add)
 	log.Printf("[DEBUG] Distributed Firewall URL is: %s", dfwURL.String())
 
-	_, err = dfw.client.ExecuteRequest(dfwURL.String(), http.MethodPost, "", "error enabling dfw: %s", nil, nil)
+	_, err = dfw.Client.ExecuteRequest(dfwURL.String(), http.MethodPost, "", "error enabling dfw: %s", nil, nil)
 	if err != nil {
 		return dfwURL.String(), err
 	}
@@ -39,14 +39,14 @@ func (dfw *DFW) EnableDistributedFirewall(VdcID string) (string, error) {
 }
 
 func (dfw *DFW) CheckDistributedFirewall(VdcId string) (bool, error) {
-	base := dfw.client.VCDHREF
+	base := dfw.Client.VCDHREF
 	add, err := url.Parse(types.DFWRequest + VdcId)
 	if err != nil {
 		return false, fmt.Errorf("Error building url for DFW check: %s", err)
 	}
 	dfwURL := base.ResolveReference(add)
 
-	resp, err := dfw.client.ExecuteRequest(dfwURL.String(), http.MethodGet, "", "error reaching dfwURL: %s", dfw.Section, nil)
+	resp, err := dfw.Client.ExecuteRequest(dfwURL.String(), http.MethodGet, "", "error reaching dfwURL: %s", dfw.Section, nil)
 	if err != nil {
 		return false, err
 	}
