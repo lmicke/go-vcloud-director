@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -138,7 +138,7 @@ func (vdc *Vdc) CreateOrgVDCNetworkWait(networkConfig *types.OrgVDCNetwork) erro
 // the combination of properties given with the network configuration structure.
 func (vdc *Vdc) CreateOrgVDCNetwork(networkConfig *types.OrgVDCNetwork) (Task, error) {
 	for _, av := range vdc.Vdc.Link {
-		if av.Rel == "add" && av.Type == "application/vnd.lmicke.vcloud.orgVdcNetwork+xml" {
+		if av.Rel == "add" && av.Type == "application/vnd.vmware.vcloud.orgVdcNetwork+xml" {
 			createUrl, err := url.ParseRequestURI(av.HREF)
 
 			if err != nil {
@@ -242,7 +242,7 @@ func (vdc *Vdc) FindEdgeGatewayNameByNetwork(networkName string) (string, error)
 // getParentVdc retrieves the VDC to which the network is attached
 func (orgVdcNet *OrgVDCNetwork) getParentVdc() (*Vdc, error) {
 	for _, link := range orgVdcNet.OrgVDCNetwork.Link {
-		if link.Type == "application/vnd.lmicke.vcloud.vdc+xml" {
+		if link.Type == "application/vnd.vmware.vcloud.vdc+xml" {
 
 			vdc := NewVdc(orgVdcNet.client)
 

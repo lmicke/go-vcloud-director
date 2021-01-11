@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -35,7 +35,7 @@ type EdgeGatewayCreation struct {
 // The Organization created will have these settings specified in the
 // settings parameter. The settings variable is defined in types.go.
 // Method will fail unless user has an admin token.
-// API Documentation: https://code.lmicke.com/apis/220/vcloud#/doc/doc/operations/POST-CreateOrganization.html
+// API Documentation: https://code.vmware.com/apis/220/vcloud#/doc/doc/operations/POST-CreateOrganization.html
 // Organization creation in vCD has two bugs BZ 2177355, BZ 2228936 (fixes are in 9.1.0.3 and 9.5.0.2) which require
 // organization settings to be provided as workarounds.
 // At least one element among DelayAfterPowerOnSeconds, DeployedVMQuota, StoredVmQuota, UseServerBootSequence, getVdcQuota
@@ -65,7 +65,7 @@ func CreateOrg(vcdClient *VCDClient, name string, fullName string, description s
 
 	// Return the task
 	return vcdClient.Client.ExecuteTaskRequest(orgCreateHREF.String(), http.MethodPost,
-		"application/vnd.lmicke.admin.organization+xml", "error instantiating a new Org: %s", vcomp)
+		"application/vnd.vmware.admin.organization+xml", "error instantiating a new Org: %s", vcomp)
 
 }
 
@@ -94,7 +94,7 @@ func getBareEntityUuid(entityId string) (string, error) {
 }
 
 // CreateEdgeGatewayAsync creates an edge gateway using a simplified configuration structure
-// https://code.lmicke.com/apis/442/vcloud-director/doc/doc/operations/POST-CreateEdgeGateway.html
+// https://code.vmware.com/apis/442/vcloud-director/doc/doc/operations/POST-CreateEdgeGateway.html
 //
 // Note. This function does not allow to pick exact subnet in external network to use for edge
 // gateway. It will pick first one instead.
@@ -166,7 +166,7 @@ func CreateEdgeGatewayAsync(vcdClient *VCDClient, egwc EdgeGatewayCreation) (Tas
 			Network: &types.Reference{
 				HREF: extNet.ExternalNetwork.HREF,
 				ID:   extNet.ExternalNetwork.ID,
-				Type: "application/vnd.lmicke.admin.network+xml",
+				Type: "application/vnd.vmware.admin.network+xml",
 				Name: extNet.ExternalNetwork.Name,
 			},
 			UseForDefaultRoute:  egwc.DefaultGateway == extNet.ExternalNetwork.Name,
@@ -214,7 +214,7 @@ func CreateAndConfigureEdgeGatewayAsync(vcdClient *VCDClient, orgName, vdcName, 
 	// The first task is the creation task. It is quick, and does only create the vCD entity,
 	// but not yet deploy the underlying VM
 	creationTask, err := vcdClient.Client.ExecuteTaskRequest(egwCreateHREF.String(), http.MethodPost,
-		"application/vnd.lmicke.admin.edgeGateway+xml", "error instantiating a new Edge Gateway: %s", egwConfiguration)
+		"application/vnd.vmware.admin.edgeGateway+xml", "error instantiating a new Edge Gateway: %s", egwConfiguration)
 
 	if err != nil {
 		return Task{}, err
@@ -311,7 +311,7 @@ func GetOrgByName(vcdClient *VCDClient, orgName string) (Org, error) {
 // If no valid org is found, it returns an empty
 // org and no error. Otherwise returns an empty AdminOrg
 // and an error.
-// API Documentation: https://code.lmicke.com/apis/220/vcloud#/doc/doc/operations/GET-Organization-AdminView.html
+// API Documentation: https://code.vmware.com/apis/220/vcloud#/doc/doc/operations/GET-Organization-AdminView.html
 // Deprecated: Use vcdClient.GetAdminOrgByName instead
 func GetAdminOrgByName(vcdClient *VCDClient, orgName string) (AdminOrg, error) {
 	orgUrl, err := getOrgHREF(vcdClient, orgName)
@@ -386,7 +386,7 @@ func getOrgHREFById(vcdClient *VCDClient, orgId string) (string, error) {
 }
 
 // Find a list of Virtual Centers matching the filter parameter.
-// Filter constructing guide: https://pubs.lmicke.com/vcloud-api-1-5/wwhelp/wwhimpl/js/html/wwhelp.htm#href=api_prog/GUID-CDF04296-5EB5-47E1-9BEC-228837C584CE.html
+// Filter constructing guide: https://pubs.vmware.com/vcloud-api-1-5/wwhelp/wwhimpl/js/html/wwhelp.htm#href=api_prog/GUID-CDF04296-5EB5-47E1-9BEC-228837C584CE.html
 // Possible parameters are any attribute from QueryResultVirtualCenterRecordType struct
 // E.g. filter could look like: name==vC1
 func QueryVirtualCenters(vcdClient *VCDClient, filter string) ([]*types.QueryResultVirtualCenterRecordType, error) {
@@ -570,8 +570,8 @@ func CreateExternalNetwork(vcdClient *VCDClient, externalNetworkData *types.Exte
 	}
 
 	// Type: VimObjectRefType
-	// Namespace: http://www.lmicke.com/vcloud/extension/v1.5
-	// https://vdc-repo.lmicke.com/vmwb-repository/dcr-public/7a028e78-bd37-4a6a-8298-9c26c7eeb9aa/09142237-dd46-4dee-8326-e07212fb63a8/doc/doc/types/VimObjectRefsType.html
+	// Namespace: http://www.vmware.com/vcloud/extension/v1.5
+	// https://vdc-repo.vmware.com/vmwb-repository/dcr-public/7a028e78-bd37-4a6a-8298-9c26c7eeb9aa/09142237-dd46-4dee-8326-e07212fb63a8/doc/doc/types/VimObjectRefsType.html
 	// Description: Represents the Managed Object Reference (MoRef) and the type of a vSphere object.
 	// Since: 0.9
 	type vimObjectRefCreate struct {
@@ -581,8 +581,8 @@ func CreateExternalNetwork(vcdClient *VCDClient, externalNetworkData *types.Exte
 	}
 
 	// Type: VimObjectRefsType
-	// Namespace: http://www.lmicke.com/vcloud/extension/v1.5
-	// https://vdc-repo.lmicke.com/vmwb-repository/dcr-public/7a028e78-bd37-4a6a-8298-9c26c7eeb9aa/09142237-dd46-4dee-8326-e07212fb63a8/doc/doc/types/VimObjectRefsType.html
+	// Namespace: http://www.vmware.com/vcloud/extension/v1.5
+	// https://vdc-repo.vmware.com/vmwb-repository/dcr-public/7a028e78-bd37-4a6a-8298-9c26c7eeb9aa/09142237-dd46-4dee-8326-e07212fb63a8/doc/doc/types/VimObjectRefsType.html
 	// Description: List of VimObjectRef elements.
 	// Since: 0.9
 	type vimObjectRefsCreate struct {
@@ -590,8 +590,8 @@ func CreateExternalNetwork(vcdClient *VCDClient, externalNetworkData *types.Exte
 	}
 
 	// Type: VMWExternalNetworkType
-	// Namespace: http://www.lmicke.com/vcloud/extension/v1.5
-	// https://vdc-repo.lmicke.com/vmwb-repository/dcr-public/7a028e78-bd37-4a6a-8298-9c26c7eeb9aa/09142237-dd46-4dee-8326-e07212fb63a8/doc/doc/types/VMWExternalNetworkType.html
+	// Namespace: http://www.vmware.com/vcloud/extension/v1.5
+	// https://vdc-repo.vmware.com/vmwb-repository/dcr-public/7a028e78-bd37-4a6a-8298-9c26c7eeb9aa/09142237-dd46-4dee-8326-e07212fb63a8/doc/doc/types/VMWExternalNetworkType.html
 	// Description: External network type.
 	// Since: 1.0
 	type externalNetworkCreate struct {

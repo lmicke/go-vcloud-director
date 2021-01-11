@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -31,7 +31,7 @@ func getExternalNetworkHref(client *Client) (string, error) {
 	}
 
 	for _, extensionLink := range extensions.Link {
-		if extensionLink.Type == "application/vnd.lmicke.admin.vmwExternalNetworkReferences+xml" {
+		if extensionLink.Type == "application/vnd.vmware.admin.vmwExternalNetworkReferences+xml" {
 			return extensionLink.HREF, nil
 		}
 	}

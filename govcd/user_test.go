@@ -1,7 +1,7 @@
 // +build user functional ALL
 
 /*
- * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd

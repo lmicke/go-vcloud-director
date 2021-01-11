@@ -1,7 +1,7 @@
 // +build lb lbAppRule nsxv functional ALL
 
 /*
- * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -30,7 +30,7 @@ func (vcd *TestVCD) Test_LBAppRule(check *C) {
 	// Used for creating
 	lbAppRuleConfig := &types.LbAppRule{
 		Name:   TestLbAppRule,
-		Script: "acl lmicke_page url_beg / lmicke redirect location https://www.lmicke.com/ iflmicke_page",
+		Script: "acl vmware_page url_beg / vmware redirect location https://www.vmware.com/ ifvmware_page",
 	}
 
 	err = deleteLbAppRuleIfExists(*edge, lbAppRuleConfig.Name)

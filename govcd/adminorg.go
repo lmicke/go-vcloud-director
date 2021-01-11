@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -21,7 +21,7 @@ import (
 // Administrators can delete and update orgs with an admin org object.
 // AdminOrg includes all members of the Org element, and adds several
 // elements that can be viewed and modified only by system administrators.
-// Definition: https://code.lmicke.com/apis/220/vcloud#/doc/doc/types/AdminOrgType.html
+// Definition: https://code.vmware.com/apis/220/vcloud#/doc/doc/types/AdminOrgType.html
 type AdminOrg struct {
 	AdminOrg *types.AdminOrg
 	client   *Client
@@ -37,13 +37,13 @@ func NewAdminOrg(cli *Client) *AdminOrg {
 // CreateCatalog creates a catalog with given name and description under the
 // the given organization. Returns an AdminCatalog that contains a creation
 // task.
-// API Documentation: https://code.lmicke.com/apis/220/vcloud#/doc/doc/operations/POST-CreateCatalog.html
+// API Documentation: https://code.vmware.com/apis/220/vcloud#/doc/doc/operations/POST-CreateCatalog.html
 func (adminOrg *AdminOrg) CreateCatalog(name, description string) (AdminCatalog, error) {
 	return CreateCatalog(adminOrg.client, adminOrg.AdminOrg.Link, name, description)
 }
 
 //   Deletes the org, returning an error if the vCD call fails.
-//   API Documentation: https://code.lmicke.com/apis/220/vcloud#/doc/doc/operations/DELETE-Organization.html
+//   API Documentation: https://code.vmware.com/apis/220/vcloud#/doc/doc/operations/DELETE-Organization.html
 func (adminOrg *AdminOrg) Delete(force bool, recursive bool) error {
 	if force && recursive {
 		//undeploys vapps
@@ -99,7 +99,7 @@ func (adminOrg *AdminOrg) Delete(force bool, recursive bool) error {
 }
 
 // Disables the org. Returns an error if the call to vCD fails.
-// API Documentation: https://code.lmicke.com/apis/220/vcloud#/doc/doc/operations/POST-DisableOrg.html
+// API Documentation: https://code.vmware.com/apis/220/vcloud#/doc/doc/operations/POST-DisableOrg.html
 func (adminOrg *AdminOrg) Disable() error {
 	orgHREF, err := url.ParseRequestURI(adminOrg.AdminOrg.HREF)
 	if err != nil {
@@ -113,7 +113,7 @@ func (adminOrg *AdminOrg) Disable() error {
 //   Updates the Org definition from current org struct contents.
 //   Any differences that may be legally applied will be updated.
 //   Returns an error if the call to vCD fails.
-//   API Documentation: https://code.lmicke.com/apis/220/vcloud#/doc/doc/operations/PUT-Organization.html
+//   API Documentation: https://code.vmware.com/apis/220/vcloud#/doc/doc/operations/PUT-Organization.html
 func (adminOrg *AdminOrg) Update() (Task, error) {
 	vcomp := &types.AdminOrg{
 		Xmlns:       types.XMLNamespaceVCloud,
@@ -132,7 +132,7 @@ func (adminOrg *AdminOrg) Update() (Task, error) {
 
 	// Return the task
 	return adminOrg.client.ExecuteTaskRequest(adminOrg.AdminOrg.HREF, http.MethodPut,
-		"application/vnd.lmicke.admin.organization+xml", "error updating Org: %s", vcomp)
+		"application/vnd.vmware.admin.organization+xml", "error updating Org: %s", vcomp)
 }
 
 // Undeploys every vapp within an organization
@@ -339,7 +339,7 @@ func (adminOrg *AdminOrg) FindAdminCatalogRecords(name string) ([]*types.Catalog
 // Otherwise it returns an error. Function allows user to use an AdminOrg
 // to also fetch a Catalog. If user does not have proper credentials to
 // perform administrator tasks then function returns an error.
-// API Documentation: https://code.lmicke.com/apis/220/vcloud#/doc/doc/operations/GET-Catalog-AdminView.html
+// API Documentation: https://code.vmware.com/apis/220/vcloud#/doc/doc/operations/GET-Catalog-AdminView.html
 // Deprecated: Use adminOrg.GetAdminCatalog instead
 func (adminOrg *AdminOrg) FindAdminCatalog(catalogName string) (AdminCatalog, error) {
 	for _, catalog := range adminOrg.AdminOrg.Catalogs.Catalog {

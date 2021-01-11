@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2018 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 // IMPORTANT: DO NOT ADD build tags to this file

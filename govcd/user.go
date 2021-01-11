@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -238,7 +238,7 @@ func retrieveUserWithTimeout(adminOrg *AdminOrg, userName string) (*OrgUser, err
 // This function returns as soon as the user has been created, which could be as
 // little as 200ms or as much as Client.MaxRetryTimeout
 // Mandatory fields are: Name, Role, Password.
-// https://code.lmicke.com/apis/442/vcloud-director#/doc/doc/operations/POST-CreateUser.html
+// https://code.vmware.com/apis/442/vcloud-director#/doc/doc/operations/POST-CreateUser.html
 func (adminOrg *AdminOrg) CreateUser(userConfiguration *types.User) (*OrgUser, error) {
 	err := validateUserForCreation(userConfiguration)
 	if err != nil {
@@ -323,7 +323,7 @@ func (user *OrgUser) GetRoleName() string {
 
 // Delete removes the user, returning an error if the call fails.
 // if requested, it will attempt to take ownership before the removal.
-// API Documentation: https://code.lmicke.com/apis/442/vcloud-director#/doc/doc/operations/DELETE-User.html
+// API Documentation: https://code.vmware.com/apis/442/vcloud-director#/doc/doc/operations/DELETE-User.html
 // Note: in the GUI we need to disable the user before deleting.
 // There is no such constraint with the API.
 //
@@ -396,7 +396,7 @@ func (user *OrgUser) UpdateSimple(userData OrgUserConfiguration) error {
 
 // Update updates the user, using its own configuration data
 // returning an error if the call fails.
-// API Documentation: https://code.lmicke.com/apis/442/vcloud-director#/doc/doc/operations/PUT-User.html
+// API Documentation: https://code.vmware.com/apis/442/vcloud-director#/doc/doc/operations/PUT-User.html
 func (user *OrgUser) Update() error {
 	util.Logger.Printf("[TRACE] Updating user: %s", user.User.Name)
 
@@ -495,7 +495,7 @@ func (user *OrgUser) ChangeRole(roleName string) error {
 // Ownership is transferred to the caller.
 // This is a call to make before deleting. Calling user.DeleteTakeOwnership() will
 // run TakeOwnership before the actual user removal.
-// API Documentation: https://code.lmicke.com/apis/442/vcloud-director#/doc/doc/operations/POST-TakeOwnership.html
+// API Documentation: https://code.vmware.com/apis/442/vcloud-director#/doc/doc/operations/POST-TakeOwnership.html
 func (user *OrgUser) TakeOwnership() error {
 	util.Logger.Printf("[TRACE] Taking ownership from user: %s", user.User.Name)
 

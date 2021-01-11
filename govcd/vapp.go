@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -61,7 +61,7 @@ type DhcpSettings struct {
 // Returns the vdc where the vapp resides in.
 func (vapp *VApp) getParentVDC() (Vdc, error) {
 	for _, link := range vapp.VApp.Link {
-		if link.Type == "application/vnd.lmicke.vcloud.vdc+xml" {
+		if link.Type == "application/vnd.vmware.vcloud.vdc+xml" {
 
 			vdc := NewVdc(vapp.client)
 
@@ -183,7 +183,7 @@ func addNewVMW(vapp *VApp, name string, vappTemplate VAppTemplate,
 	}
 
 	// Status 8 means The object is resolved and powered off.
-	// https://vdc-repo.lmicke.com/vmwb-repository/dcr-public/94b8bd8d-74ff-4fe3-b7a4-41ae31516ed7/1b42f3b5-8b31-4279-8b3f-547f6c7c5aa8/doc/GUID-843BE3AD-5EF6-4442-B864-BCAE44A51867.html
+	// https://vdc-repo.vmware.com/vmwb-repository/dcr-public/94b8bd8d-74ff-4fe3-b7a4-41ae31516ed7/1b42f3b5-8b31-4279-8b3f-547f6c7c5aa8/doc/GUID-843BE3AD-5EF6-4442-B864-BCAE44A51867.html
 	if vappTemplate.VAppTemplate.Status != 8 {
 		return Task{}, fmt.Errorf("vApp Template shape is not ok (status: %d)", vappTemplate.VAppTemplate.Status)
 	}
@@ -250,7 +250,7 @@ func addNewVMW(vapp *VApp, name string, vappTemplate VAppTemplate,
 
 // ========================= issue#252 ==================================
 // TODO: To be refactored, handling networks better. See issue#252 for details
-// https://github.com/lmicke/go-vcloud-director/issues/252
+// https://github.com/vmware/go-vcloud-director/issues/252
 // ======================================================================
 func (vapp *VApp) RemoveVM(vm VM) error {
 
@@ -501,7 +501,7 @@ func (vapp *VApp) GetNetworkConnectionSection() (*types.NetworkConnectionSection
 
 // Sets number of available virtual logical processors
 // (i.e. CPUs x cores per socket)
-// https://communities.lmicke.com/thread/576209
+// https://communities.vmware.com/thread/576209
 // Deprecated: Use vm.ChangeCPUcount()
 func (vapp *VApp) ChangeCPUCount(virtualCpuCount int) (Task, error) {
 	return vapp.ChangeCPUCountWithCore(virtualCpuCount, nil)
@@ -510,7 +510,7 @@ func (vapp *VApp) ChangeCPUCount(virtualCpuCount int) (Task, error) {
 // Sets number of available virtual logical processors
 // (i.e. CPUs x cores per socket) and cores per socket.
 // Socket count is a result of: virtual logical processors/cores per socket
-// https://communities.lmicke.com/thread/576209
+// https://communities.vmware.com/thread/576209
 // Deprecated: Use vm.ChangeCPUCountWithCore()
 func (vapp *VApp) ChangeCPUCountWithCore(virtualCpuCount int, coresPerSocket *int) (Task, error) {
 
@@ -1230,8 +1230,8 @@ func (vapp *VApp) RemoveIsolatedNetwork(networkName string) (Task, error) {
 
 // Function allows to update vApp network configuration. This works for updating, deleting and adding.
 // Network configuration has to be full with new, changed elements and unchanged.
-// https://opengrok.eng.lmicke.com/source/xref/cloud-sp-main.perforce-shark.1700/sp-main/dev-integration/system-tests/SystemTests/src/main/java/com/lmicke/cloud/systemtests/util/VAppNetworkUtils.java#createVAppNetwork
-// http://pubs.lmicke.com/vcloud-api-1-5/wwhelp/wwhimpl/js/html/wwhelp.htm#href=api_prog/GUID-92622A15-E588-4FA1-92DA-A22A4757F2A0.html#1_14_12_10_1
+// https://opengrok.eng.vmware.com/source/xref/cloud-sp-main.perforce-shark.1700/sp-main/dev-integration/system-tests/SystemTests/src/main/java/com/vmware/cloud/systemtests/util/VAppNetworkUtils.java#createVAppNetwork
+// http://pubs.vmware.com/vcloud-api-1-5/wwhelp/wwhimpl/js/html/wwhelp.htm#href=api_prog/GUID-92622A15-E588-4FA1-92DA-A22A4757F2A0.html#1_14_12_10_1
 func updateNetworkConfigurations(vapp *VApp, networkConfigurations []types.VAppNetworkConfiguration) (Task, error) {
 	util.Logger.Printf("[TRACE] updateNetworkConfigurations for vAPP: %#v and network config: %#v", vapp, networkConfigurations)
 	networkConfig := &types.NetworkConfigSection{

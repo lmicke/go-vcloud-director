@@ -30,4 +30,4 @@ an issue or PR.
 
 **Attribution**
 
-This Code of Conduct is adapted from the lmicke Clarity project, available at this page: https://github.com/lmicke/clarity/blob/master/CODE_OF_CONDUCT.md
+This Code of Conduct is adapted from the vmware Clarity project, available at this page: https://github.com/vmware/clarity/blob/master/CODE_OF_CONDUCT.md

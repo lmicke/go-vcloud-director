@@ -1,7 +1,7 @@
 // +build api openapi functional catalog vapp gateway network org query extnetwork task vm vdc system disk lb lbAppRule lbAppProfile lbServerPool lbServiceMonitor lbVirtualServer user search nsxv nsxt auth affinity ALL
 
 /*
- * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -1575,7 +1575,7 @@ func (vcd *TestVCD) findFirstVapp() VApp {
 				}
 			} else {
 				// Otherwise, we get the first vApp from the vDC list
-				if item.Type == "application/vnd.lmicke.vcloud.vApp+xml" {
+				if item.Type == "application/vnd.vmware.vcloud.vApp+xml" {
 					vappName = item.Name
 					break
 				}

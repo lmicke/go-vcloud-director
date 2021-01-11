@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package types
@@ -28,112 +28,112 @@ const (
 
 const (
 	// MimeOrgList mime for org list
-	MimeOrgList = "application/vnd.lmicke.vcloud.orgList+xml"
+	MimeOrgList = "application/vnd.vmware.vcloud.orgList+xml"
 	// MimeOrg mime for org
-	MimeOrg = "application/vnd.lmicke.vcloud.org+xml"
+	MimeOrg = "application/vnd.vmware.vcloud.org+xml"
 	// MimeAdminOrg mime for admin org
-	MimeAdminOrg = "application/vnd.lmicke.admin.organization+xml"
+	MimeAdminOrg = "application/vnd.vmware.admin.organization+xml"
 	// MimeCatalog mime for catalog
-	MimeCatalog = "application/vnd.lmicke.vcloud.catalog+xml"
+	MimeCatalog = "application/vnd.vmware.vcloud.catalog+xml"
 	// MimeCatalogItem mime for catalog item
-	MimeCatalogItem = "application/vnd.lmicke.vcloud.catalogItem+xml"
+	MimeCatalogItem = "application/vnd.vmware.vcloud.catalogItem+xml"
 	// MimeVDC mime for a VDC
-	MimeVDC = "application/vnd.lmicke.vcloud.vdc+xml"
+	MimeVDC = "application/vnd.vmware.vcloud.vdc+xml"
 	// MimeVDC mime for a admin VDC
-	MimeAdminVDC = "application/vnd.lmicke.admin.vdc+xml"
+	MimeAdminVDC = "application/vnd.vmware.admin.vdc+xml"
 	// MimeEdgeGateway mime for an Edge Gateway
-	MimeEdgeGateway = "application/vnd.lmicke.admin.edgeGateway+xml"
+	MimeEdgeGateway = "application/vnd.vmware.admin.edgeGateway+xml"
 	// MimeVAppTemplate mime for a vapp template
-	MimeVAppTemplate = "application/vnd.lmicke.vcloud.vAppTemplate+xml"
+	MimeVAppTemplate = "application/vnd.vmware.vcloud.vAppTemplate+xml"
 	// MimeVApp mime for a vApp
-	MimeVApp = "application/vnd.lmicke.vcloud.vApp+xml"
+	MimeVApp = "application/vnd.vmware.vcloud.vApp+xml"
 	// MimeQueryRecords mime for the query records
-	MimeQueryRecords = "application/vnd.lmicke.vcloud.query.records+xml"
+	MimeQueryRecords = "application/vnd.vmware.vcloud.query.records+xml"
 	// MimeAPIExtensibility mime for api extensibility
-	MimeAPIExtensibility = "application/vnd.lmicke.vcloud.apiextensibility+xml"
+	MimeAPIExtensibility = "application/vnd.vmware.vcloud.apiextensibility+xml"
 	// MimeEntity mime for vcloud entity
-	MimeEntity = "application/vnd.lmicke.vcloud.entity+xml"
+	MimeEntity = "application/vnd.vmware.vcloud.entity+xml"
 	// MimeQueryList mime for query list
-	MimeQueryList = "application/vnd.lmicke.vcloud.query.queryList+xml"
+	MimeQueryList = "application/vnd.vmware.vcloud.query.queryList+xml"
 	// MimeSession mime for a session
-	MimeSession = "application/vnd.lmicke.vcloud.session+xml"
+	MimeSession = "application/vnd.vmware.vcloud.session+xml"
 	// MimeTask mime for task
-	MimeTask = "application/vnd.lmicke.vcloud.task+xml"
+	MimeTask = "application/vnd.vmware.vcloud.task+xml"
 	// MimeError mime for error
-	MimeError = "application/vnd.lmicke.vcloud.error+xml"
+	MimeError = "application/vnd.vmware.vcloud.error+xml"
 	// MimeNetwork mime for a network
-	MimeNetwork = "application/vnd.lmicke.vcloud.network+xml"
+	MimeNetwork = "application/vnd.vmware.vcloud.network+xml"
 	// MimeOrgVdcNetwork mime for an Org VDC network
-	MimeOrgVdcNetwork = "application/vnd.lmicke.vcloud.orgVdcNetwork+xml"
+	MimeOrgVdcNetwork = "application/vnd.vmware.vcloud.orgVdcNetwork+xml"
 	//MimeDiskCreateParams mime for create independent disk
-	MimeDiskCreateParams = "application/vnd.lmicke.vcloud.diskCreateParams+xml"
+	MimeDiskCreateParams = "application/vnd.vmware.vcloud.diskCreateParams+xml"
 	// Mime for VMs
-	MimeVMs = "application/vnd.lmicke.vcloud.vms+xml"
+	MimeVMs = "application/vnd.vmware.vcloud.vms+xml"
 	// Mime for attach or detach independent disk
-	MimeDiskAttachOrDetachParams = "application/vnd.lmicke.vcloud.diskAttachOrDetachParams+xml"
+	MimeDiskAttachOrDetachParams = "application/vnd.vmware.vcloud.diskAttachOrDetachParams+xml"
 	// Mime for Disk
-	MimeDisk = "application/vnd.lmicke.vcloud.disk+xml"
+	MimeDisk = "application/vnd.vmware.vcloud.disk+xml"
 	// Mime for insert or eject media
-	MimeMediaInsertOrEjectParams = "application/vnd.lmicke.vcloud.mediaInsertOrEjectParams+xml"
+	MimeMediaInsertOrEjectParams = "application/vnd.vmware.vcloud.mediaInsertOrEjectParams+xml"
 	// Mime for catalog
-	MimeAdminCatalog = "application/vnd.lmicke.admin.catalog+xml"
+	MimeAdminCatalog = "application/vnd.vmware.admin.catalog+xml"
 	// Mime for virtual hardware section
-	MimeVirtualHardwareSection = "application/vnd.lmicke.vcloud.virtualHardwareSection+xml"
+	MimeVirtualHardwareSection = "application/vnd.vmware.vcloud.virtualHardwareSection+xml"
 	// Mime for networkConnectionSection
-	MimeNetworkConnectionSection = "application/vnd.lmicke.vcloud.networkConnectionSection+xml"
+	MimeNetworkConnectionSection = "application/vnd.vmware.vcloud.networkConnectionSection+xml"
 	// Mime for Item
-	MimeRasdItem = "application/vnd.lmicke.vcloud.rasdItem+xml"
+	MimeRasdItem = "application/vnd.vmware.vcloud.rasdItem+xml"
 	// Mime for guest customization section
-	MimeGuestCustomizationSection = "application/vnd.lmicke.vcloud.guestCustomizationSection+xml"
+	MimeGuestCustomizationSection = "application/vnd.vmware.vcloud.guestCustomizationSection+xml"
 	// Mime for guest customization status
-	MimeGuestCustomizationStatus = "application/vnd.lmicke.vcloud.guestcustomizationstatussection"
+	MimeGuestCustomizationStatus = "application/vnd.vmware.vcloud.guestcustomizationstatussection"
 	// Mime for network config section
-	MimeNetworkConfigSection = "application/vnd.lmicke.vcloud.networkconfigsection+xml"
+	MimeNetworkConfigSection = "application/vnd.vmware.vcloud.networkconfigsection+xml"
 	// Mime for recompose vApp params
-	MimeRecomposeVappParams = "application/vnd.lmicke.vcloud.recomposeVAppParams+xml"
+	MimeRecomposeVappParams = "application/vnd.vmware.vcloud.recomposeVAppParams+xml"
 	// Mime for compose vApp params
-	MimeComposeVappParams = "application/vnd.lmicke.vcloud.composeVAppParams+xml"
+	MimeComposeVappParams = "application/vnd.vmware.vcloud.composeVAppParams+xml"
 	// Mime for undeploy vApp params
-	MimeUndeployVappParams = "application/vnd.lmicke.vcloud.undeployVAppParams+xml"
+	MimeUndeployVappParams = "application/vnd.vmware.vcloud.undeployVAppParams+xml"
 	// Mime for deploy vApp params
-	MimeDeployVappParams = "application/vnd.lmicke.vcloud.deployVAppParams+xml"
+	MimeDeployVappParams = "application/vnd.vmware.vcloud.deployVAppParams+xml"
 	// Mime for VM
-	MimeVM = "application/vnd.lmicke.vcloud.vm+xml"
+	MimeVM = "application/vnd.vmware.vcloud.vm+xml"
 	// Mime for instantiate vApp template params
-	MimeInstantiateVappTemplateParams = "application/vnd.lmicke.vcloud.instantiateVAppTemplateParams+xml"
+	MimeInstantiateVappTemplateParams = "application/vnd.vmware.vcloud.instantiateVAppTemplateParams+xml"
 	// Mime for product section
-	MimeProductSection = "application/vnd.lmicke.vcloud.productSections+xml"
+	MimeProductSection = "application/vnd.vmware.vcloud.productSections+xml"
 	// Mime for metadata
-	MimeMetaData = "application/vnd.lmicke.vcloud.metadata+xml"
+	MimeMetaData = "application/vnd.vmware.vcloud.metadata+xml"
 	// Mime for metadata value
-	MimeMetaDataValue = "application/vnd.lmicke.vcloud.metadata.value+xml"
+	MimeMetaDataValue = "application/vnd.vmware.vcloud.metadata.value+xml"
 	// Mime for a admin network
-	MimeExtensionNetwork = "application/vnd.lmicke.admin.extension.network+xml"
+	MimeExtensionNetwork = "application/vnd.vmware.admin.extension.network+xml"
 	// Mime for an external network
-	MimeExternalNetwork = "application/vnd.lmicke.admin.vmwexternalnet+xml"
+	MimeExternalNetwork = "application/vnd.vmware.admin.vmwexternalnet+xml"
 	// Mime of an Org User
-	MimeAdminUser = "application/vnd.lmicke.admin.user+xml"
+	MimeAdminUser = "application/vnd.vmware.admin.user+xml"
 	// MimeAdminGroup specifies groups
-	MimeAdminGroup = "application/vnd.lmicke.admin.group+xml"
+	MimeAdminGroup = "application/vnd.vmware.admin.group+xml"
 	// MimeOrgLdapSettings
-	MimeOrgLdapSettings = "application/vnd.lmicke.admin.organizationldapsettings+xml"
+	MimeOrgLdapSettings = "application/vnd.vmware.admin.organizationldapsettings+xml"
 	// Mime of vApp network
-	MimeVappNetwork = "application/vnd.lmicke.vcloud.vAppNetwork+xml"
+	MimeVappNetwork = "application/vnd.vmware.vcloud.vAppNetwork+xml"
 	// Mime of access control
-	MimeControlAccess = "application/vnd.lmicke.vcloud.controlAccess+xml"
+	MimeControlAccess = "application/vnd.vmware.vcloud.controlAccess+xml"
 	// Mime of VM capabilities
-	MimeVmCapabilities = "application/vnd.lmicke.vcloud.vmCapabilitiesSection+xml"
+	MimeVmCapabilities = "application/vnd.vmware.vcloud.vmCapabilitiesSection+xml"
 	// Mime of Vdc Compute Policy References
-	MimeVdcComputePolicyReferences = "application/vnd.lmicke.vcloud.vdcComputePolicyReferences+xml"
+	MimeVdcComputePolicyReferences = "application/vnd.vmware.vcloud.vdcComputePolicyReferences+xml"
 	// Mime for Storage profile
-	MimeStorageProfile = "application/vnd.lmicke.admin.vdcStorageProfile+xml "
+	MimeStorageProfile = "application/vnd.vmware.admin.vdcStorageProfile+xml "
 )
 
 const (
-	VMsCDResourceSubType = "lmicke.cdrom.iso"
+	VMsCDResourceSubType = "vmware.cdrom.iso"
 )
 
-// https://blogs.lmicke.com/vapp/2009/11/virtual-hardware-in-ovf-part-1.html
+// https://blogs.vmware.com/vapp/2009/11/virtual-hardware-in-ovf-part-1.html
 
 const (
 	ResourceTypeOther     int = 0
@@ -169,13 +169,13 @@ const (
 )
 
 const (
-	XMLNamespaceVCloud    = "http://www.lmicke.com/vcloud/v1.5"
+	XMLNamespaceVCloud    = "http://www.vmware.com/vcloud/v1.5"
 	XMLNamespaceOVF       = "http://schemas.dmtf.org/ovf/envelope/1"
-	XMLNamespaceVMW       = "http://www.lmicke.com/schema/ovf"
+	XMLNamespaceVMW       = "http://www.vmware.com/schema/ovf"
 	XMLNamespaceXSI       = "http://www.w3.org/2001/XMLSchema-instance"
 	XMLNamespaceRASD      = "http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_ResourceAllocationSettingData"
 	XMLNamespaceVSSD      = "http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_VirtualSystemSettingData"
-	XMLNamespaceExtension = "http://www.lmicke.com/vcloud/extension/v1.5"
+	XMLNamespaceExtension = "http://www.vmware.com/vcloud/extension/v1.5"
 )
 
 // NSX-V Edge gateway API endpoints
@@ -337,9 +337,9 @@ const (
 // Header keys to run operations in tenant context
 const (
 	// HeaderTenantContext requires the Org ID of the tenant
-	HeaderTenantContext = "X-lmicke-VCLOUD-TENANT-CONTEXT"
+	HeaderTenantContext = "X-vmware-VCLOUD-TENANT-CONTEXT"
 	// HeaderAuthContext requires the Org name of the tenant
-	HeaderAuthContext = "X-lmicke-VCLOUD-AUTH-CONTEXT"
+	HeaderAuthContext = "X-vmware-VCLOUD-AUTH-CONTEXT"
 )
 
 const (

@@ -4,7 +4,7 @@ import "encoding/xml"
 
 // VM represents a virtual machine
 // Type: VmType
-// Namespace: http://www.lmicke.com/vcloud/v1.5
+// Namespace: http://www.vmware.com/vcloud/v1.5
 // Description: Represents a virtual machine.
 // Since: 0.9
 type VM struct {
@@ -71,7 +71,7 @@ type VmSpecSection struct {
 	MediaSection      *MediaSection     `xml:"MediaSection,omitempty"`      // The media devices of this VM.
 	DiskSection       *DiskSection      `xml:"DiskSection,omitempty"`       // virtual disks of this VM.
 	HardwareVersion   *HardwareVersion  `xml:"HardwareVersion"`             // vSphere name of Virtual Hardware Version of this VM. Example: vmx-13 - This parameter may be omitted when using the VmSpec to update the contents of an existing VM.
-	VmToolsVersion    string            `xml:"VmToolsVersion,omitempty"`    // lmicke tools version of this VM.
+	VmToolsVersion    string            `xml:"VmToolsVersion,omitempty"`    // vmware tools version of this VM.
 	VirtualCpuType    string            `xml:"VirtualCpuType,omitempty"`    // The capabilities settings for this VM. This parameter may be omitted when using the VmSpec to update the contents of an existing VM.
 	TimeSyncWithHost  *bool             `xml:"TimeSyncWithHost,omitempty"`  // Synchronize the VM's time with the host.
 }

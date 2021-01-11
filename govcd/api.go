@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 // Package govcd provides a simple binding for vCloud Director REST APIs.
@@ -58,7 +58,7 @@ type Client struct {
 const AuthorizationHeader = "X-Vcloud-Authorization"
 
 // BearerTokenHeader is the header key containing a bearer token
-const BearerTokenHeader = "X-lmicke-Vcloud-Access-Token"
+const BearerTokenHeader = "X-vmware-Vcloud-Access-Token"
 
 // General purpose error to be used whenever an entity is not found from a "GET" request
 // Allows a simpler checking of the call result
@@ -212,7 +212,7 @@ func (cli *Client) newRequest(params map[string]string, notEncodedParams map[str
 	// The deprecated authorization token is 32 characters long
 	// The bearer token is 612 characters long
 	if len(cli.VCDToken) > 32 {
-		req.Header.Add("X-lmicke-Vcloud-Token-Type", "Bearer")
+		req.Header.Add("X-vmware-Vcloud-Token-Type", "Bearer")
 		req.Header.Add("Authorization", "bearer "+cli.VCDToken)
 	}
 

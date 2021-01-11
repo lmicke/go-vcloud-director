@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -58,7 +58,7 @@ func (org *Org) Refresh() error {
 func (org *Org) FindCatalog(catalogName string) (Catalog, error) {
 
 	for _, link := range org.Org.Link {
-		if link.Rel == "down" && link.Type == "application/vnd.lmicke.vcloud.catalog+xml" && link.Name == catalogName {
+		if link.Rel == "down" && link.Type == "application/vnd.vmware.vcloud.catalog+xml" && link.Name == catalogName {
 
 			cat := NewCatalog(org.client)
 
@@ -115,7 +115,7 @@ func CreateCatalog(client *Client, links types.LinkList, Name, Description strin
 
 	catalog := NewAdminCatalog(client)
 	_, err := client.ExecuteRequest(createOrgLink.HREF, http.MethodPost,
-		"application/vnd.lmicke.admin.catalog+xml", "error creating catalog: %s", vcomp, catalog.AdminCatalog)
+		"application/vnd.vmware.admin.catalog+xml", "error creating catalog: %s", vcomp, catalog.AdminCatalog)
 
 	return *catalog, err
 }
@@ -123,7 +123,7 @@ func CreateCatalog(client *Client, links types.LinkList, Name, Description strin
 // CreateCatalog creates a catalog with given name and description under
 // the given organization. Returns an Catalog that contains a creation
 // task.
-// API Documentation: https://code.lmicke.com/apis/220/vcloud#/doc/doc/operations/POST-CreateCatalog.html
+// API Documentation: https://code.vmware.com/apis/220/vcloud#/doc/doc/operations/POST-CreateCatalog.html
 func (org *Org) CreateCatalog(name, description string) (Catalog, error) {
 	catalog := NewCatalog(org.client)
 	adminCatalog, err := CreateCatalog(org.client, org.Org.Link, name, description)
@@ -334,7 +334,7 @@ func (org *Org) QueryCatalogList() ([]*types.CatalogRecord, error) {
 func (org *Org) GetTaskList() (*types.TasksList, error) {
 
 	for _, link := range org.Org.Link {
-		if link.Rel == "down" && link.Type == "application/vnd.lmicke.vcloud.tasksList+xml" {
+		if link.Rel == "down" && link.Type == "application/vnd.vmware.vcloud.tasksList+xml" {
 
 			tasksList := &types.TasksList{}
 

@@ -1,7 +1,7 @@
 package govcd
 
 /*
- * Copyright 2020 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2020 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 import (
@@ -36,7 +36,7 @@ func (vdc *Vdc) GetAllVmAffinityRuleList() ([]*types.VmAffinityRule, error) {
 
 	affinityRules := new(types.VmAffinityRules)
 
-	href := vdc.getLinkHref("down", "application/vnd.lmicke.vcloud.vmaffinityrules+xml")
+	href := vdc.getLinkHref("down", "application/vnd.vmware.vcloud.vmaffinityrules+xml")
 	if href == "" {
 		return nil, fmt.Errorf("no link with VM affinity rule found in VDC %s", vdc.Vdc.Name)
 	}
@@ -239,13 +239,13 @@ func (vdc *Vdc) CreateVmAffinityRuleAsync(affinityRuleDef *types.VmAffinityRule)
 
 	affinityRuleDef.Xmlns = types.XMLNamespaceVCloud
 
-	href := vdc.getLinkHref("add", "application/vnd.lmicke.vcloud.vmaffinityrule+xml")
+	href := vdc.getLinkHref("add", "application/vnd.vmware.vcloud.vmaffinityrule+xml")
 	if href == "" {
 		return Task{}, fmt.Errorf("no link with VM affinity rule found in VDC %s", vdc.Vdc.Name)
 	}
 
 	task, err := vdc.client.ExecuteTaskRequest(href, http.MethodPost,
-		"application/vnd.lmicke.vcloud.vmaffinityrule+xml", "error instantiating a new VM affinity rule: %s", affinityRuleDef)
+		"application/vnd.vmware.vcloud.vmaffinityrule+xml", "error instantiating a new VM affinity rule: %s", affinityRuleDef)
 	if err != nil {
 		// if we get any error, we repeat the validation
 		// with a strict check on VM existence.

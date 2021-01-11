@@ -1,7 +1,7 @@
 // +build system functional ALL
 
 /*
- * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -292,7 +292,7 @@ func (vcd *TestVCD) Test_CreateDeleteEdgeGatewayAdvanced(check *C) {
 		Network: &types.Reference{
 			HREF: externalNetwork.HREF,
 			ID:   externalNetwork.ID,
-			Type: "application/vnd.lmicke.admin.network+xml",
+			Type: "application/vnd.vmware.admin.network+xml",
 			Name: externalNetwork.Name,
 		},
 		UseForDefaultRoute:  true,

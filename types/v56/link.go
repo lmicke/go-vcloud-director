@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2018 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package types
@@ -123,7 +123,7 @@ const (
 	RelNextPage               = "nextPage"
 	RelFirstPage              = "firstPage"
 	RelLastPage               = "lastPage"
-	RelInstalllmickeTools     = "installlmickeTools"
+	RelInstallvmwareTools     = "installvmwareTools"
 	RelConsolidate            = "consolidate"
 	RelEntity                 = "entity"
 	RelEntityResolver         = "entityResolver"

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -38,7 +38,7 @@ func (catalogItem *CatalogItem) GetVAppTemplate() (VAppTemplate, error) {
 }
 
 // Deletes the Catalog Item, returning an error if the vCD call fails.
-// Link to API call: https://code.lmicke.com/apis/220/vcloud#/doc/doc/operations/DELETE-CatalogItem.html
+// Link to API call: https://code.vmware.com/apis/220/vcloud#/doc/doc/operations/DELETE-CatalogItem.html
 func (catalogItem *CatalogItem) Delete() error {
 	util.Logger.Printf("[TRACE] Deleting catalog item: %#v", catalogItem.CatalogItem)
 	catalogItemHREF := catalogItem.client.VCDHREF

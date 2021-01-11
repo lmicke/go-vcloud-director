@@ -1,7 +1,7 @@
 // +build network functional ALL
 
 /*
- * Copyright 2019 lmicke, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -249,7 +249,7 @@ func (vcd *TestVCD) Test_CreateUpdateOrgVdcNetworkIso(check *C) {
 					bridged (connected directly to the ParentNetwork),
 				  isolated (not connected to any other network),
 				  natRouted (connected to the ParentNetwork via a NAT service)
-				  https://code.lmicke.com/apis/287/vcloud#/doc/doc/types/OrgVdcNetworkType.html
+				  https://code.vmware.com/apis/287/vcloud#/doc/doc/types/OrgVdcNetworkType.html
 				*/
 				IPScopes: &types.IPScopes{
 					IPScope: []*types.IPScope{&types.IPScope{

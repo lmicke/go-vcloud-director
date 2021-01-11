@@ -6,7 +6,7 @@ cd $SHOME
 SRCROOT=`cd ..; pwd`
 cd $SRCROOT
 
-DESTINATION_SRC=/go/src/github.com/lmicke/go-vcloud-director
+DESTINATION_SRC=/go/src/github.com/vmware/go-vcloud-director
 
 # Build the Docker image using the current uid/gid so
 # repeat iterations of the Jenkins environment can
