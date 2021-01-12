@@ -38,9 +38,9 @@ curl -I -k --header "Accept: application/*;version=${api_version}.0" \
 
 # If successful, the output of this command will include lines like the following
 # X-VCLOUD-AUTHORIZATION: 08a321735de84f1d9ec80c3b3e18fa8b
-# X-vmware-VCLOUD-ACCESS-TOKEN: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yI[562 more characters]
+# X-VMWARE-VCLOUD-ACCESS-TOKEN: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yI[562 more characters]
 #
 # The string after `X-VCLOUD-AUTHORIZATION:` is the old (deprecated) token.
-# The 612-character string after `X-vmware-VCLOUD-ACCESS-TOKEN` is the bearer token
+# The 612-character string after `X-VMWARE-VCLOUD-ACCESS-TOKEN` is the bearer token
 #
 # Note that using cloudapi we will only get the bearer token

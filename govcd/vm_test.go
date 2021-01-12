@@ -1,7 +1,7 @@
 // +build vm functional ALL
 
 /*
-* Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+* Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
 * Copyright 2016 Skyscape Cloud Services.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
@@ -14,7 +14,7 @@ import (
 
 	. "gopkg.in/check.v1"
 
-	"github.com/lmicke/go-vcloud-director/v2/types/v56"
+	"github.com/vmware/go-vcloud-director/v2/types/v56"
 )
 
 func init() {
@@ -488,8 +488,6 @@ func (vcd *TestVCD) Test_AnswerVmQuestion(check *C) {
 	if vmName == "" {
 		check.Skip("skipping test because no VM is found")
 	}
-
-	fmt.Printf("Running: %s\n", check.TestName())
 
 	vm := NewVM(&vcd.client.Client)
 	vm.VM = &vmType

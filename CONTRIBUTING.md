@@ -70,7 +70,7 @@ to adapt it to your own work style.
 
 ### Sign the Contributor License Agreement (CLA)
 
-vmware Apache-licensed projects require all contributors to sign a CLA. 
+VMware Apache-licensed projects require all contributors to sign a CLA. 
 Visit https://cla.vmware.com and follow steps presented there. 
 
 ### Fork the Repo

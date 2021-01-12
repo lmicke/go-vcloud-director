@@ -8,16 +8,16 @@
 
 
 # This check will find files with a copyright for any year
-vmware_any_copyright='Copyright \d\d\d\d vmware'
+vmware_any_copyright='Copyright \d\d\d\d VMware'
 
 this_year=$(date +%Y)
 last_year=$((this_year-1))
 
 # This check will find files with a copyright for the current year
-vmware_latest_copyright="Copyright $this_year vmware"
+vmware_latest_copyright="Copyright $this_year VMware"
 
 # This check will find files with a copyright for last year
-vmware_last_year_copyright="Copyright $last_year vmware"
+vmware_last_year_copyright="Copyright $last_year VMware"
 exit_code=0
 
 modified_files=$(git status -uno | grep "modified:" | awk '{print $2}')

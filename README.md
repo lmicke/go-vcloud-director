@@ -4,7 +4,7 @@ This repo contains the `go-vcloud-director` package which implements
 an SDK for vCloud Director. The project serves the needs of Golang
 developers who need to integrate with vCloud Director. It is also the
 basis of the [vCD Terraform
-Provider](https://github.com/terraform-providers/terraform-provider-vcd).
+Provider](https://github.com/vmware/terraform-provider-vcd).
 
 ## Contributions ##
 
@@ -37,7 +37,7 @@ To show the SDK in action run the example:
 ```
 mkdir ~/govcd_example
 go mod init govcd_example
-go get github.com/lmicke/go-vcloud-director/v2@master
+go get github.com/vmware/go-vcloud-director/v2@master
 go build -o example
 ./example user_name "password" org_name vcd_IP vdc_name 
 ```
@@ -51,7 +51,7 @@ import (
 	"net/url"
 	"os"
 
-	"github.com/lmicke/go-vcloud-director/v2/govcd"
+	"github.com/vmware/go-vcloud-director/v2/govcd"
 )
 
 type Config struct {

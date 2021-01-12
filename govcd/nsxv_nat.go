@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/lmicke/go-vcloud-director/v2/types/v56"
+	"github.com/vmware/go-vcloud-director/v2/types/v56"
 )
 
 // requestEdgeNatRules nests EdgeNatRule as a convenience for unmarshalling POST requests

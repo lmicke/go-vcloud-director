@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -15,8 +15,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/lmicke/go-vcloud-director/v2/types/v56"
-	"github.com/lmicke/go-vcloud-director/v2/util"
+	"github.com/vmware/go-vcloud-director/v2/types/v56"
+	"github.com/vmware/go-vcloud-director/v2/util"
 )
 
 type VM struct {
@@ -1032,7 +1032,7 @@ func (vm *VM) WaitForDhcpIpByNicIndexes(nicIndexes []int, maxWaitSeconds int, us
 				maxWaitSeconds, nicIndexes, strings.Join(ipSlice, ", "))
 			return ipSlice, true, nil
 		case <-tick.C:
-			// Step 1 check if vmware tools reported IPs in NetworkConnectionSection (HTML5 UI reads it to show IPs as well).
+			// Step 1 check if VMware tools reported IPs in NetworkConnectionSection (HTML5 UI reads it to show IPs as well).
 			// Also populate MAC addresses into nicStates structure for later usage.
 			nicStates, err = vm.getIpsMacsByNicIndexes(nicStates)
 			if err != nil {

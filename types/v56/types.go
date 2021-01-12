@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 // Package types/v56 provider all types which are used by govcd package in order to perform API
@@ -135,7 +135,7 @@ type NetworkFeatures struct {
 // Description: A list of IP addresses.
 // Since: 0.9
 type IPAddresses struct {
-	IPAddress string `xml:"IpAddress,omitempty"` // An IP address.
+	IPAddress []string `xml:"IpAddress,omitempty"` // A list of IP addresses.
 }
 
 // IPRanges represents a list of IP ranges.
@@ -372,10 +372,10 @@ type OrgVDCNetwork struct {
 	Tasks           *TasksInProgress      `xml:"Tasks,omitempty"`
 }
 
-// SupportedHardwareVersions contains a list of vmware virtual hardware versions supported in this vDC.
+// SupportedHardwareVersions contains a list of VMware virtual hardware versions supported in this vDC.
 // Type: SupportedHardwareVersionsType
 // Namespace: http://www.vmware.com/vcloud/v1.5
-// Description: Contains a list of vmware virtual hardware versions supported in this vDC.
+// Description: Contains a list of VMware virtual hardware versions supported in this vDC.
 // Since: 1.5
 type SupportedHardwareVersions struct {
 	SupportedHardwareVersion []string `xml:"SupportedHardwareVersion,omitempty"` // A virtual hardware version supported in this vDC.
@@ -603,7 +603,7 @@ type ComputeCapacity struct {
 // Description: A reference to a resource. Contains an href attribute and optional name and type attributes.
 // Since: 0.9
 type Reference struct {
-	HREF string `xml:"href,attr"`
+	HREF string `xml:"href,attr,omitempty"`
 	ID   string `xml:"id,attr,omitempty"`
 	Type string `xml:"type,attr,omitempty"`
 	Name string `xml:"name,attr,omitempty"`

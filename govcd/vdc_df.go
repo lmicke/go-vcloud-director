@@ -31,7 +31,8 @@ func (dfw *DFW) EnableDistributedFirewall(VdcID string) (string, error) {
 	dfwURL := base.ResolveReference(add)
 	log.Printf("[DEBUG] Distributed Firewall URL is: %s", dfwURL.String())
 
-	_, err = dfw.Client.ExecuteRequest(dfwURL.String(), http.MethodPost, "", "error enabling dfw: %s", nil, nil)
+	resp, err := dfw.Client.ExecuteRequest(dfwURL.String(), http.MethodPost, "", "error enabling dfw: %s", nil, nil)
+	log.Printf("Response: %v", resp)
 	if err != nil {
 		return dfwURL.String(), err
 	}

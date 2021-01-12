@@ -1,7 +1,7 @@
 // +build extnetwork network functional openapi ALL
 
 /*
- * Copyright 2020 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2020 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -9,7 +9,7 @@ package govcd
 import (
 	"fmt"
 
-	"github.com/lmicke/go-vcloud-director/v2/types/v56"
+	"github.com/vmware/go-vcloud-director/v2/types/v56"
 	. "gopkg.in/check.v1"
 )
 
@@ -21,6 +21,11 @@ func (vcd *TestVCD) Test_CreateExternalNetworkV2NsxtVrf(check *C) {
 	// The documented backing type of NSX-T VRF router is "NSXT_VRF_TIER0" (types.ExternalNetworkBackingTypeNsxtVrfTier0Router)
 	// but although it is documented - it fails and requires the same "NSXT_TIER0" (types.ExternalNetworkBackingTypeNsxtTier0Router)
 	// backing type to be specified
+	// As of 10.1.2 release it is not officially supported (support only introduced in 10.2.0) therefore skipping this test for
+	// 10.1.X. 10.1.1 allowed to create it, but 10.1.2 introduced a validator and throws error.
+	if vcd.client.Client.APIVCDMaxVersionIs("< 35") {
+		check.Skip("NSX-T VRF-Lite backed external networks are officially supported only in 10.2.0+")
+	}
 	vcd.testCreateExternalNetworkV2Nsxt(check, vcd.config.VCD.Nsxt.Tier0routerVrf, types.ExternalNetworkBackingTypeNsxtTier0Router)
 }
 

@@ -1,7 +1,7 @@
 // +build functional openapi ALL
 
 /*
- * Copyright 2020 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2020 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -14,7 +14,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/lmicke/go-vcloud-director/v2/types/v56"
+	"github.com/vmware/go-vcloud-director/v2/types/v56"
 
 	. "gopkg.in/check.v1"
 )
@@ -294,6 +294,9 @@ func getAuditTrailTimestampWithElements(elementCount int, check *C, vcd *TestVCD
 	} else {
 		singleElement = onePageAuditTrail[(elementCount - 1)]
 	}
-	return singleElement.Timestamp
 
+	timeFormat, err := time.Parse("2006-01-02T15:04:05.000+0000", singleElement.Timestamp)
+	check.Assert(err, IsNil)
+
+	return timeFormat.Format(types.FiqlQueryTimestampFormat)
 }

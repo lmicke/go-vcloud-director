@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 // Package govcd provides a simple binding for vCloud Director REST APIs.
@@ -19,8 +19,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/lmicke/go-vcloud-director/v2/types/v56"
-	"github.com/lmicke/go-vcloud-director/v2/util"
+	"github.com/vmware/go-vcloud-director/v2/types/v56"
+	"github.com/vmware/go-vcloud-director/v2/util"
 )
 
 // Client provides a client to vCloud Director, values can be populated automatically using the Authenticate method.
@@ -58,7 +58,7 @@ type Client struct {
 const AuthorizationHeader = "X-Vcloud-Authorization"
 
 // BearerTokenHeader is the header key containing a bearer token
-const BearerTokenHeader = "X-vmware-Vcloud-Access-Token"
+const BearerTokenHeader = "X-Vmware-Vcloud-Access-Token"
 
 // General purpose error to be used whenever an entity is not found from a "GET" request
 // Allows a simpler checking of the call result
@@ -212,7 +212,7 @@ func (cli *Client) newRequest(params map[string]string, notEncodedParams map[str
 	// The deprecated authorization token is 32 characters long
 	// The bearer token is 612 characters long
 	if len(cli.VCDToken) > 32 {
-		req.Header.Add("X-vmware-Vcloud-Token-Type", "Bearer")
+		req.Header.Add("X-Vmware-Vcloud-Token-Type", "Bearer")
 		req.Header.Add("Authorization", "bearer "+cli.VCDToken)
 	}
 

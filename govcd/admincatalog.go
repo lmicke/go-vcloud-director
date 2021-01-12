@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/lmicke/go-vcloud-director/v2/types/v56"
+	"github.com/vmware/go-vcloud-director/v2/types/v56"
 )
 
 // AdminCatalog is a admin view of a vCloud Director Catalog
@@ -47,9 +47,10 @@ func (adminCatalog *AdminCatalog) Update() error {
 		Description: adminCatalog.AdminCatalog.Description,
 	}
 	vcomp := &types.AdminCatalog{
-		Xmlns:       types.XMLNamespaceVCloud,
-		Catalog:     *reqCatalog,
-		IsPublished: adminCatalog.AdminCatalog.IsPublished,
+		Xmlns:                  types.XMLNamespaceVCloud,
+		Catalog:                *reqCatalog,
+		CatalogStorageProfiles: adminCatalog.AdminCatalog.CatalogStorageProfiles,
+		IsPublished:            adminCatalog.AdminCatalog.IsPublished,
 	}
 	catalog := &types.AdminCatalog{}
 	_, err := adminCatalog.client.ExecuteRequest(adminCatalog.AdminCatalog.HREF, http.MethodPut,

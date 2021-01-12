@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package types
@@ -329,17 +329,19 @@ const (
 	OpenApiEndpointRoles                      = "roles/"
 	OpenApiEndpointAuditTrail                 = "auditTrail/"
 	OpenApiEndpointImportableTier0Routers     = "nsxTResources/importableTier0Routers"
+	OpenApiEndpointEdgeClusters               = "nsxTResources/edgeClusters"
 	OpenApiEndpointExternalNetworks           = "externalNetworks/"
 	OpenApiEndpointVdcComputePolicies         = "vdcComputePolicies/"
 	OpenApiEndpointVdcAssignedComputePolicies = "vdcs/%s/computePolicies"
+	OpenApiEndpointEdgeGateways               = "edgeGateways/"
 )
 
 // Header keys to run operations in tenant context
 const (
 	// HeaderTenantContext requires the Org ID of the tenant
-	HeaderTenantContext = "X-vmware-VCLOUD-TENANT-CONTEXT"
+	HeaderTenantContext = "X-VMWARE-VCLOUD-TENANT-CONTEXT"
 	// HeaderAuthContext requires the Org name of the tenant
-	HeaderAuthContext = "X-vmware-VCLOUD-AUTH-CONTEXT"
+	HeaderAuthContext = "X-VMWARE-VCLOUD-AUTH-CONTEXT"
 )
 
 const (

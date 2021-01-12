@@ -1,6 +1,6 @@
 # Open API consumption using low level functions and RAW JSON structures
 
-This example demonstrates how to consume new [OpenAPI](https://vdc-download.vmware.com/vmwb-repository/dcr-public/71f952e6-c14b-417d-8749-dbb5ff2dd48a/9b26a7c0-0cee-40a2-8c01-2f15472324cf/com.vmware.vmware_cloud_director.openapi_34_0.pdf) in vmware Cloud Director. 
+This example demonstrates how to consume new [OpenAPI](https://vdc-download.vmware.com/vmwb-repository/dcr-public/71f952e6-c14b-417d-8749-dbb5ff2dd48a/9b26a7c0-0cee-40a2-8c01-2f15472324cf/com.vmware.vmware_cloud_director.openapi_34_0.pdf) in VMware Cloud Director. 
 
 OpenAPI low level functions consist of the following to match REST API:
 * OpenApiGetAllItems (FIQL filtering can be applied to narrow down results)

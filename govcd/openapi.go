@@ -1,7 +1,7 @@
 package govcd
 
 /*
- * Copyright 2020 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2020 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 import (
@@ -17,8 +17,8 @@ import (
 
 	"github.com/peterhellberg/link"
 
-	"github.com/lmicke/go-vcloud-director/v2/types/v56"
-	"github.com/lmicke/go-vcloud-director/v2/util"
+	"github.com/vmware/go-vcloud-director/v2/types/v56"
+	"github.com/vmware/go-vcloud-director/v2/util"
 )
 
 // This file contains generalised low level methods to interact with VCD OpenAPI REST endpoints as documented in
@@ -608,7 +608,7 @@ func (client *Client) newOpenApiRequest(apiVersion string, params url.Values, me
 		// The bearer token is 612 characters long
 		if len(client.VCDToken) > 32 {
 			req.Header.Add("Authorization", "bearer "+client.VCDToken)
-			req.Header.Add("X-vmware-Vcloud-Token-Type", "Bearer")
+			req.Header.Add("X-Vmware-Vcloud-Token-Type", "Bearer")
 		}
 		// Add the Accept header for VCD
 		acceptMime := types.JSONMime + ";version=" + apiVersion

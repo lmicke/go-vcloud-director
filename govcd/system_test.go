@@ -1,7 +1,7 @@
 // +build system functional ALL
 
 /*
- * Copyright 2019 vmware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
+ * Copyright 2019 VMware, Inc.  All rights reserved.  Licensed under the Apache v2 License.
  */
 
 package govcd
@@ -11,8 +11,8 @@ import (
 
 	. "gopkg.in/check.v1"
 
-	"github.com/lmicke/go-vcloud-director/v2/types/v56"
-	"github.com/lmicke/go-vcloud-director/v2/util"
+	"github.com/vmware/go-vcloud-director/v2/types/v56"
+	"github.com/vmware/go-vcloud-director/v2/util"
 )
 
 // Tests Org retrieval by name, by ID, and by a combination of name and ID
