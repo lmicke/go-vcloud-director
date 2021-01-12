@@ -29,7 +29,7 @@ func (dfw *DFW) EnableDistributedFirewall(VdcID string) (string, error) {
 		return "", fmt.Errorf("Error building url for DFW activation: %s", err)
 	}
 	dfwURL := base.ResolveReference(add)
-	log.Printf("[DEBUG] Distributed Firewall URL is: %s", dfwURL.String())
+	log.Printf("[DEBUG] Enable Distributed Firewall URL is: %s", dfwURL.String())
 
 	resp, err := dfw.Client.ExecuteRequest(dfwURL.String(), http.MethodPost, "", "error enabling dfw: %s", nil, nil)
 	log.Printf("Response for Enabling: %v", resp)
@@ -46,8 +46,8 @@ func (dfw *DFW) CheckDistributedFirewall(VdcId string) (bool, error) {
 		return false, fmt.Errorf("Error building url for DFW check: %s", err)
 	}
 	dfwURL := base.ResolveReference(add)
-
-	resp, err := dfw.Client.ExecuteRequest(dfwURL.String(), http.MethodGet, "", "error reaching dfwURL: %s", nil, dfw.Section)
+	log.Printf("[DEBUG] Check Distributed Firewall URL is: %s", dfwURL.String())
+	resp, err := dfw.Client.ExecuteRequest(dfwURL.String(), http.MethodGet, "", "error reaching dfwURL: %s", nil, nil)
 	log.Printf("Response for Check Firewall: %v", resp)
 	if err != nil {
 		return false, err
