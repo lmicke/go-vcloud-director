@@ -13,7 +13,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
 )
 
 func TestGetPseudoUUID(t *testing.T) {

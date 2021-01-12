@@ -17,8 +17,8 @@ import (
 
 	"github.com/peterhellberg/link"
 
-	"github.com/vmware/go-vcloud-director/v2/types/v56"
-	"github.com/vmware/go-vcloud-director/v2/util"
+	"github.com/lmicke/go-vcloud-director/v2/types/v56"
+	"github.com/lmicke/go-vcloud-director/v2/util"
 )
 
 // This file contains generalised low level methods to interact with VCD OpenAPI REST endpoints as documented in
