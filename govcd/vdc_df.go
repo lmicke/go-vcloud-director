@@ -52,7 +52,7 @@ func (dfw *DFW) CheckDistributedFirewall(VdcId string) (bool, error) {
 	if err != nil {
 		return false, err
 	}
-	if resp.StatusCode == 404 {
+	if (resp.StatusCode == 404) || (resp.StatusCode == 400) {
 		return false, nil
 	}
 	if resp.StatusCode == 200 {

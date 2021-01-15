@@ -361,5 +361,5 @@ const (
 	// DFWOn is needed to check if vdc is a valid object for network api or to enable Distributed Firewall
 	DFWOn = "/network/firewall/vdc/"
 	//DFWRequest is needed to get information about the DFW in VDC or add rules to DFW
-	DFWRequest = "/api/network/firewall/globalroot-0/config/layer3sections/"
+	DFWRequest = "/network/firewall/globalroot-0/config/layer3sections/"
 )
