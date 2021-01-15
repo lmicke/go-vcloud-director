@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"strings"
 
 	"github.com/lmicke/go-vcloud-director/v2/types/v56"
 )
@@ -22,9 +23,20 @@ func NewDFW(cli *Client) *DFW {
 	}
 }
 
+func urnToUID(urn string) string {
+
+	if isUrn(urn) {
+		uid := strings.TrimLeft(urn, "urn:vcloud:vdc:")
+		return uid
+	}
+	return urn
+}
+
 func (dfw *DFW) EnableDistributedFirewall(VdcID string) (string, error) {
+
 	base := dfw.Client.VCDHREF
-	add, err := url.Parse(types.DFWOn + VdcID + "?append=true")
+	ID := urnToUID(VdcID)
+	add, err := url.Parse(types.DFWOn + ID + "?append=true")
 	if err != nil {
 		return "", fmt.Errorf("Error building url for DFW activation: %s", err)
 	}
@@ -39,9 +51,10 @@ func (dfw *DFW) EnableDistributedFirewall(VdcID string) (string, error) {
 	return dfwURL.String(), nil
 }
 
-func (dfw *DFW) CheckDistributedFirewall(VdcId string) (bool, error) {
+func (dfw *DFW) CheckDistributedFirewall(VdcID string) (bool, error) {
 	base := dfw.Client.VCDHREF
-	add, err := url.Parse(types.DFWRequest + VdcId)
+	ID := urnToUID(VdcID)
+	add, err := url.Parse(types.DFWRequest + ID)
 	if err != nil {
 		return false, fmt.Errorf("Error building url for DFW check: %s", err)
 	}
@@ -62,9 +75,10 @@ func (dfw *DFW) CheckDistributedFirewall(VdcId string) (bool, error) {
 	return false, fmt.Errorf("Unexptected Status Code %s", resp.Status)
 }
 
-func (dfw *DFW) DeleteDistributedFirewall(VdcId string) error {
+func (dfw *DFW) DeleteDistributedFirewall(VdcID string) error {
 	base := dfw.Client.VCDHREF
-	add, err := url.Parse(types.DFWRequest + VdcId)
+	ID := urnToUID(VdcID)
+	add, err := url.Parse(types.DFWOn + ID)
 	if err != nil {
 		return fmt.Errorf("Error building url for DFW Delete: %s", err)
 	}
