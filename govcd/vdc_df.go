@@ -170,6 +170,8 @@ type DFWAppliedTo struct {
 func (cli *Client) NewRequestWithCustomHeader(params map[string]string, notEncodedParams map[string]string, method string, reqUrl url.URL, body io.Reader, etag string) *http.Request {
 	headers := make(http.Header)
 	headers.Add("If-Match", etag)
+	headers.Add("Accept", "application/xml;charset=UTF-8")
+	headers.Add("Content-Type", "application/xml;charset=UTF-8")
 	return cli.newRequest(params, nil, method, reqUrl, body, cli.APIVersion, headers)
 
 }
