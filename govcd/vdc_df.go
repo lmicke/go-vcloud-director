@@ -23,6 +23,7 @@ func NewDFW(cli *Client) *DFW {
 	return &DFW{
 		Section: &DFWSection{},
 		Client:  cli,
+		Etag:    "",
 	}
 }
 
