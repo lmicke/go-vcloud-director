@@ -168,7 +168,7 @@ type DFWAppliedTo struct {
 // Update Request with Custom Etag Header:
 
 func (cli *Client) NewRequestWithCustomHeader(params map[string]string, notEncodedParams map[string]string, method string, reqUrl url.URL, body io.Reader, etag string) *http.Request {
-	var headers http.Header
+	headers := make(http.Header)
 	headers.Add("If-Match", etag)
 	return cli.newRequest(params, nil, method, reqUrl, body, cli.APIVersion, headers)
 
