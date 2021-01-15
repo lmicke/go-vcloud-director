@@ -23,7 +23,7 @@ func NewDFW(cli *Client) *DFW {
 	return &DFW{
 		Section: &DFWSection{},
 		Client:  cli,
-		Etag:    "",
+		Etag:    "None",
 	}
 }
 
@@ -77,7 +77,8 @@ func (dfw *DFW) CheckDistributedFirewall(VdcID string) (bool, error) {
 	}
 
 	header := resp.Header
-	dfw.Etag = header.Get("ETag")
+	dfw.Etag = header.Get("Etag")
+	log.Printf("[DEBUG] Etag after Check Firewall: %s", dfw.Etag)
 
 	return false, fmt.Errorf("Unexptected Status Code %s", resp.Status)
 }
@@ -111,11 +112,10 @@ func (dfw *DFW) UpdateDistributedFirewall(VdcID string) error {
 	}
 	dfwURL := base.ResolveReference(add)
 	log.Printf("[DEBUG] Update Distributed Firewall URL is: %s", dfwURL.String())
-	log.Printf("[DEBUG] Etag is: %s", dfw.Etag)
 	// Build default Change
 	dfw.Section.Rules[0].Name = "Default Deny"
 	dfw.Section.Rules[0].Action = "deny"
-
+	log.Printf("[DEBUG] Etag is: %s", dfw.Etag)
 	resp, err := dfw.Client.ExecuteRequestWithCustomHeader(dfwURL.String(), http.MethodPut, "", "error reaching dfwURL: %s", dfw.Etag, dfw.Section, dfw.Section)
 	log.Printf("[DEBUG] Response for Update  Firewall: %v", resp)
 	if err != nil {
