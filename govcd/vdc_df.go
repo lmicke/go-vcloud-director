@@ -77,7 +77,7 @@ func (dfw *DFW) CheckDistributedFirewall(VdcID string) (bool, error) {
 	}
 
 	header := resp.Header
-	dfw.Etag = header.Get("Etag")
+	dfw.Etag = header["ETag"][0]
 	log.Printf("[DEBUG] Etag after Check Firewall: %s", dfw.Etag)
 
 	return false, fmt.Errorf("Unexptected Status Code %s", resp.Status)
