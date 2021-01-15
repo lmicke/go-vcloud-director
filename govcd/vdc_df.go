@@ -16,14 +16,14 @@ import (
 type DFW struct {
 	Section *DFWSection
 	Client  *Client
-	Etag    *string
+	Etag    string
 }
 
 func NewDFW(cli *Client) *DFW {
 	return &DFW{
 		Section: &DFWSection{},
 		Client:  cli,
-		Etag:    nil,
+		Etag:    "Test",
 	}
 }
 
@@ -73,12 +73,11 @@ func (dfw *DFW) CheckDistributedFirewall(VdcID string) (bool, error) {
 		return false, nil
 	}
 	if resp.StatusCode == 200 {
+		header := resp.Header
+		dfw.Etag = header["ETag"][0]
+		log.Printf("[DEBUG] Etag after Check Firewall: %s", dfw.Etag)
 		return true, nil
 	}
-
-	header := resp.Header
-	*dfw.Etag = header["ETag"][0]
-	log.Printf("[DEBUG] Etag after Check Firewall: %s", dfw.Etag)
 
 	return false, fmt.Errorf("Unexptected Status Code %s", resp.Status)
 }
