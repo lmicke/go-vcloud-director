@@ -17,7 +17,7 @@ type DFW struct {
 
 func NewDFW(cli *Client) *DFW {
 	return &DFW{
-		Section: new(DFWSection),
+		Section: &DFWSection{},
 		Client:  cli,
 	}
 }
@@ -47,7 +47,7 @@ func (dfw *DFW) CheckDistributedFirewall(VdcId string) (bool, error) {
 	}
 	dfwURL := base.ResolveReference(add)
 	log.Printf("[DEBUG] Check Distributed Firewall URL is: %s", dfwURL.String())
-	resp, err := dfw.Client.ExecuteRequest(dfwURL.String(), http.MethodGet, "", "error reaching dfwURL: %s", nil, nil)
+	resp, err := dfw.Client.ExecuteRequest(dfwURL.String(), http.MethodGet, "", "error reaching dfwURL: %s", nil, dfw.Section)
 	log.Printf("Response for Check Firewall: %v", resp)
 	if err != nil {
 		return false, err
@@ -60,6 +60,26 @@ func (dfw *DFW) CheckDistributedFirewall(VdcId string) (bool, error) {
 	}
 
 	return false, fmt.Errorf("Unexptected Status Code %s", resp.Status)
+}
+
+func (dfw *DFW) DeleteDistributedFirewall(VdcId string) error {
+	base := dfw.Client.VCDHREF
+	add, err := url.Parse(types.DFWRequest + VdcId)
+	if err != nil {
+		return fmt.Errorf("Error building url for DFW Delete: %s", err)
+	}
+	dfwURL := base.ResolveReference(add)
+	log.Printf("[DEBUG] Delete Distributed Firewall URL is: %s", dfwURL.String())
+	resp, err := dfw.Client.ExecuteRequest(dfwURL.String(), http.MethodDelete, "", "error reaching dfwURL: %s", nil, nil)
+	log.Printf("[DEBUG] Response for Delete Firewall: %v", resp)
+	if err != nil {
+		return err
+	}
+	if resp.StatusCode != 204 {
+		return fmt.Errorf("Deleting Firewall was not successfull, API Response is:  %s", resp.Status)
+	}
+	return nil
+
 }
 
 type DFWSection struct {
