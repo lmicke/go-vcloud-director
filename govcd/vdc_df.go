@@ -74,7 +74,8 @@ func (dfw *DFW) CheckDistributedFirewall(VdcID string) (bool, error) {
 	}
 	if resp.StatusCode == 200 {
 		header := resp.Header
-		dfw.Etag = header["ETag"][0]
+		//dfw.Etag = header["ETag"][0]
+		dfw.Etag = header.Get("ETag")
 		log.Printf("[DEBUG] Etag after Check Firewall: %s", dfw.Etag)
 		return true, nil
 	}
