@@ -142,9 +142,9 @@ type DFWSection struct {
 }
 
 type DFWRule struct {
-	Name          string         `xml:"name"`
-	Action        string         `xml:"action"`
-	AppliedToList []DFWAppliedTo `xml:"appliedToList"`
+	Name          string         `xml:"name"`          //optional
+	Action        string         `xml:"action"`        //must allow, deny
+	AppliedToList []DFWAppliedTo `xml:"appliedToList"` //Kandidaten ORG_VDC, VMs, Netzwerke, Security Groups, Edge
 	SectionID     int            `xml:"sectionId"`
 	Direction     string         `xml:"direction"`
 	PacketType    string         `xml:"packetType"`
@@ -155,9 +155,9 @@ type DFWRule struct {
 }
 
 type DFWApplied struct {
-	Name    string `xml:"name"`
+	Name    string `xml:"name"` //ToDo: Namen rausfinden
 	Value   string `xml:"value"`
-	Type    string `xml:"type"`
+	Type    string `xml:"type"` //ToDo: Types rausfinden
 	IsValid bool   `xml:"isValid"`
 }
 
