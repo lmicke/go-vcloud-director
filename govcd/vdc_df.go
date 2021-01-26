@@ -5,6 +5,7 @@ import (
 	"encoding/xml"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"net/url"
@@ -117,7 +118,8 @@ func (dfw *DFW) UpdateDistributedFirewall(VdcID string) error {
 	//dfw.Section.Rules[0].Action = "deny"
 	log.Printf("[DEBUG] Etag is: %s", dfw.Etag)
 	resp, err := dfw.Client.ExecuteRequestWithCustomHeader(dfwURL.String(), http.MethodPut, "", "error reaching dfwURL: %s", dfw.Etag, dfw.Section, dfw.Section)
-	log.Printf("[DEBUG] Response for Update  Firewall: %v", resp.Body)
+	body, _ := ioutil.ReadAll(resp.Body)
+	log.Printf("[DEBUG] Response for Update  Firewall: %s", string(body))
 	if err != nil {
 		return err
 	}
@@ -209,7 +211,7 @@ func (cli *Client) ExecuteRequestWithCustomHeader(pathURL, requestType, contentT
 		return resp, fmt.Errorf(errorMessage, err)
 	}
 
-	var nsxError types.NSXError
+	nsxError := types.NSXError{}
 	if resp.StatusCode == 400 {
 		if err = decodeBody(types.BodyTypeXML, resp, nsxError); err != nil {
 			return resp, fmt.Errorf("error decoding response: %s", err)
