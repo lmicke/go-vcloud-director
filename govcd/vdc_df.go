@@ -112,9 +112,9 @@ func (dfw *DFW) UpdateDistributedFirewall(VdcID string) error {
 	}
 	dfwURL := base.ResolveReference(add)
 	log.Printf("[DEBUG] Update Distributed Firewall URL is: %s", dfwURL.String())
-	// Build default Change
-	dfw.Section.Rules[0].Name = "Default Deny"
-	dfw.Section.Rules[0].Action = "deny"
+	// Build default Change moved to terraform resource
+	//dfw.Section.Rules[0].Name = "Default Deny"
+	//dfw.Section.Rules[0].Action = "deny"
 	log.Printf("[DEBUG] Etag is: %s", dfw.Etag)
 	resp, err := dfw.Client.ExecuteRequestWithCustomHeader(dfwURL.String(), http.MethodPut, "", "error reaching dfwURL: %s", dfw.Etag, dfw.Section, dfw.Section)
 	log.Printf("[DEBUG] Response for Update  Firewall: %v", resp)
@@ -122,10 +122,9 @@ func (dfw *DFW) UpdateDistributedFirewall(VdcID string) error {
 		return err
 	}
 	if resp.StatusCode != 200 {
-		return fmt.Errorf("Deleting Firewall was not successfull, API Response is:  %s", resp.Status)
+		return fmt.Errorf("Updating Firewall was not successfull, API Response is:  %s", resp.Status)
 	}
 	return nil
-
 }
 
 type DFWSection struct {
