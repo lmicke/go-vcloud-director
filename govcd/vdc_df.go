@@ -117,7 +117,7 @@ func (dfw *DFW) UpdateDistributedFirewall(VdcID string) error {
 	//dfw.Section.Rules[0].Action = "deny"
 	log.Printf("[DEBUG] Etag is: %s", dfw.Etag)
 	resp, err := dfw.Client.ExecuteRequestWithCustomHeader(dfwURL.String(), http.MethodPut, "", "error reaching dfwURL: %s", dfw.Etag, dfw.Section, dfw.Section)
-	log.Printf("[DEBUG] Response for Update  Firewall: %v", resp)
+	log.Printf("[DEBUG] Response for Update  Firewall: %v", resp.Body)
 	if err != nil {
 		return err
 	}
@@ -207,6 +207,14 @@ func (cli *Client) ExecuteRequestWithCustomHeader(pathURL, requestType, contentT
 	resp, err := cli.Http.Do(req)
 	if err != nil {
 		return resp, fmt.Errorf(errorMessage, err)
+	}
+
+	var nsxError types.NSXError
+	if resp.StatusCode == 400 {
+		if err = decodeBody(types.BodyTypeXML, resp, nsxError); err != nil {
+			return resp, fmt.Errorf("error decoding response: %s", err)
+		}
+		return resp, nsxError
 	}
 
 	if err = decodeBody(types.BodyTypeXML, resp, out); err != nil {
