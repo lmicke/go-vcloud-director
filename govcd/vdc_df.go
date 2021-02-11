@@ -156,10 +156,10 @@ type DFWRule struct {
 }
 
 type DFWApplied struct {
-	Name    string `xml:"name"` //ToDo: Namen rausfinden
+	Name    string `xml:"name,omitempty"` //ToDo: Namen rausfinden
 	Value   string `xml:"value"`
 	Type    string `xml:"type"` //ToDo: Types rausfinden
-	IsValid bool   `xml:"isValid"`
+	IsValid bool   `xml:"isValid,omitempty"`
 }
 
 type DFWAppliedTo struct {
@@ -190,7 +190,7 @@ func (cli *Client) ExecuteRequestWithCustomHeader(pathURL, requestType, contentT
 
 		marshaledXml, err := xml.MarshalIndent(payload, "  ", "    ")
 		if err != nil {
-			return &http.Response{}, fmt.Errorf("error marshalling xml data %s", err)
+			return &http.Response{}, fmt.Errorf("error marshalling xml data %v", err)
 		}
 		body := bytes.NewBufferString(xml.Header + string(marshaledXml))
 
