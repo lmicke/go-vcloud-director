@@ -143,27 +143,47 @@ type DFWSection struct {
 }
 
 type DFWRule struct {
-	Name          string         `xml:"name"`          //optional
-	Action        string         `xml:"action"`        //must allow, deny
-	AppliedToList []DFWAppliedTo `xml:"appliedToList"` //Kandidaten ORG_VDC, VMs, Netzwerke, Security Groups, Edge
-	SectionID     int            `xml:"sectionId"`
-	Direction     string         `xml:"direction"`
-	PacketType    string         `xml:"packetType"`
-	Tag           string         `xml:"tag"`
-	ID            int            `xml:"id,attr"`
-	Disabled      bool           `xml:"disabled,attr"`
-	Logged        bool           `xml:"logged,attr"`
+	Name          string       `xml:"name"`          //optional
+	Action        string       `xml:"action"`        //must allow, deny
+	AppliedToList DFWAppliedTo `xml:"appliedToList"` //Kandidaten ORG_VDC, VMs, Netzwerke, Security Groups, Edge
+	Sources       Sources      `xml:sources,omitempty`
+	Destinations  Destinations `xml:"destinations,omitempty"`
+	Services      Services     `xml:"services,omitempty"`
+	SectionID     int          `xml:"sectionId"`
+	Direction     string       `xml:"direction"`
+	PacketType    string       `xml:"packetType"`
+	Tag           string       `xml:"tag"`
+	ID            int          `xml:"id,attr"`
+	Disabled      bool         `xml:"disabled,attr"`
+	Logged        bool         `xml:"logged,attr"`
 }
 
 type DFWApplied struct {
-	Name    string `xml:"name,omitempty"` //ToDo: Namen rausfinden
+	Name    string `xml:"name,omitempty"`
 	Value   string `xml:"value"`
-	Type    string `xml:"type"` //ToDo: Types rausfinden
+	Type    string `xml:"type"`
 	IsValid bool   `xml:"isValid,omitempty"`
 }
 
 type DFWAppliedTo struct {
-	ID DFWApplied `xml:"appliedTo"`
+	Applied []DFWApplied `xml:"appliedTo"`
+}
+
+//Add Sources and Destinations
+
+type Sources struct {
+	Excluded string       `xml:"excluded,attr"`
+	Source   []DFWApplied `xml:"source"`
+}
+
+type Destinations struct {
+	Excluded    string       `xml:"excluded,attr"`
+	Destination []DFWApplied `xml:"destination"`
+}
+
+// Add Service Struct
+type Services struct {
+	Service []DFWApplied `xml:"service"`
 }
 
 // Update Request with Custom Etag Header:
