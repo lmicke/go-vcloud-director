@@ -49,6 +49,7 @@ func (dfw *DFW) EnableDistributedFirewall(VdcID string) (string, error) {
 	log.Printf("[DEBUG] Enable Distributed Firewall URL is: %s", dfwURL.String())
 
 	resp, err := dfw.Client.ExecuteRequest(dfwURL.String(), http.MethodPost, "", "error enabling dfw: %s", nil, nil)
+	//resp, err := dfw.Client.ExecuteParamRequestWithCustomError()
 	log.Printf("Response for Enabling: %v", resp)
 	if err != nil {
 		return dfwURL.String(), err
@@ -146,9 +147,9 @@ type DFWRule struct {
 	Name          string       `xml:"name"`          //optional
 	Action        string       `xml:"action"`        //must allow, deny
 	AppliedToList DFWAppliedTo `xml:"appliedToList"` //Kandidaten ORG_VDC, VMs, Netzwerke, Security Groups, Edge
-	Sources       Sources      `xml:sources,omitempty`
-	Destinations  Destinations `xml:"destinations,omitempty"`
-	Services      Services     `xml:"services,omitempty"`
+	Sources       *Sources      `xml:sources,omitempty`
+	Destinations  *Destinations `xml:"destinations,omitempty"`
+	Services      *Services     `xml:"services,omitempty"`
 	SectionID     int          `xml:"sectionId"`
 	Direction     string       `xml:"direction"`
 	PacketType    string       `xml:"packetType"`
@@ -187,6 +188,8 @@ type Services struct {
 }
 
 // Update Request with Custom Etag Header:
+
+
 
 func (cli *Client) NewRequestWithCustomHeader(params map[string]string, notEncodedParams map[string]string, method string, reqUrl url.URL, body io.Reader, etag string) *http.Request {
 	headers := make(http.Header)
