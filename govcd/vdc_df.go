@@ -31,7 +31,7 @@ func NewDFW(cli *Client) *DFW {
 func urnToUID(urn string) string {
 
 	if isUrn(urn) {
-		uid := strings.TrimLeft(urn, "urn:vcloud:vdc:")
+		uid := strings.TrimPrefix(urn, "urn:vcloud:vdc:")
 		return uid
 	}
 	return urn
