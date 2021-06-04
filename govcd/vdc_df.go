@@ -147,7 +147,7 @@ type DFWRule struct {
 	Name          string       `xml:"name"`          //optional
 	Action        string       `xml:"action"`        //must allow, deny
 	AppliedToList DFWAppliedTo `xml:"appliedToList"` //Kandidaten ORG_VDC, VMs, Netzwerke, Security Groups, Edge
-	Sources       *Sources      `xml:sources,omitempty`
+	Sources       *Sources      `xml:"sources,omitempty"`
 	Destinations  *Destinations `xml:"destinations,omitempty"`
 	Services      *Services     `xml:"services,omitempty"`
 	SectionID     int          `xml:"sectionId"`
