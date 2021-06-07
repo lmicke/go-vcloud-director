@@ -144,19 +144,19 @@ type DFWSection struct {
 }
 
 type DFWRule struct {
-	Name          string       `xml:"name"`          //optional
-	Action        string       `xml:"action"`        //must allow, deny
-	AppliedToList DFWAppliedTo `xml:"appliedToList"` //Kandidaten ORG_VDC, VMs, Netzwerke, Security Groups, Edge
+	Name          string        `xml:"name"`          //optional
+	Action        string        `xml:"action"`        //must allow, deny
+	AppliedToList DFWAppliedTo  `xml:"appliedToList"` //Kandidaten ORG_VDC, VMs, Netzwerke, Security Groups, Edge
 	Sources       *Sources      `xml:"sources,omitempty"`
 	Destinations  *Destinations `xml:"destinations,omitempty"`
 	Services      *Services     `xml:"services,omitempty"`
-	SectionID     int          `xml:"sectionId"`
-	Direction     string       `xml:"direction"`
-	PacketType    string       `xml:"packetType"`
-	Tag           string       `xml:"tag"`
-	ID            int          `xml:"id,attr"`
-	Disabled      bool         `xml:"disabled,attr"`
-	Logged        bool         `xml:"logged,attr"`
+	SectionID     int           `xml:"sectionId"`
+	Direction     string        `xml:"direction"`
+	PacketType    string        `xml:"packetType"`
+	Tag           string        `xml:"tag"`
+	ID            int           `xml:"id,attr"`
+	Disabled      bool          `xml:"disabled,attr"`
+	Logged        bool          `xml:"logged,attr"`
 }
 
 type DFWApplied struct {
@@ -188,8 +188,6 @@ type Services struct {
 }
 
 // Update Request with Custom Etag Header:
-
-
 
 func (cli *Client) NewRequestWithCustomHeader(params map[string]string, notEncodedParams map[string]string, method string, reqUrl url.URL, body io.Reader, etag string) *http.Request {
 	headers := make(http.Header)
